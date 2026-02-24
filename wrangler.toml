@@ -1,0 +1,5 @@
+name = "toolit"
+compatibility_date = "2025-02-24"
+
+[assets]
+directory = "./out"

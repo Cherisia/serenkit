@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Toolit — 무료 날짜 계산기 모음
 
-## Getting Started
+D-day, 날짜 차이, 날짜 더하기/빼기, 영업일, 만 나이, 기념일 계산기를 제공하는 무료 웹 서비스입니다.
 
-First, run the development server:
+## 기술 스택
+
+- Next.js (App Router, `output: export` 정적 빌드)
+- React 19
+- Tailwind CSS 4
+
+## 계산기 목록
+
+| 계산기 | 경로 |
+|---|---|
+| D-day 계산기 | /cal/dday |
+| 날짜 차이 계산기 | /cal/date-diff |
+| 날짜 더하기/빼기 | /cal/date-add |
+| 영업일 계산기 | /cal/business-days |
+| 만 나이 계산기 | /cal/age |
+| 기념일 계산기 | /cal/anniversary |
+
+## 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 빌드
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+정적 파일은 `/out` 폴더에 생성됩니다.
