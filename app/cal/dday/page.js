@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['D-day 계산기', 'D데이 계산기', '디데이 계산기', '남은 날짜 계산', '날짜 카운트다운'],
   alternates: { canonical: 'https://serenkit.com/cal/dday/' },
   openGraph: {
-    title: 'D-day 계산기 | serenKit',
+    title: 'D-day 계산기 | serenkit',
     description: '특정 날짜까지 남은 일수와 경과 일수를 무료로 계산해드립니다.',
     url: 'https://serenkit.com/cal/dday/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'D-day 계산기 | serenKit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'D-day 계산기 | serenkit' }],
   },
 }
 

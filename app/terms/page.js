@@ -1,6 +1,6 @@
 export const metadata = {
   title: '이용약관',
-  description: 'serenKit 서비스의 이용약관을 안내합니다.',
+  description: 'serenkit 서비스의 이용약관을 안내합니다.',
   robots: { index: false, follow: true },
   alternates: { canonical: 'https://serenkit.com/terms/' },
 }
@@ -8,7 +8,7 @@ export const metadata = {
 const SECTIONS = [
   {
     title: '제1조 (목적)',
-    content: `본 약관은 serenKit(이하 "서비스")이 제공하는 날짜 계산기 서비스의 이용 조건 및 절차, 서비스 제공자와 이용자 간의 권리·의무 및 책임 사항을 규정함을 목적으로 합니다.`,
+    content: `본 약관은 serenkit(이하 "서비스")이 제공하는 날짜 계산기 서비스의 이용 조건 및 절차, 서비스 제공자와 이용자 간의 권리·의무 및 책임 사항을 규정함을 목적으로 합니다.`,
   },
   {
     title: '제2조 (서비스의 제공)',
@@ -85,7 +85,7 @@ export default function TermsPage() {
       <main className="container xl:w-7/12 md:w-9/12 w-[92%] mx-auto mt-10 space-y-8">
         {/* 인트로 */}
         <p className="bg-amber-50 border border-amber-100 rounded-2xl p-6 text-xs text-stone-600 leading-relaxed">
-          serenKit 서비스를 이용하시면 본 약관에 동의한 것으로 간주됩니다. 서비스 이용 전 반드시 본 약관을 주의 깊게 읽어주시기 바랍니다.
+          serenkit 서비스를 이용하시면 본 약관에 동의한 것으로 간주됩니다. 서비스 이용 전 반드시 본 약관을 주의 깊게 읽어주시기 바랍니다.
         </p>
 
         {/* 섹션들 */}

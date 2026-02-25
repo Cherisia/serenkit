@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['영업일 계산기', '영업일 수 계산', '공휴일 제외 일수', '근무일 계산', '납기일 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/business-days/' },
   openGraph: {
-    title: '영업일 계산기 | serenKit',
+    title: '영업일 계산기 | serenkit',
     description: '주말과 공휴일을 제외한 실제 영업일수를 무료로 계산해드립니다.',
     url: 'https://serenkit.com/cal/business-days/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '영업일 계산기 | serenKit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '영업일 계산기 | serenkit' }],
   },
 }
 

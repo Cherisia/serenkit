@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['날짜 더하기', '날짜 빼기', '날짜 계산기', '90일 후 날짜', '몇일 후 날짜'],
   alternates: { canonical: 'https://serenkit.com/cal/date-add/' },
   openGraph: {
-    title: '날짜 더하기 빼기 계산기 | serenKit',
+    title: '날짜 더하기 빼기 계산기 | serenkit',
     description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 무료로 계산해드립니다.',
     url: 'https://serenkit.com/cal/date-add/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 | serenKit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 | serenkit' }],
   },
 }
 

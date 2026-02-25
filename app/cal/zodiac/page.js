@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['띠 계산기', '별자리 계산기', '내 띠 확인', '생년월일 별자리', '띠 궁합', '오행', '12간지'],
   alternates: { canonical: 'https://serenkit.com/cal/zodiac/' },
   openGraph: {
-    title: '띠/별자리 계산기 | serenKit',
+    title: '띠/별자리 계산기 | serenkit',
     description: '생년월일로 나의 띠와 별자리를 무료로 확인하세요.',
     url: 'https://serenkit.com/cal/zodiac/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '띠/별자리 계산기 | serenKit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '띠/별자리 계산기 | serenkit' }],
   },
 }
 
