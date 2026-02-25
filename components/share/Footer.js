@@ -7,6 +7,7 @@ const links = [
   { name: '영업일 계산기',    url: '/cal/business-days' },
   { name: '만 나이',          url: '/cal/age' },
   { name: '기념일 계산기',    url: '/cal/anniversary' },
+  { name: '띠/별자리 계산기', url: '/cal/zodiac' },
 ]
 
 export default function Footer() {

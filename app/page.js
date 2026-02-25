@@ -26,6 +26,7 @@ const jsonLd = {
     { '@type': 'ListItem', position: 4, name: '영업일 계산기',    url: 'https://serenkit.com/cal/business-days/' },
     { '@type': 'ListItem', position: 5, name: '만 나이 계산기',   url: 'https://serenkit.com/cal/age/' },
     { '@type': 'ListItem', position: 6, name: '기념일 계산기',    url: 'https://serenkit.com/cal/anniversary/' },
+    { '@type': 'ListItem', position: 7, name: '띠/별자리 계산기', url: 'https://serenkit.com/cal/zodiac/' },
   ],
 }
 
@@ -36,6 +37,7 @@ const calcs = [
   { name: '영업일 계산기',    url: '/cal/business-days', icon: '💼', desc: '주말·공휴일 제외한 실제 근무 가능 일수를 계산해요', color: 'from-lime-400 to-green-400' },
   { name: '만 나이 계산기',   url: '/cal/age',           icon: '🎂', desc: '생년월일로 법적 만 나이를 정확하게 계산해요',       color: 'from-sky-400 to-blue-400' },
   { name: '기념일 계산기',    url: '/cal/anniversary',   icon: '💑', desc: '100일·200일·1주년 등 기념일 날짜를 자동 계산해요',  color: 'from-pink-400 to-rose-400' },
+  { name: '띠/별자리 계산기', url: '/cal/zodiac',         icon: '🐾', desc: '생년월일로 나의 띠와 별자리, 오행, 궁합까지 확인해요', color: 'from-violet-400 to-purple-500' },
 ]
 
 export default function Home() {
