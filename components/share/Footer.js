@@ -8,6 +8,7 @@ const links = [
   { name: '만 나이',          url: '/cal/age' },
   { name: '기념일 계산기',    url: '/cal/anniversary' },
   { name: '띠/별자리 계산기', url: '/cal/zodiac' },
+  { name: '월급 실수령액',    url: '/cal/salary' },
 ]
 
 export default function Footer() {
@@ -19,9 +20,9 @@ export default function Footer() {
           {/* 브랜드 */}
           <div className="w-full">
             <strong className="text-xl font-black text-white tracking-tight">
-              seren<span className="text-amber-400">Kit</span>
+              seren<span className="text-amber-400">kit</span>
             </strong>
-            <p className="mt-2 text-xs text-stone-500">무료 날짜 계산기 모음 서비스</p>
+            <p className="mt-2 text-xs text-stone-500">계산기 모음 서비스</p>
           </div>
 
           {/* 계산기 목록 */}
@@ -60,7 +61,7 @@ export default function Footer() {
           {/* 카피라이트 */}
           <div className="w-full border-t border-stone-700 pt-5">
             <small className="text-xs text-stone-600">
-              Copyright ⓒ 2025 serenKit. All rights reserved.
+              Copyright ⓒ 2025 serenkit. All rights reserved.
             </small>
           </div>
         </div>
