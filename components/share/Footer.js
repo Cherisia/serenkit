@@ -18,7 +18,7 @@ export default function Footer() {
           {/* 브랜드 */}
           <div className="w-full">
             <strong className="text-xl font-black text-white tracking-tight">
-              tool<span className="text-amber-400">it</span>
+              seren<span className="text-amber-400">Kit</span>
             </strong>
             <p className="mt-2 text-xs text-stone-500">무료 날짜 계산기 모음 서비스</p>
           </div>
@@ -42,7 +42,7 @@ export default function Footer() {
             <h2 className="font-bold text-stone-300 mb-3">안내</h2>
             <ul className="space-y-2">
               <li>계산 결과는 참고용입니다</li>
-              <li>문의 : admin@toolit.com</li>
+              <li>문의 : admin@serenkit.com</li>
               <li>
                 <Link href="/privacy" className="hover:text-amber-400 transition-colors">
                   개인정보처리방침
@@ -59,7 +59,7 @@ export default function Footer() {
           {/* 카피라이트 */}
           <div className="w-full border-t border-stone-700 pt-5">
             <small className="text-xs text-stone-600">
-              Copyright ⓒ 2025 Toolit. All rights reserved.
+              Copyright ⓒ 2025 serenKit. All rights reserved.
             </small>
           </div>
         </div>

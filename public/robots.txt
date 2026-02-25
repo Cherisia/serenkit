@@ -4,4 +4,4 @@ Allow: /
 Disallow: /_next/
 Disallow: /out/
 
-Sitemap: https://toolit.com/sitemap.xml
+Sitemap: https://serenkit.com/sitemap.xml

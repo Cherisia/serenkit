@@ -5,13 +5,13 @@ export const metadata = {
   title: '날짜 더하기 빼기 계산기',
   description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 무료로 계산해드립니다. 90일 후, 1년 전 날짜 등을 간편하게 확인하세요.',
   keywords: ['날짜 더하기', '날짜 빼기', '날짜 계산기', '90일 후 날짜', '몇일 후 날짜'],
-  alternates: { canonical: 'https://toolit.com/cal/date-add/' },
+  alternates: { canonical: 'https://serenkit.com/cal/date-add/' },
   openGraph: {
-    title: '날짜 더하기 빼기 계산기 | Toolit',
+    title: '날짜 더하기 빼기 계산기 | serenKit',
     description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 무료로 계산해드립니다.',
-    url: 'https://toolit.com/cal/date-add/',
+    url: 'https://serenkit.com/cal/date-add/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 | Toolit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 | serenKit' }],
   },
 }
 
@@ -19,7 +19,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '날짜 더하기 빼기 계산기',
-  url: 'https://toolit.com/cal/date-add/',
+  url: 'https://serenkit.com/cal/date-add/',
   description: '날짜에 기간을 더하거나 빼서 결과 날짜를 구하는 무료 날짜 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
@@ -27,8 +27,8 @@ const jsonLd = {
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://toolit.com/' },
-      { '@type': 'ListItem', position: 2, name: '날짜 더하기 빼기', item: 'https://toolit.com/cal/date-add/' },
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://serenkit.com/' },
+      { '@type': 'ListItem', position: 2, name: '날짜 더하기 빼기', item: 'https://serenkit.com/cal/date-add/' },
     ],
   },
 }

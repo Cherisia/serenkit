@@ -5,13 +5,13 @@ export const metadata = {
   title: '영업일 계산기',
   description: '주말과 공휴일을 제외한 실제 영업일수를 무료로 계산해드립니다. 계약 납기일, 배송일, 행정 처리 기한을 정확하게 확인하세요.',
   keywords: ['영업일 계산기', '영업일 수 계산', '공휴일 제외 일수', '근무일 계산', '납기일 계산'],
-  alternates: { canonical: 'https://toolit.com/cal/business-days/' },
+  alternates: { canonical: 'https://serenkit.com/cal/business-days/' },
   openGraph: {
-    title: '영업일 계산기 | Toolit',
+    title: '영업일 계산기 | serenKit',
     description: '주말과 공휴일을 제외한 실제 영업일수를 무료로 계산해드립니다.',
-    url: 'https://toolit.com/cal/business-days/',
+    url: 'https://serenkit.com/cal/business-days/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '영업일 계산기 | Toolit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '영업일 계산기 | serenKit' }],
   },
 }
 
@@ -19,7 +19,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '영업일 계산기',
-  url: 'https://toolit.com/cal/business-days/',
+  url: 'https://serenkit.com/cal/business-days/',
   description: '주말·공휴일을 제외한 실제 영업일수를 계산하는 무료 영업일 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
@@ -27,8 +27,8 @@ const jsonLd = {
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://toolit.com/' },
-      { '@type': 'ListItem', position: 2, name: '영업일 계산기', item: 'https://toolit.com/cal/business-days/' },
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://serenkit.com/' },
+      { '@type': 'ListItem', position: 2, name: '영업일 계산기', item: 'https://serenkit.com/cal/business-days/' },
     ],
   },
 }

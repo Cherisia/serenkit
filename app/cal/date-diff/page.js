@@ -5,13 +5,13 @@ export const metadata = {
   title: '날짜 차이 계산기',
   description: '두 날짜 사이의 일수, 주, 월, 년을 무료로 계산해드립니다. 계약 기간, 근무 일수, 여행 기간 등을 정확하게 확인하세요.',
   keywords: ['날짜 차이 계산기', '두 날짜 사이 일수', '날짜 간격 계산', '기간 계산기', '일수 계산'],
-  alternates: { canonical: 'https://toolit.com/cal/date-diff/' },
+  alternates: { canonical: 'https://serenkit.com/cal/date-diff/' },
   openGraph: {
-    title: '날짜 차이 계산기 | Toolit',
+    title: '날짜 차이 계산기 | serenKit',
     description: '두 날짜 사이의 일수, 주, 월, 년을 무료로 계산해드립니다.',
-    url: 'https://toolit.com/cal/date-diff/',
+    url: 'https://serenkit.com/cal/date-diff/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 차이 계산기 | Toolit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 차이 계산기 | serenKit' }],
   },
 }
 
@@ -19,7 +19,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '날짜 차이 계산기',
-  url: 'https://toolit.com/cal/date-diff/',
+  url: 'https://serenkit.com/cal/date-diff/',
   description: '두 날짜 사이의 기간을 일·주·월·년 단위로 계산하는 무료 날짜 차이 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
@@ -27,8 +27,8 @@ const jsonLd = {
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://toolit.com/' },
-      { '@type': 'ListItem', position: 2, name: '날짜 차이 계산기', item: 'https://toolit.com/cal/date-diff/' },
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://serenkit.com/' },
+      { '@type': 'ListItem', position: 2, name: '날짜 차이 계산기', item: 'https://serenkit.com/cal/date-diff/' },
     ],
   },
 }

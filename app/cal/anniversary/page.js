@@ -5,13 +5,13 @@ export const metadata = {
   title: '기념일 계산기',
   description: '100일, 200일, 1주년 등 기념일 날짜를 무료로 계산해드립니다. 연인, 결혼, 친구와의 특별한 날을 미리 확인하세요.',
   keywords: ['기념일 계산기', '100일 계산', '200일 계산', '1주년 날짜', '커플 기념일 계산'],
-  alternates: { canonical: 'https://toolit.com/cal/anniversary/' },
+  alternates: { canonical: 'https://serenkit.com/cal/anniversary/' },
   openGraph: {
-    title: '기념일 계산기 | Toolit',
+    title: '기념일 계산기 | serenKit',
     description: '100일, 200일, 1주년 등 기념일 날짜를 무료로 계산해드립니다.',
-    url: 'https://toolit.com/cal/anniversary/',
+    url: 'https://serenkit.com/cal/anniversary/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '기념일 계산기 | Toolit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '기념일 계산기 | serenKit' }],
   },
 }
 
@@ -19,7 +19,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '기념일 계산기',
-  url: 'https://toolit.com/cal/anniversary/',
+  url: 'https://serenkit.com/cal/anniversary/',
   description: '100일·200일·1주년 등 기념일 날짜를 자동으로 계산하는 무료 기념일 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
@@ -27,8 +27,8 @@ const jsonLd = {
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://toolit.com/' },
-      { '@type': 'ListItem', position: 2, name: '기념일 계산기', item: 'https://toolit.com/cal/anniversary/' },
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://serenkit.com/' },
+      { '@type': 'ListItem', position: 2, name: '기념일 계산기', item: 'https://serenkit.com/cal/anniversary/' },
     ],
   },
 }

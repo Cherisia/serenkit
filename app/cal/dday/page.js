@@ -5,13 +5,13 @@ export const metadata = {
   title: 'D-day 계산기',
   description: '특정 날짜까지 남은 일수와 경과 일수를 무료로 계산해드립니다. 수능, 시험, 기념일, 여행 등 중요한 날짜를 확인하세요.',
   keywords: ['D-day 계산기', 'D데이 계산기', '디데이 계산기', '남은 날짜 계산', '날짜 카운트다운'],
-  alternates: { canonical: 'https://toolit.com/cal/dday/' },
+  alternates: { canonical: 'https://serenkit.com/cal/dday/' },
   openGraph: {
-    title: 'D-day 계산기 | Toolit',
+    title: 'D-day 계산기 | serenKit',
     description: '특정 날짜까지 남은 일수와 경과 일수를 무료로 계산해드립니다.',
-    url: 'https://toolit.com/cal/dday/',
+    url: 'https://serenkit.com/cal/dday/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'D-day 계산기 | Toolit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'D-day 계산기 | serenKit' }],
   },
 }
 
@@ -19,7 +19,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'D-day 계산기',
-  url: 'https://toolit.com/cal/dday/',
+  url: 'https://serenkit.com/cal/dday/',
   description: '특정 날짜까지 남은 일수와 경과 일수를 계산하는 무료 D-day 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
@@ -27,8 +27,8 @@ const jsonLd = {
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://toolit.com/' },
-      { '@type': 'ListItem', position: 2, name: 'D-day 계산기', item: 'https://toolit.com/cal/dday/' },
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://serenkit.com/' },
+      { '@type': 'ListItem', position: 2, name: 'D-day 계산기', item: 'https://serenkit.com/cal/dday/' },
     ],
   },
 }

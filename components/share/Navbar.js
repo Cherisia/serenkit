@@ -39,7 +39,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-1.5">
           <span className={`text-2xl font-black tracking-tight transition-colors duration-300
             ${white ? 'text-white' : 'text-stone-800'}`}>
-            tool<span className={white ? 'text-white' : 'text-amber-400'}>it</span>
+            seren<span className={white ? 'text-white' : 'text-amber-400'}>Kit</span>
           </span>
         </Link>
 

@@ -1,16 +1,16 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Toolit | 무료 날짜 계산기 모음',
+  title: 'serenKit | 무료 날짜 계산기 모음',
   description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일 등 생활에 필요한 모든 날짜 계산기를 무료로 제공합니다.',
   keywords: ['날짜 계산기', 'D-day 계산기', '날짜 차이 계산기', '영업일 계산기', '만 나이 계산기', '기념일 계산기', '무료 계산기'],
-  alternates: { canonical: 'https://toolit.com/' },
+  alternates: { canonical: 'https://serenkit.com/' },
   openGraph: {
-    title: 'Toolit | 무료 날짜 계산기 모음',
+    title: 'serenKit | 무료 날짜 계산기 모음',
     description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일 등 생활에 필요한 모든 날짜 계산기를 무료로 제공합니다.',
-    url: 'https://toolit.com/',
+    url: 'https://serenkit.com/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Toolit 무료 날짜 계산기 모음' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'serenKit 무료 날짜 계산기 모음' }],
   },
 }
 
@@ -18,14 +18,14 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: '날짜 계산기 목록',
-  url: 'https://toolit.com/',
+  url: 'https://serenkit.com/',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'D-day 계산기',    url: 'https://toolit.com/cal/dday/' },
-    { '@type': 'ListItem', position: 2, name: '날짜 차이 계산기', url: 'https://toolit.com/cal/date-diff/' },
-    { '@type': 'ListItem', position: 3, name: '날짜 더하기/빼기', url: 'https://toolit.com/cal/date-add/' },
-    { '@type': 'ListItem', position: 4, name: '영업일 계산기',    url: 'https://toolit.com/cal/business-days/' },
-    { '@type': 'ListItem', position: 5, name: '만 나이 계산기',   url: 'https://toolit.com/cal/age/' },
-    { '@type': 'ListItem', position: 6, name: '기념일 계산기',    url: 'https://toolit.com/cal/anniversary/' },
+    { '@type': 'ListItem', position: 1, name: 'D-day 계산기',    url: 'https://serenkit.com/cal/dday/' },
+    { '@type': 'ListItem', position: 2, name: '날짜 차이 계산기', url: 'https://serenkit.com/cal/date-diff/' },
+    { '@type': 'ListItem', position: 3, name: '날짜 더하기/빼기', url: 'https://serenkit.com/cal/date-add/' },
+    { '@type': 'ListItem', position: 4, name: '영업일 계산기',    url: 'https://serenkit.com/cal/business-days/' },
+    { '@type': 'ListItem', position: 5, name: '만 나이 계산기',   url: 'https://serenkit.com/cal/age/' },
+    { '@type': 'ListItem', position: 6, name: '기념일 계산기',    url: 'https://serenkit.com/cal/anniversary/' },
   ],
 }
 

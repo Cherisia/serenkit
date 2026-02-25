@@ -5,13 +5,13 @@ export const metadata = {
   title: '만 나이 계산기',
   description: '생년월일로 법적 만 나이를 무료로 계산해드립니다. 2023년 만 나이 통일법 기준으로 정확한 만 나이를 확인하세요.',
   keywords: ['만 나이 계산기', '만나이 계산', '법적 나이 계산', '만 나이 통일법', '나이 계산기'],
-  alternates: { canonical: 'https://toolit.com/cal/age/' },
+  alternates: { canonical: 'https://serenkit.com/cal/age/' },
   openGraph: {
-    title: '만 나이 계산기 | Toolit',
+    title: '만 나이 계산기 | serenKit',
     description: '생년월일로 법적 만 나이를 무료로 계산해드립니다.',
-    url: 'https://toolit.com/cal/age/',
+    url: 'https://serenkit.com/cal/age/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '만 나이 계산기 | Toolit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '만 나이 계산기 | serenKit' }],
   },
 }
 
@@ -19,7 +19,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '만 나이 계산기',
-  url: 'https://toolit.com/cal/age/',
+  url: 'https://serenkit.com/cal/age/',
   description: '생년월일로 법적 만 나이를 계산하는 무료 만 나이 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
@@ -27,8 +27,8 @@ const jsonLd = {
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://toolit.com/' },
-      { '@type': 'ListItem', position: 2, name: '만 나이 계산기', item: 'https://toolit.com/cal/age/' },
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://serenkit.com/' },
+      { '@type': 'ListItem', position: 2, name: '만 나이 계산기', item: 'https://serenkit.com/cal/age/' },
     ],
   },
 }
