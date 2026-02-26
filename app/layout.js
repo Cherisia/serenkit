@@ -10,7 +10,7 @@ export const metadata = {
     default: 'serenkit | 숫자가 필요한 순간',
     template: '%s | serenkit',
   },
-  description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리까지 생활에 필요한 모든 계산기가 모여 있어요.',
+  description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 양력 음력 변환까지 생활에 필요한 모든 계산기가 모여 있어요.',
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -25,7 +25,7 @@ export const metadata = {
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: 'serenkit | 숫자가 필요한 순간',
-    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리까지 생활에 필요한 모든 계산기가 모여 있어요.',
+    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 양력 음력 변환까지 생활에 필요한 모든 계산기가 모여 있어요.',
     url: BASE_URL,
     type: 'website',
     siteName: 'serenkit',
@@ -35,7 +35,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'serenkit | 숫자가 필요한 순간',
-    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리까지 생활에 필요한 모든 계산기가 모여 있어요.',
+    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 양력 음력 변환까지 생활에 필요한 모든 계산기가 모여 있어요.',
     images: ['/og-image.png'],
   },
 }

@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(cd /c/Project/serenkit && npm install korean-lunar-calendar 2>&1)",
+      "Bash(node:*)",
+      "Bash(tail:*)",
+      "Bash(grep:*)"
     ]
   }
 }

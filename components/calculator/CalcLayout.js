@@ -15,6 +15,7 @@ const CATEGORIES = [
       { name: '영업일 계산기',    url: '/cal/business-days', icon: '💼', desc: '주말·공휴일 제외 근무일' },
       { name: '만 나이',          url: '/cal/age',           icon: '🎂', desc: '법적 만 나이 계산' },
       { name: '기념일 계산기',    url: '/cal/anniversary',   icon: '💑', desc: '100일·1주년 기념일 날짜' },
+      { name: '양력 음력 변환기', url: '/cal/lunar',          icon: '🌙', desc: '양력↔음력 상호 변환' },
     ],
   },
   {

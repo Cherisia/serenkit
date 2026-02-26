@@ -10,6 +10,7 @@ const categories = [
       { name: '영업일 계산기',    url: '/cal/business-days' },
       { name: '만 나이 계산기',   url: '/cal/age' },
       { name: '기념일 계산기',    url: '/cal/anniversary' },
+      { name: '양력 음력 변환기', url: '/cal/lunar' },
     ],
   },
   {

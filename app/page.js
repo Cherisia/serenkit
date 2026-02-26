@@ -32,6 +32,7 @@ const jsonLd = {
     { '@type': 'ListItem', position: 10, name: '월급 실수령액 계산기', url: 'https://serenkit.com/cal/salary/' },
     { '@type': 'ListItem', position: 11, name: '띠/별자리 계산기',    url: 'https://serenkit.com/cal/zodiac/' },
     { '@type': 'ListItem', position: 12, name: '단위 변환기',         url: 'https://serenkit.com/cal/unit/' },
+    { '@type': 'ListItem', position: 13, name: '양력 음력 변환기',    url: 'https://serenkit.com/cal/lunar/' },
   ],
 }
 
@@ -52,6 +53,7 @@ const categories = [
       { name: '영업일 계산기',    url: '/cal/business-days', icon: '💼', desc: '주말·공휴일 제외한 실제 근무 가능 일수를 계산해요', color: 'from-lime-400 to-green-400' },
       { name: '만 나이 계산기',   url: '/cal/age',           icon: '🎂', desc: '생년월일로 법적 만 나이를 정확하게 계산해요',       color: 'from-sky-400 to-blue-400' },
       { name: '기념일 계산기',    url: '/cal/anniversary',   icon: '💑', desc: '100일·200일·1주년 등 기념일 날짜를 자동 계산해요',  color: 'from-pink-400 to-rose-400' },
+      { name: '양력 음력 변환기', url: '/cal/lunar',          icon: '🌙', desc: '양력↔음력 상호 변환 및 간지(갑자) 확인',             color: 'from-indigo-400 to-blue-500' },
     ],
   },
   {
