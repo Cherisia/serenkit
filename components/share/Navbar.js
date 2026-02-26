@@ -5,12 +5,11 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 const menu = [
-  { name: 'D-day 계산기',    url: '/cal/dday' },
-  { name: '날짜 차이',        url: '/cal/date-diff' },
-  { name: '날짜 더하기/빼기', url: '/cal/date-add' },
-  { name: '영업일 계산기',    url: '/cal/business-days' },
-  { name: '만 나이',          url: '/cal/age' },
-  { name: '기념일 계산기',    url: '/cal/anniversary' },
+  { name: 'D-day 계산기',  url: '/cal/dday' },
+  { name: '만 나이',        url: '/cal/age' },
+  { name: '월급 실수령액',  url: '/cal/salary' },
+  { name: '생리주기',       url: '/cal/period' },
+  { name: '단위 변환',      url: '/cal/unit' },
 ]
 
 export default function Navbar() {
@@ -54,6 +53,14 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+          <Link href="/"
+            className={`text-sm font-bold px-3.5 py-1.5 rounded-full border transition-all duration-200
+              ${white
+                ? 'border-white/50 text-white hover:bg-white/20'
+                : 'border-amber-300 text-amber-500 hover:bg-amber-50'
+              }`}>
+            전체 보기 →
+          </Link>
         </nav>
 
         {/* 모바일 햄버거 */}
@@ -77,6 +84,10 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+          <Link href="/" onClick={() => setOpen(false)}
+            className="text-sm font-bold text-amber-500 border-t border-stone-100 pt-4">
+            전체 보기 →
+          </Link>
         </div>
       )}
     </header>
