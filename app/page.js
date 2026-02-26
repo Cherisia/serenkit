@@ -2,12 +2,12 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'serenkit | 숫자가 필요한 순간',
-  description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량, 단위 변환까지 생활에 필요한 모든 계산기를 무료로 제공합니다.',
-  keywords: ['날짜 계산기', 'D-day 계산기', '날짜 차이 계산기', '영업일 계산기', '만 나이 계산기', '기념일 계산기', '월급 실수령액 계산기', 'BMI 계산기', '적정 체중 계산기', '기초대사량 계산기', '단위 변환기', '무료 계산기'],
+  description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량, 단위 변환, 생리주기까지 생활에 필요한 모든 계산기를 무료로 제공합니다.',
+  keywords: ['날짜 계산기', 'D-day 계산기', '날짜 차이 계산기', '영업일 계산기', '만 나이 계산기', '기념일 계산기', '월급 실수령액 계산기', 'BMI 계산기', '적정 체중 계산기', '기초대사량 계산기', '단위 변환기', '생리주기 계산기', '무료 계산기'],
   alternates: { canonical: 'https://serenkit.com/' },
   openGraph: {
     title: 'serenkit | 숫자가 필요한 순간',
-    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량, 단위 변환까지 생활에 필요한 모든 계산기를 무료로 제공합니다.',
+    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량, 단위 변환, 생리주기까지 생활에 필요한 모든 계산기를 무료로 제공합니다.',
     url: 'https://serenkit.com/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit | 숫자가 필요한 순간' }],
@@ -31,6 +31,7 @@ const jsonLd = {
     { '@type': 'ListItem', position: 9, name: '적정 체중 계산기', url: 'https://serenkit.com/cal/weight/' },
     { '@type': 'ListItem', position: 10, name: '기초대사량 계산기', url: 'https://serenkit.com/cal/calorie/' },
     { '@type': 'ListItem', position: 11, name: '단위 변환기', url: 'https://serenkit.com/cal/unit/' },
+    { '@type': 'ListItem', position: 12, name: '생리주기 계산기', url: 'https://serenkit.com/cal/period/' },
   ],
 }
 
@@ -46,6 +47,7 @@ const calcs = [
   { name: '적정 체중 계산기', url: '/cal/weight',          icon: '⚖️', desc: 'BMI와 표준 체중으로 나의 적정 체중 범위를 확인해요',           color: 'from-cyan-400 to-sky-500' },
   { name: '기초대사량 계산기', url: '/cal/calorie',         icon: '🔥', desc: '나이·키·체중·활동량으로 하루 필요 칼로리를 계산해요',           color: 'from-rose-400 to-orange-400' },
   { name: '단위 변환기',      url: '/cal/unit',            icon: '🔄', desc: '길이·무게·온도·넓이·부피·속도·데이터 단위를 한 번에 변환해요',  color: 'from-teal-400 to-cyan-500' },
+  { name: '생리주기 계산기', url: '/cal/period',           icon: '🌸', desc: '다음 생리 예정일·배란일·가임기·PMS를 한 번에 예측해요',          color: 'from-pink-400 to-rose-500' },
 ]
 
 export default function Home() {

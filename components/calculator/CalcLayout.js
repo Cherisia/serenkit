@@ -13,6 +13,7 @@ const ALL_CALCS = [
   { name: '적정 체중',        url: '/cal/weight',         icon: '⚖️', desc: 'BMI와 표준 체중 계산' },
   { name: '기초대사량',       url: '/cal/calorie',        icon: '🔥', desc: '하루 필요 칼로리 계산' },
   { name: '단위 변환기',      url: '/cal/unit',           icon: '🔄', desc: '길이·무게·온도 등 단위 변환' },
+  { name: '생리주기 계산기', url: '/cal/period',          icon: '🌸', desc: '다음 생리·배란일·가임기 예측' },
 ]
 
 export default function CalcLayout({ title, desc, currentUrl, faqs, children }) {
