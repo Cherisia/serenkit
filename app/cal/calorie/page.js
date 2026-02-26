@@ -11,7 +11,7 @@ export const metadata = {
     description: '기초대사량(BMR)과 하루 필요 칼로리(TDEE), 목표별 권장 칼로리를 계산해보세요.',
     url: 'https://serenkit.com/cal/calorie/',
     type: 'website',
-    images: [{ url: '/api/og?title=기초대사량+계산기&sub=하루+필요+칼로리와+목표별+권장+칼로리', width: 1200, height: 630, alt: '기초대사량 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '기초대사량 계산기 | serenkit' }],
   },
 }
 

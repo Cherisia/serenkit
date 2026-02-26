@@ -10,7 +10,7 @@ export const metadata = {
     description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량, 단위 변환, 생리주기까지 생활에 필요한 모든 계산기가 모여 있어요.',
     url: 'https://serenkit.com/',
     type: 'website',
-    images: [{ url: '/api/og?title=serenkit&sub=숫자가+필요한+순간', width: 1200, height: 630, alt: 'serenkit | 숫자가 필요한 순간' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit | 숫자가 필요한 순간' }],
   },
 }
 

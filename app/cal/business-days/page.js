@@ -11,7 +11,7 @@ export const metadata = {
     description: '주말과 공휴일을 제외한 실제 영업일수를 바로 계산해요.',
     url: 'https://serenkit.com/cal/business-days/',
     type: 'website',
-    images: [{ url: '/api/og?title=영업일+계산기&sub=주말+공휴일+제외+실제+근무일+계산', width: 1200, height: 630, alt: '영업일 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '영업일 계산기 | serenkit' }],
   },
 }
 

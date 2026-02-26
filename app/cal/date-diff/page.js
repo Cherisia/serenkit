@@ -11,7 +11,7 @@ export const metadata = {
     description: '두 날짜 사이의 일수, 주, 월, 년을 바로 계산해요.',
     url: 'https://serenkit.com/cal/date-diff/',
     type: 'website',
-    images: [{ url: '/api/og?title=날짜+차이+계산기&sub=두+날짜+사이+일수+주+월+년+계산', width: 1200, height: 630, alt: '날짜 차이 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 차이 계산기 | serenkit' }],
   },
 }
 

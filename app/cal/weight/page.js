@@ -11,7 +11,7 @@ export const metadata = {
     description: 'BMI와 표준 체중으로 나의 적정 체중 범위를 확인해보세요.',
     url: 'https://serenkit.com/cal/weight/',
     type: 'website',
-    images: [{ url: '/api/og?title=적정+체중+계산기&sub=BMI와+표준+체중으로+적정+체중+확인', width: 1200, height: 630, alt: '적정 체중 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '적정 체중 계산기 | serenkit' }],
   },
 }
 

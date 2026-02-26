@@ -11,7 +11,7 @@ export const metadata = {
     description: '생년월일로 법적 만 나이를 바로 계산해요.',
     url: 'https://serenkit.com/cal/age/',
     type: 'website',
-    images: [{ url: '/api/og?title=만+나이+계산기&sub=생년월일로+법적+만+나이+계산', width: 1200, height: 630, alt: '만 나이 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '만 나이 계산기 | serenkit' }],
   },
 }
 

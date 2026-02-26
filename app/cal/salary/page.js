@@ -11,7 +11,7 @@ export const metadata = {
     description: '2025년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산해요.',
     url: 'https://serenkit.com/cal/salary/',
     type: 'website',
-    images: [{ url: '/api/og?title=월급+실수령액+계산기&sub=4대보험+소득세+공제+후+실수령액', width: 1200, height: 630, alt: '월급 실수령액 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '월급 실수령액 계산기 | serenkit' }],
   },
 }
 
