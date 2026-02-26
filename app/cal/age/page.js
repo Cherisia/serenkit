@@ -3,12 +3,12 @@ import AgeCalc from '@/components/calculator/AgeCalc'
 
 export const metadata = {
   title: '만 나이 계산기',
-  description: '생년월일로 법적 만 나이를 무료로 계산해드립니다. 2023년 만 나이 통일법 기준으로 정확한 만 나이를 확인하세요.',
+  description: '생년월일로 법적 만 나이를 바로 계산해요. 2023년 만 나이 통일법 기준으로 정확한 만 나이를 확인하세요.',
   keywords: ['만 나이 계산기', '만나이 계산', '법적 나이 계산', '만 나이 통일법', '나이 계산기'],
   alternates: { canonical: 'https://serenkit.com/cal/age/' },
   openGraph: {
     title: '만 나이 계산기 | serenkit',
-    description: '생년월일로 법적 만 나이를 무료로 계산해드립니다.',
+    description: '생년월일로 법적 만 나이를 바로 계산해요.',
     url: 'https://serenkit.com/cal/age/',
     type: 'website',
     images: [{ url: '/api/og?title=만+나이+계산기&sub=생년월일로+법적+만+나이+계산', width: 1200, height: 630, alt: '만 나이 계산기 | serenkit' }],
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '만 나이 계산기',
   url: 'https://serenkit.com/cal/age/',
-  description: '생년월일로 법적 만 나이를 계산하는 무료 만 나이 계산기',
+  description: '생년월일로 법적 만 나이를 계산하는 만 나이 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },

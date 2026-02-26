@@ -3,12 +3,12 @@ import DdayCalc from '@/components/calculator/DdayCalc'
 
 export const metadata = {
   title: 'D-day 계산기',
-  description: '특정 날짜까지 남은 일수와 경과 일수를 무료로 계산해드립니다. 수능, 시험, 기념일, 여행 등 중요한 날짜를 확인하세요.',
+  description: '특정 날짜까지 남은 일수와 경과 일수를 바로 계산해요. 수능, 시험, 기념일, 여행 등 중요한 날짜를 확인하세요.',
   keywords: ['D-day 계산기', 'D데이 계산기', '디데이 계산기', '남은 날짜 계산', '날짜 카운트다운'],
   alternates: { canonical: 'https://serenkit.com/cal/dday/' },
   openGraph: {
     title: 'D-day 계산기 | serenkit',
-    description: '특정 날짜까지 남은 일수와 경과 일수를 무료로 계산해드립니다.',
+    description: '특정 날짜까지 남은 일수와 경과 일수를 바로 계산해요.',
     url: 'https://serenkit.com/cal/dday/',
     type: 'website',
     images: [{ url: '/api/og?title=D-day+계산기&sub=특정+날짜까지+남은+일수와+경과+일수+계산', width: 1200, height: 630, alt: 'D-day 계산기 | serenkit' }],
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: 'D-day 계산기',
   url: 'https://serenkit.com/cal/dday/',
-  description: '특정 날짜까지 남은 일수와 경과 일수를 계산하는 무료 D-day 계산기',
+  description: '특정 날짜까지 남은 일수와 경과 일수를 계산하는 D-day 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },

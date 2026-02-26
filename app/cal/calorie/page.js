@@ -3,7 +3,7 @@ import CalorieCalc from '@/components/calculator/CalorieCalc'
 
 export const metadata = {
   title: '기초대사량 계산기 | 하루 칼로리 계산기',
-  description: '나이·키·몸무게·활동량으로 기초대사량(BMR)과 하루 필요 칼로리(TDEE)를 계산하세요. 체중 감량·유지·증량 목표별 권장 칼로리와 영양소 비율까지 무료 제공.',
+  description: '나이·키·몸무게·활동량으로 기초대사량(BMR)과 하루 필요 칼로리(TDEE)를 계산하세요. 체중 감량·유지·증량 목표별 권장 칼로리와 영양소 비율까지 한눈에 볼 수 있어요.',
   keywords: ['기초대사량 계산기', '하루 칼로리 계산기', 'BMR 계산기', 'TDEE 계산기', '칼로리 계산', '다이어트 칼로리', '하루 권장 칼로리', '기초 대사량'],
   alternates: { canonical: 'https://serenkit.com/cal/calorie/' },
   openGraph: {
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '기초대사량 계산기',
   url: 'https://serenkit.com/cal/calorie/',
-  description: 'Mifflin-St Jeor 공식 기반 기초대사량(BMR)과 하루 필요 칼로리(TDEE)를 계산하는 무료 계산기',
+  description: 'Mifflin-St Jeor 공식 기반 기초대사량(BMR)과 하루 필요 칼로리(TDEE)를 계산하는 계산기',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },

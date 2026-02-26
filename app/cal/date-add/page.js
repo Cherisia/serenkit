@@ -3,12 +3,12 @@ import DateAddCalc from '@/components/calculator/DateAddCalc'
 
 export const metadata = {
   title: '날짜 더하기 빼기 계산기',
-  description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 무료로 계산해드립니다. 90일 후, 1년 전 날짜 등을 간편하게 확인하세요.',
+  description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 바로 계산해요. 90일 후, 1년 전 날짜 등을 간편하게 확인하세요.',
   keywords: ['날짜 더하기', '날짜 빼기', '날짜 계산기', '90일 후 날짜', '몇일 후 날짜'],
   alternates: { canonical: 'https://serenkit.com/cal/date-add/' },
   openGraph: {
     title: '날짜 더하기 빼기 계산기 | serenkit',
-    description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 무료로 계산해드립니다.',
+    description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 바로 계산해요.',
     url: 'https://serenkit.com/cal/date-add/',
     type: 'website',
     images: [{ url: '/api/og?title=날짜+더하기빼기&sub=날짜에+원하는+기간을+더하거나+빼기', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 | serenkit' }],
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '날짜 더하기 빼기 계산기',
   url: 'https://serenkit.com/cal/date-add/',
-  description: '날짜에 기간을 더하거나 빼서 결과 날짜를 구하는 무료 날짜 계산기',
+  description: '날짜에 기간을 더하거나 빼서 결과 날짜를 구하는 날짜 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },

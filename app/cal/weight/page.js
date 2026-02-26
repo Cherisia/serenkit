@@ -3,7 +3,7 @@ import WeightCalc from '@/components/calculator/WeightCalc'
 
 export const metadata = {
   title: '적정 체중 계산기 | BMI 계산기',
-  description: '키와 몸무게를 입력하면 BMI(체질량지수)와 표준 체중, 적정 체중 범위를 바로 계산해드립니다. 한국인 기준 비만도 판정 무료 제공.',
+  description: '키와 몸무게를 입력하면 BMI(체질량지수)와 표준 체중, 적정 체중 범위를 바로 계산해요. 한국인 기준 비만도 판정 기준도 확인해보세요.',
   keywords: ['적정 체중 계산기', 'BMI 계산기', '체질량지수 계산', '표준 체중', '비만도 계산기', '체중 계산기', '정상 체중 범위'],
   alternates: { canonical: 'https://serenkit.com/cal/weight/' },
   openGraph: {
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '적정 체중 계산기',
   url: 'https://serenkit.com/cal/weight/',
-  description: 'BMI(체질량지수)와 표준 체중을 기반으로 적정 체중 범위를 계산하는 무료 계산기',
+  description: 'BMI(체질량지수)와 표준 체중을 기반으로 적정 체중 범위를 계산하는 계산기',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },

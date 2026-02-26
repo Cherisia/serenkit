@@ -60,10 +60,10 @@ export default function Footer() {
             </p>
             <p className="mt-4 text-xs text-stone-500 leading-relaxed">
               날짜 계산부터 건강, 금융, 단위 변환까지<br />
-              무료로 제공하는 실용 계산기 서비스입니다.
+              생활에 꼭 필요한 계산기를 모아둔 서비스입니다.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
-              {['무료', '빠른계산'].map(tag => (
+              {['빠른계산', '간편하게'].map(tag => (
                 <span key={tag} className="text-[10px] font-bold text-stone-400 border border-stone-700 rounded-full px-2.5 py-1">
                   {tag}
                 </span>

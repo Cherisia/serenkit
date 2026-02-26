@@ -3,12 +3,12 @@ import ZodiacCalc from '@/components/calculator/ZodiacCalc'
 
 export const metadata = {
   title: '띠/별자리 계산기',
-  description: '생년월일로 나의 띠와 별자리를 무료로 확인하세요. 오행, 궁합 좋은 띠, 별자리 특징까지 한번에 알아보세요.',
+  description: '생년월일로 나의 띠와 별자리를 확인해보세요. 오행, 궁합 좋은 띠, 별자리 특징까지 한번에 알아보세요.',
   keywords: ['띠 계산기', '별자리 계산기', '내 띠 확인', '생년월일 별자리', '띠 궁합', '오행', '12간지'],
   alternates: { canonical: 'https://serenkit.com/cal/zodiac/' },
   openGraph: {
     title: '띠/별자리 계산기 | serenkit',
-    description: '생년월일로 나의 띠와 별자리를 무료로 확인하세요.',
+    description: '생년월일로 나의 띠와 별자리를 확인해보세요.',
     url: 'https://serenkit.com/cal/zodiac/',
     type: 'website',
     images: [{ url: '/api/og?title=띠별자리+계산기&sub=나의+띠와+별자리+오행+궁합+확인', width: 1200, height: 630, alt: '띠/별자리 계산기 | serenkit' }],
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '띠/별자리 계산기',
   url: 'https://serenkit.com/cal/zodiac/',
-  description: '생년월일로 띠와 별자리를 계산하는 무료 계산기',
+  description: '생년월일로 띠와 별자리를 계산하는 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },

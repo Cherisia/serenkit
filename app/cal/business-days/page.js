@@ -3,12 +3,12 @@ import BusinessDaysCalc from '@/components/calculator/BusinessDaysCalc'
 
 export const metadata = {
   title: '영업일 계산기',
-  description: '주말과 공휴일을 제외한 실제 영업일수를 무료로 계산해드립니다. 계약 납기일, 배송일, 행정 처리 기한을 정확하게 확인하세요.',
+  description: '주말과 공휴일을 제외한 실제 영업일수를 바로 계산해요. 계약 납기일, 배송일, 행정 처리 기한을 정확하게 확인하세요.',
   keywords: ['영업일 계산기', '영업일 수 계산', '공휴일 제외 일수', '근무일 계산', '납기일 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/business-days/' },
   openGraph: {
     title: '영업일 계산기 | serenkit',
-    description: '주말과 공휴일을 제외한 실제 영업일수를 무료로 계산해드립니다.',
+    description: '주말과 공휴일을 제외한 실제 영업일수를 바로 계산해요.',
     url: 'https://serenkit.com/cal/business-days/',
     type: 'website',
     images: [{ url: '/api/og?title=영업일+계산기&sub=주말+공휴일+제외+실제+근무일+계산', width: 1200, height: 630, alt: '영업일 계산기 | serenkit' }],
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '영업일 계산기',
   url: 'https://serenkit.com/cal/business-days/',
-  description: '주말·공휴일을 제외한 실제 영업일수를 계산하는 무료 영업일 계산기',
+  description: '주말·공휴일을 제외한 실제 영업일수를 계산하는 영업일 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },

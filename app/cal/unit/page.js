@@ -3,7 +3,7 @@ import UnitCalc from '@/components/calculator/UnitCalc'
 
 export const metadata = {
   title: '단위 변환기 | 길이·무게·온도·넓이·부피·속도·데이터',
-  description: '길이, 무게, 넓이, 부피, 온도, 속도, 데이터 단위를 한 번에 변환하세요. mm↔cm↔m↔km↔인치↔피트, kg↔lb↔oz, °C↔°F↔K 등 무료 단위 변환기.',
+  description: '길이, 무게, 넓이, 부피, 온도, 속도, 데이터 단위를 한 번에 변환하세요. mm↔cm↔m↔km↔인치↔피트, kg↔lb↔oz, °C↔°F↔K 등 단위 변환기.',
   keywords: ['단위 변환기', '길이 변환', '무게 변환', '온도 변환', '넓이 변환', '부피 변환', '속도 변환', '데이터 변환', 'cm 인치 변환', 'kg lb 변환', '섭씨 화씨 변환', '평 m2 변환'],
   alternates: { canonical: 'https://serenkit.com/cal/unit/' },
   openGraph: {
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '단위 변환기',
   url: 'https://serenkit.com/cal/unit/',
-  description: '길이, 무게, 넓이, 부피, 온도, 속도, 데이터 등 7가지 단위를 변환하는 무료 단위 변환기',
+  description: '길이, 무게, 넓이, 부피, 온도, 속도, 데이터 등 7가지 단위를 변환하는 단위 변환기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },

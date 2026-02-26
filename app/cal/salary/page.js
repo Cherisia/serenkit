@@ -3,12 +3,12 @@ import SalaryCalc from '@/components/calculator/SalaryCalc'
 
 export const metadata = {
   title: '월급 실수령액 계산기',
-  description: '2025년 기준 4대보험(국민연금·건강보험·장기요양·고용보험)과 소득세를 공제한 월급 실수령액을 무료로 계산하세요.',
+  description: '2025년 기준 4대보험(국민연금·건강보험·장기요양·고용보험)과 소득세를 공제한 월급 실수령액을 계산해보세요.',
   keywords: ['월급 실수령액 계산기', '세후 월급 계산', '4대보험 계산기', '소득세 계산', '월급 계산기', '연봉 실수령액'],
   alternates: { canonical: 'https://serenkit.com/cal/salary/' },
   openGraph: {
     title: '월급 실수령액 계산기 | serenkit',
-    description: '2025년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산해드립니다.',
+    description: '2025년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산해요.',
     url: 'https://serenkit.com/cal/salary/',
     type: 'website',
     images: [{ url: '/api/og?title=월급+실수령액+계산기&sub=4대보험+소득세+공제+후+실수령액', width: 1200, height: 630, alt: '월급 실수령액 계산기 | serenkit' }],
@@ -20,7 +20,7 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '월급 실수령액 계산기',
   url: 'https://serenkit.com/cal/salary/',
-  description: '2025년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산하는 무료 계산기',
+  description: '2025년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산하는 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
