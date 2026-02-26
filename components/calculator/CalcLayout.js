@@ -12,6 +12,7 @@ const ALL_CALCS = [
   { name: '월급 실수령액',    url: '/cal/salary',         icon: '💰', desc: '4대보험·소득세 공제 후 실수령액' },
   { name: '적정 체중',        url: '/cal/weight',         icon: '⚖️', desc: 'BMI와 표준 체중 계산' },
   { name: '기초대사량',       url: '/cal/calorie',        icon: '🔥', desc: '하루 필요 칼로리 계산' },
+  { name: '단위 변환기',      url: '/cal/unit',           icon: '🔄', desc: '길이·무게·온도 등 단위 변환' },
 ]
 
 export default function CalcLayout({ title, desc, currentUrl, faqs, children }) {
