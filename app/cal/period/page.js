@@ -11,7 +11,7 @@ export const metadata = {
     description: '다음 생리 예정일, 배란일, 가임기, PMS 예상일을 한 번에 계산해보세요.',
     url: 'https://serenkit.com/cal/period/',
     type: 'website',
-    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '생리주기 계산기 | serenkit' }],
+    images: [{ url: '/api/og?title=생리주기+계산기&sub=다음+생리+예정일+배란일+가임기+예측', width: 1200, height: 630, alt: '생리주기 계산기 | serenkit' }],
   },
 }
 

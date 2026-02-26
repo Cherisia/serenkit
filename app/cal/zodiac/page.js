@@ -11,7 +11,7 @@ export const metadata = {
     description: '생년월일로 나의 띠와 별자리를 무료로 확인하세요.',
     url: 'https://serenkit.com/cal/zodiac/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '띠/별자리 계산기 | serenkit' }],
+    images: [{ url: '/api/og?title=띠별자리+계산기&sub=나의+띠와+별자리+오행+궁합+확인', width: 1200, height: 630, alt: '띠/별자리 계산기 | serenkit' }],
   },
 }
 

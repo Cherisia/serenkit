@@ -11,7 +11,7 @@ export const metadata = {
     description: '길이·무게·온도·넓이·부피·속도·데이터 단위를 한 번에 변환해보세요.',
     url: 'https://serenkit.com/cal/unit/',
     type: 'website',
-    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '단위 변환기 | serenkit' }],
+    images: [{ url: '/api/og?title=단위+변환기&sub=길이+무게+온도+넓이+부피+속도+변환', width: 1200, height: 630, alt: '단위 변환기 | serenkit' }],
   },
 }
 
