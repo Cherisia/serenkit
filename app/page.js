@@ -188,34 +188,102 @@ export default function Home() {
 
       {/* 활용 예시 */}
       <section className="container xl:w-10/12 md:w-11/12 w-[92%] mx-auto mt-10">
-        <div className="bg-amber-50 border border-amber-100 rounded-2xl p-6 md:p-8">
-          <h2 className="text-sm font-black text-stone-700 mb-5">📌 이런 상황에 활용하세요</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-stone-500">
-            <article>
-              <h3 className="font-bold text-stone-600 mb-2">💑 연인 · 기념일</h3>
-              <ul className="space-y-1.5">
-                <li>→ 100일·200일 기념일 날짜</li>
-                <li>→ 처음 만난 날 D-day</li>
-                <li>→ 결혼기념일까지 남은 날</li>
-              </ul>
-            </article>
-            <article>
-              <h3 className="font-bold text-stone-600 mb-2">📚 수험생 · 직장인</h3>
-              <ul className="space-y-1.5">
-                <li>→ 수능 D-day 계산</li>
-                <li>→ 프로젝트 마감 영업일</li>
-                <li>→ 월급 실수령액 확인</li>
-              </ul>
-            </article>
-            <article>
-              <h3 className="font-bold text-stone-600 mb-2">💪 건강 · 다이어트</h3>
-              <ul className="space-y-1.5">
-                <li>→ 나의 BMI · 적정 체중 확인</li>
-                <li>→ 하루 권장 칼로리 계산</li>
-                <li>→ 생리 예정일 · 배란일 예측</li>
-              </ul>
-            </article>
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-orange-400 flex items-center justify-center text-base shrink-0">
+            📌
           </div>
+          <div>
+            <h2 className="text-sm font-black text-amber-600">활용 예시</h2>
+            <p className="text-[11px] text-stone-400">Use Cases</p>
+          </div>
+          <div className="flex-1 h-px bg-stone-200 ml-1" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          {[
+            {
+              icon: '💑', title: '연인 · 커플',
+              color: 'from-pink-400 to-rose-400',
+              bg: 'bg-pink-50', border: 'border-pink-100', titleColor: 'text-pink-600',
+              items: [
+                '처음 만난 날부터 D-day 카운트',
+                '100일·200일·1주년 기념일 날짜',
+                '결혼기념일까지 남은 날 계산',
+                '두 사람의 띠·별자리 궁합 확인',
+              ],
+            },
+            {
+              icon: '📚', title: '수험생 · 학생',
+              color: 'from-sky-400 to-blue-400',
+              bg: 'bg-sky-50', border: 'border-sky-100', titleColor: 'text-sky-600',
+              items: [
+                '수능·시험까지 D-day 계산',
+                '원서 마감일까지 영업일 확인',
+                '학기 시작·종강일 날짜 계산',
+                '만 나이로 학년·병역 기준 확인',
+              ],
+            },
+            {
+              icon: '💼', title: '직장인 · 비즈니스',
+              color: 'from-emerald-400 to-green-400',
+              bg: 'bg-emerald-50', border: 'border-emerald-100', titleColor: 'text-emerald-600',
+              items: [
+                '세전 월급 → 실수령액 계산',
+                '계약 만료일·프로젝트 마감 영업일',
+                '입사일 기준 근속 기간 확인',
+                '연봉 협상 전 공제 내역 파악',
+              ],
+            },
+            {
+              icon: '💪', title: '건강 · 다이어트',
+              color: 'from-orange-400 to-rose-400',
+              bg: 'bg-orange-50', border: 'border-orange-100', titleColor: 'text-orange-600',
+              items: [
+                'BMI · 적정 체중 범위 확인',
+                '기초대사량·하루 필요 칼로리 계산',
+                '감량·유지·증량 목표별 식단 기준',
+                '다이어트 시작일 D-day 관리',
+              ],
+            },
+            {
+              icon: '🌸', title: '여성 · 임신 준비',
+              color: 'from-pink-400 to-fuchsia-400',
+              bg: 'bg-fuchsia-50', border: 'border-fuchsia-100', titleColor: 'text-fuchsia-600',
+              items: [
+                '다음 생리 예정일 미리 확인',
+                '배란일·가임기 날짜 예측',
+                'PMS 예상 기간 파악',
+                '향후 4개월 주기 한눈에 보기',
+              ],
+            },
+            {
+              icon: '🔄', title: '일상 · 생활',
+              color: 'from-teal-400 to-cyan-400',
+              bg: 'bg-teal-50', border: 'border-teal-100', titleColor: 'text-teal-600',
+              items: [
+                'cm ↔ 인치, kg ↔ 파운드 즉시 변환',
+                '평 ↔ m² 아파트 넓이 계산',
+                '섭씨 ↔ 화씨 온도 변환',
+                '해외 레시피 용량 단위 변환',
+              ],
+            },
+          ].map(({ icon, title, color, bg, border, titleColor, items }) => (
+            <article key={title} className={`${bg} ${border} border rounded-2xl p-5`}>
+              <div className="flex items-center gap-2.5 mb-3">
+                <div className={`w-8 h-8 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center text-sm shrink-0`}>
+                  {icon}
+                </div>
+                <h3 className={`text-sm font-black ${titleColor}`}>{title}</h3>
+              </div>
+              <ul className="space-y-1.5">
+                {items.map(item => (
+                  <li key={item} className="flex items-start gap-1.5 text-xs text-stone-500">
+                    <span className="text-stone-300 mt-0.5 shrink-0">→</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -1,71 +1,116 @@
 import Link from 'next/link'
 
-const links = [
-  { name: 'D-day 계산기',    url: '/cal/dday' },
-  { name: '날짜 차이',        url: '/cal/date-diff' },
-  { name: '날짜 더하기/빼기', url: '/cal/date-add' },
-  { name: '영업일 계산기',    url: '/cal/business-days' },
-  { name: '만 나이',          url: '/cal/age' },
-  { name: '기념일 계산기',    url: '/cal/anniversary' },
-  { name: '띠/별자리 계산기', url: '/cal/zodiac' },
-  { name: '월급 실수령액',    url: '/cal/salary' },
+const categories = [
+  {
+    label: '📅 날짜 · 시간',
+    links: [
+      { name: 'D-day 계산기',    url: '/cal/dday' },
+      { name: '날짜 차이 계산기', url: '/cal/date-diff' },
+      { name: '날짜 더하기/빼기', url: '/cal/date-add' },
+      { name: '영업일 계산기',    url: '/cal/business-days' },
+      { name: '만 나이 계산기',   url: '/cal/age' },
+      { name: '기념일 계산기',    url: '/cal/anniversary' },
+    ],
+  },
+  {
+    label: '💪 건강 · 신체',
+    links: [
+      { name: '적정 체중 계산기',  url: '/cal/weight' },
+      { name: '기초대사량 계산기', url: '/cal/calorie' },
+      { name: '생리주기 계산기',   url: '/cal/period' },
+    ],
+  },
+  {
+    label: '💰 금융 · 급여',
+    links: [
+      { name: '월급 실수령액 계산기', url: '/cal/salary' },
+    ],
+  },
+  {
+    label: '✨ 운세 · 라이프',
+    links: [
+      { name: '띠/별자리 계산기', url: '/cal/zodiac' },
+    ],
+  },
+  {
+    label: '🔄 단위 변환',
+    links: [
+      { name: '단위 변환기', url: '/cal/unit' },
+    ],
+  },
 ]
 
 export default function Footer() {
   return (
-    <footer className="bg-stone-800">
-      <div className="container mx-auto px-6 xl:px-48 py-12 max-md:py-8">
-        <div className="flex flex-wrap gap-10 text-sm text-stone-400">
+    <footer className="bg-stone-900">
+
+      {/* 메인 푸터 */}
+      <div className="container mx-auto px-6 xl:w-10/12 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-10">
 
           {/* 브랜드 */}
-          <div className="w-full">
-            <strong className="text-xl font-black text-white tracking-tight">
-              seren<span className="text-amber-400">kit</span>
-            </strong>
-            <p className="mt-2 text-xs text-stone-500">계산기 모음 서비스</p>
+          <div>
+            <Link href="/">
+              <strong className="text-2xl font-black text-white tracking-tight">
+                seren<span className="text-amber-400">kit</span>
+              </strong>
+            </Link>
+            <p className="mt-2 text-xs text-stone-400 leading-relaxed">
+              숫자가 필요한 순간,<br />생활에 필요한 모든 계산기 모음
+            </p>
+            <p className="mt-4 text-xs text-stone-500 leading-relaxed">
+              날짜 계산부터 건강, 금융, 단위 변환까지<br />
+              무료로 제공하는 실용 계산기 서비스입니다.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {['무료', '빠른계산'].map(tag => (
+                <span key={tag} className="text-[10px] font-bold text-stone-400 border border-stone-700 rounded-full px-2.5 py-1">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* 계산기 목록 */}
-          <nav aria-label="계산기 목록" className="flex-1 min-w-[180px]">
-            <h2 className="font-bold text-stone-300 mb-3">계산기</h2>
-            <ul className="space-y-2">
-              {links.map((l) => (
-                <li key={l.url}>
-                  <Link href={l.url} className="hover:text-amber-400 transition-colors">
-                    {l.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* 카테고리별 링크 */}
+          {categories.map(cat => (
+            <nav key={cat.label} aria-label={cat.label}>
+              <h2 className="text-xs font-black text-stone-300 mb-3 whitespace-nowrap">{cat.label}</h2>
+              <ul className="space-y-2">
+                {cat.links.map(l => (
+                  <li key={l.url}>
+                    <Link href={l.url}
+                      className="text-xs text-stone-500 hover:text-amber-400 transition-colors">
+                      {l.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
 
-          {/* 정보 */}
-          <nav aria-label="안내 및 법적 정보" className="min-w-[180px]">
-            <h2 className="font-bold text-stone-300 mb-3">안내</h2>
-            <ul className="space-y-2">
-              <li>계산 결과는 참고용입니다</li>
-              <li>문의 : admin@serenkit.com</li>
-              <li>
-                <Link href="/privacy" className="hover:text-amber-400 transition-colors">
-                  개인정보처리방침
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-amber-400 transition-colors">
-                  이용약관
-                </Link>
-              </li>
-            </ul>
-          </nav>
+        </div>
+      </div>
 
-          {/* 카피라이트 */}
-          <div className="w-full border-t border-stone-700 pt-5">
-            <small className="text-xs text-stone-600">
-              Copyright ⓒ 2025 serenkit. All rights reserved.
-            </small>
+      {/* 하단 바 */}
+      <div className="border-t border-stone-800">
+        <div className="container mx-auto px-6 xl:w-10/12 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+          <small className="text-xs text-stone-600">
+            Copyright ⓒ 2026 serenkit. All rights reserved.
+          </small>
+          <div className="flex items-center gap-4 text-xs text-stone-600">
+            <span>계산 결과는 참고용입니다</span>
+            <span className="text-stone-700">·</span>
+            <a href="mailto:admin@serenkit.com" className="hover:text-amber-400 transition-colors">
+              admin@serenkit.com
+            </a>
+            <span className="text-stone-700">·</span>
+            <Link href="/privacy" className="hover:text-amber-400 transition-colors">개인정보처리방침</Link>
+            <span className="text-stone-700">·</span>
+            <Link href="/terms" className="hover:text-amber-400 transition-colors">이용약관</Link>
           </div>
         </div>
       </div>
+
     </footer>
   )
 }
