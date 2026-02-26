@@ -25,6 +25,7 @@ const categories = [
     label: '💰 금융 · 급여',
     links: [
       { name: '월급 실수령액 계산기', url: '/cal/salary' },
+      { name: '퇴직금 계산기',       url: '/cal/severance' },
     ],
   },
   {
