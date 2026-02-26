@@ -8,6 +8,10 @@ const ALL_CALCS = [
   { name: '영업일 계산기',    url: '/cal/business-days',  icon: '💼', desc: '주말·공휴일 제외 근무일' },
   { name: '만 나이',          url: '/cal/age',            icon: '🎂', desc: '법적 만 나이 계산' },
   { name: '기념일 계산기',    url: '/cal/anniversary',    icon: '💑', desc: '100일·1주년 기념일 날짜' },
+  { name: '띠/별자리',        url: '/cal/zodiac',         icon: '🐾', desc: '나의 띠와 별자리 확인' },
+  { name: '월급 실수령액',    url: '/cal/salary',         icon: '💰', desc: '4대보험·소득세 공제 후 실수령액' },
+  { name: '적정 체중',        url: '/cal/weight',         icon: '⚖️', desc: 'BMI와 표준 체중 계산' },
+  { name: '기초대사량',       url: '/cal/calorie',        icon: '🔥', desc: '하루 필요 칼로리 계산' },
 ]
 
 export default function CalcLayout({ title, desc, currentUrl, faqs, children }) {

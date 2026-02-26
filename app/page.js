@@ -2,12 +2,12 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'serenkit | 숫자가 필요한 순간',
-  description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리까지 생활에 필요한 모든 계산기를 무료로 제공합니다.',
-  keywords: ['날짜 계산기', 'D-day 계산기', '날짜 차이 계산기', '영업일 계산기', '만 나이 계산기', '기념일 계산기', '월급 실수령액 계산기', '무료 계산기'],
+  description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량까지 생활에 필요한 모든 계산기를 무료로 제공합니다.',
+  keywords: ['날짜 계산기', 'D-day 계산기', '날짜 차이 계산기', '영업일 계산기', '만 나이 계산기', '기념일 계산기', '월급 실수령액 계산기', 'BMI 계산기', '적정 체중 계산기', '기초대사량 계산기', '무료 계산기'],
   alternates: { canonical: 'https://serenkit.com/' },
   openGraph: {
     title: 'serenkit | 숫자가 필요한 순간',
-    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리까지 생활에 필요한 모든 계산기를 무료로 제공합니다.',
+    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량까지 생활에 필요한 모든 계산기를 무료로 제공합니다.',
     url: 'https://serenkit.com/',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'serenkit | 숫자가 필요한 순간' }],
@@ -28,6 +28,8 @@ const jsonLd = {
     { '@type': 'ListItem', position: 6, name: '기념일 계산기',    url: 'https://serenkit.com/cal/anniversary/' },
     { '@type': 'ListItem', position: 7, name: '띠/별자리 계산기', url: 'https://serenkit.com/cal/zodiac/' },
     { '@type': 'ListItem', position: 8, name: '월급 실수령액 계산기', url: 'https://serenkit.com/cal/salary/' },
+    { '@type': 'ListItem', position: 9, name: '적정 체중 계산기', url: 'https://serenkit.com/cal/weight/' },
+    { '@type': 'ListItem', position: 10, name: '기초대사량 계산기', url: 'https://serenkit.com/cal/calorie/' },
   ],
 }
 
@@ -40,6 +42,8 @@ const calcs = [
   { name: '기념일 계산기',    url: '/cal/anniversary',   icon: '💑', desc: '100일·200일·1주년 등 기념일 날짜를 자동 계산해요',  color: 'from-pink-400 to-rose-400' },
   { name: '띠/별자리 계산기', url: '/cal/zodiac',         icon: '🐾', desc: '생년월일로 나의 띠와 별자리, 오행, 궁합까지 확인해요', color: 'from-violet-400 to-purple-500' },
   { name: '월급 실수령액',    url: '/cal/salary',         icon: '💰', desc: '4대보험·소득세 공제 후 실제 통장에 들어오는 금액을 계산해요', color: 'from-emerald-400 to-green-500' },
+  { name: '적정 체중 계산기', url: '/cal/weight',          icon: '⚖️', desc: 'BMI와 표준 체중으로 나의 적정 체중 범위를 확인해요',           color: 'from-cyan-400 to-sky-500' },
+  { name: '기초대사량 계산기', url: '/cal/calorie',         icon: '🔥', desc: '나이·키·체중·활동량으로 하루 필요 칼로리를 계산해요',           color: 'from-rose-400 to-orange-400' },
 ]
 
 export default function Home() {
