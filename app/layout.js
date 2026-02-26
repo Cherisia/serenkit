@@ -16,6 +16,11 @@ export const metadata = {
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
+  verification: {
+    other: {
+      'naver-site-verification': 'bbad3f80de8df232b88deb29abbda71d2159c1da',
+    },
+  },
   robots: { index: true, follow: true },
   alternates: { canonical: BASE_URL },
   openGraph: {
