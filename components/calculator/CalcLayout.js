@@ -41,6 +41,7 @@ const CATEGORIES = [
       { name: '퇴직금 계산기',    url: '/cal/severance',    icon: '💼', desc: '법정 퇴직금 계산' },
       { name: '실업급여 계산기',  url: '/cal/unemployment', icon: '📋', desc: '구직급여 수령액 계산' },
       { name: '시급 계산기',      url: '/cal/hourly',       icon: '⏰', desc: '주휴수당 포함 월급 환산' },
+      { name: '대출 이자 계산기', url: '/cal/loan',          icon: '🏦', desc: '원리금균등·원금균등·만기일시 이자 계산' },
     ],
   },
   {
