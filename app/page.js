@@ -37,6 +37,7 @@ const jsonLd = {
     { '@type': 'ListItem', position: 15, name: '실업급여 계산기',      url: 'https://serenkit.com/cal/unemployment/' },
     { '@type': 'ListItem', position: 16, name: '시급 계산기',          url: 'https://serenkit.com/cal/hourly/' },
     { '@type': 'ListItem', position: 17, name: '대출 이자 계산기',     url: 'https://serenkit.com/cal/loan/' },
+    { '@type': 'ListItem', position: 18, name: '부가세 계산기',        url: 'https://serenkit.com/cal/vat/' },
   ],
 }
 
@@ -90,6 +91,7 @@ const categories = [
       { name: '실업급여 계산기',  url: '/cal/unemployment', icon: '📋', desc: '가입기간·나이·월급으로 구직급여 수령액과 지급일수를 계산해요', color: 'from-blue-400 to-indigo-500' },
       { name: '시급 계산기',      url: '/cal/hourly',       icon: '⏰', desc: '2026 최저시급 기준으로 일급·주급·월급·연봉을 주휴수당 포함 계산해요', color: 'from-green-400 to-teal-500' },
       { name: '대출 이자 계산기', url: '/cal/loan',          icon: '🏦', desc: '원리금균등·원금균등·만기일시 상환 방식별 월 납입금과 총 이자를 계산해요', color: 'from-green-500 to-emerald-600' },
+      { name: '부가세 계산기',    url: '/cal/vat',           icon: '🧾', desc: '공급가액으로 부가세·합계금액을 계산하거나 합계금액에서 공급가액을 역산해요', color: 'from-teal-400 to-green-500' },
     ],
   },
   {
