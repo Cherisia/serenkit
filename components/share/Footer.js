@@ -37,6 +37,7 @@ const categories = [
     label: '✨ 운세 · 라이프',
     links: [
       { name: '띠/별자리 계산기', url: '/cal/zodiac' },
+      { name: 'MBTI 궁합 계산기', url: '/cal/mbti' },
     ],
   },
   {

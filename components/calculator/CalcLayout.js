@@ -54,6 +54,7 @@ const CATEGORIES = [
     labelColor: 'text-violet-600',
     calcs: [
       { name: '띠/별자리',        url: '/cal/zodiac',  icon: '🐾', desc: '나의 띠와 별자리 확인' },
+      { name: 'MBTI 궁합',       url: '/cal/mbti',    icon: '💘', desc: '두 사람의 MBTI 궁합 분석' },
     ],
   },
   {

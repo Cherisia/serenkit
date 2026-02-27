@@ -39,6 +39,7 @@ const jsonLd = {
     { '@type': 'ListItem', position: 17, name: '대출 이자 계산기',     url: 'https://serenkit.com/cal/loan/' },
     { '@type': 'ListItem', position: 18, name: '부가세 계산기',        url: 'https://serenkit.com/cal/vat/' },
     { '@type': 'ListItem', position: 19, name: '종합소득세 계산기',    url: 'https://serenkit.com/cal/income-tax/' },
+    { '@type': 'ListItem', position: 20, name: 'MBTI 궁합 계산기',    url: 'https://serenkit.com/cal/mbti/' },
   ],
 }
 
@@ -107,6 +108,7 @@ const categories = [
     labelColor: 'text-violet-600',
     calcs: [
       { name: '띠/별자리 계산기', url: '/cal/zodiac',  icon: '🐾', desc: '생년월일로 나의 띠와 별자리, 오행, 궁합까지 확인해요',        color: 'from-violet-400 to-purple-500' },
+      { name: 'MBTI 궁합 계산기', url: '/cal/mbti',   icon: '💘', desc: '두 사람의 MBTI를 선택하면 궁합 점수와 황금비율 여부를 알려드려요', color: 'from-pink-400 to-rose-500' },
     ],
   },
   {
