@@ -34,6 +34,7 @@ const jsonLd = {
     { '@type': 'ListItem', position: 12, name: '단위 변환기',         url: 'https://serenkit.com/cal/unit/' },
     { '@type': 'ListItem', position: 13, name: '양력 음력 변환기',    url: 'https://serenkit.com/cal/lunar/' },
     { '@type': 'ListItem', position: 14, name: '퇴직금 계산기',       url: 'https://serenkit.com/cal/severance/' },
+    { '@type': 'ListItem', position: 15, name: '실업급여 계산기',      url: 'https://serenkit.com/cal/unemployment/' },
   ],
 }
 
@@ -82,8 +83,9 @@ const categories = [
     bg: 'bg-green-50',
     labelColor: 'text-green-600',
     calcs: [
-      { name: '월급 실수령액',    url: '/cal/salary',    icon: '💰', desc: '4대보험·소득세 공제 후 실제 통장에 들어오는 금액을 계산해요', color: 'from-emerald-400 to-green-500' },
-      { name: '퇴직금 계산기',    url: '/cal/severance', icon: '💼', desc: '입사일·퇴직일·월급여로 법정 퇴직금을 바로 계산해요',        color: 'from-green-400 to-teal-500' },
+      { name: '월급 실수령액',    url: '/cal/salary',       icon: '💰', desc: '4대보험·소득세 공제 후 실제 통장에 들어오는 금액을 계산해요', color: 'from-emerald-400 to-green-500' },
+      { name: '퇴직금 계산기',    url: '/cal/severance',    icon: '💼', desc: '입사일·퇴직일·월급여로 법정 퇴직금을 바로 계산해요',        color: 'from-green-400 to-teal-500' },
+      { name: '실업급여 계산기',  url: '/cal/unemployment', icon: '📋', desc: '가입기간·나이·월급으로 구직급여 수령액과 지급일수를 계산해요', color: 'from-blue-400 to-indigo-500' },
     ],
   },
   {

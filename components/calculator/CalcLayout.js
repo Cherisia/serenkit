@@ -37,8 +37,9 @@ const CATEGORIES = [
     color: 'from-green-400 to-emerald-500',
     labelColor: 'text-green-600',
     calcs: [
-      { name: '월급 실수령액',    url: '/cal/salary',    icon: '💰', desc: '4대보험·소득세 공제 후 실수령액' },
-      { name: '퇴직금 계산기',    url: '/cal/severance', icon: '💼', desc: '법정 퇴직금 계산' },
+      { name: '월급 실수령액',    url: '/cal/salary',       icon: '💰', desc: '4대보험·소득세 공제 후 실수령액' },
+      { name: '퇴직금 계산기',    url: '/cal/severance',    icon: '💼', desc: '법정 퇴직금 계산' },
+      { name: '실업급여 계산기',  url: '/cal/unemployment', icon: '📋', desc: '구직급여 수령액 계산' },
     ],
   },
   {
