@@ -38,6 +38,7 @@ const jsonLd = {
     { '@type': 'ListItem', position: 16, name: '시급 계산기',          url: 'https://serenkit.com/cal/hourly/' },
     { '@type': 'ListItem', position: 17, name: '대출 이자 계산기',     url: 'https://serenkit.com/cal/loan/' },
     { '@type': 'ListItem', position: 18, name: '부가세 계산기',        url: 'https://serenkit.com/cal/vat/' },
+    { '@type': 'ListItem', position: 19, name: '종합소득세 계산기',    url: 'https://serenkit.com/cal/income-tax/' },
   ],
 }
 
@@ -92,6 +93,7 @@ const categories = [
       { name: '시급 계산기',      url: '/cal/hourly',       icon: '⏰', desc: '2026 최저시급 기준으로 일급·주급·월급·연봉을 주휴수당 포함 계산해요', color: 'from-green-400 to-teal-500' },
       { name: '대출 이자 계산기', url: '/cal/loan',          icon: '🏦', desc: '원리금균등·원금균등·만기일시 상환 방식별 월 납입금과 총 이자를 계산해요', color: 'from-green-500 to-emerald-600' },
       { name: '부가세 계산기',    url: '/cal/vat',           icon: '🧾', desc: '공급가액으로 부가세·합계금액을 계산하거나 합계금액에서 공급가액을 역산해요', color: 'from-teal-400 to-green-500' },
+      { name: '종합소득세 계산기', url: '/cal/income-tax',   icon: '📊', desc: '근로·사업·프리랜서 소득을 입력하면 과세표준·세액공제·결정세액을 단계별로 계산해요', color: 'from-emerald-500 to-green-600' },
     ],
   },
   {

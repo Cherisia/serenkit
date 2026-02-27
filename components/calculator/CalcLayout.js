@@ -43,6 +43,7 @@ const CATEGORIES = [
       { name: '시급 계산기',      url: '/cal/hourly',       icon: '⏰', desc: '주휴수당 포함 월급 환산' },
       { name: '대출 이자 계산기', url: '/cal/loan',          icon: '🏦', desc: '원리금균등·원금균등·만기일시 이자 계산' },
       { name: '부가세 계산기',    url: '/cal/vat',           icon: '🧾', desc: '공급가액↔합계금액 부가세 즉시 계산' },
+      { name: '종합소득세 계산기', url: '/cal/income-tax',   icon: '📊', desc: '근로·사업·프리랜서 소득세 단계별 계산' },
     ],
   },
   {
