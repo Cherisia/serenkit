@@ -40,6 +40,7 @@ const CATEGORIES = [
       { name: '월급 실수령액',    url: '/cal/salary',       icon: '💰', desc: '4대보험·소득세 공제 후 실수령액' },
       { name: '퇴직금 계산기',    url: '/cal/severance',    icon: '💼', desc: '법정 퇴직금 계산' },
       { name: '실업급여 계산기',  url: '/cal/unemployment', icon: '📋', desc: '구직급여 수령액 계산' },
+      { name: '시급 계산기',      url: '/cal/hourly',       icon: '⏰', desc: '주휴수당 포함 월급 환산' },
     ],
   },
   {
