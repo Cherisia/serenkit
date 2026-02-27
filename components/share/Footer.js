@@ -26,6 +26,11 @@ const categories = [
     links: [
       { name: '월급 실수령액 계산기', url: '/cal/salary' },
       { name: '퇴직금 계산기',       url: '/cal/severance' },
+      { name: '실업급여 계산기',      url: '/cal/unemployment' },
+      { name: '시급 계산기',          url: '/cal/hourly' },
+      { name: '대출 이자 계산기',     url: '/cal/loan' },
+      { name: '부가세 계산기',        url: '/cal/vat' },
+      { name: '종합소득세 계산기',    url: '/cal/income-tax' },
     ],
   },
   {
