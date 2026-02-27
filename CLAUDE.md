@@ -153,8 +153,9 @@ npx wrangler deploy  # Cloudflare Workers에 배포
 - `@/` 경로 별칭은 프로젝트 루트를 가리킴 (`jsconfig.json`)
 - 폰트: `font-black` = NanumSquareEB, `font-bold` = NanumSquareB (globals.css 오버라이드)
 - 기존 계산기 로직 수정 시 관련 법령·기준 연도 확인 필요 (급여 세율, 최저임금 등)
-- 신규 URL 생성시 sitemap.xml, footer 링크 추가
+- 신규 URL 생성시 sitemap.xml, footer 링크 추가, README.md 와 CLAUDE.md 계산기 목록 갱신
 - SEO 최적화를 위한 semantic tag 사용하여 요소 구현
+- h1 태그에 명확한 키워드 명시
 - 모든 기능은 2026년 규정을 기준으로 명시하고 구현
 
 ## 현재 계산기 목록 (15개)
