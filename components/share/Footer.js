@@ -41,9 +41,10 @@ const categories = [
     ],
   },
   {
-    label: '🔄 단위 변환',
+    label: '🛠️ 유틸리티',
     links: [
-      { name: '단위 변환기', url: '/cal/unit' },
+      { name: '글자수 세기',  url: '/cal/char-count' },
+      { name: '단위 변환기',  url: '/cal/unit' },
     ],
   },
 ]

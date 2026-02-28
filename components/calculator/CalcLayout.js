@@ -58,13 +58,14 @@ const CATEGORIES = [
     ],
   },
   {
-    key: 'convert',
-    label: '단위 변환',
-    icon: '🔄',
-    color: 'from-teal-400 to-cyan-500',
-    labelColor: 'text-teal-600',
+    key: 'utility',
+    label: '유틸리티',
+    icon: '🛠️',
+    color: 'from-sky-400 to-blue-500',
+    labelColor: 'text-sky-600',
     calcs: [
-      { name: '단위 변환기',      url: '/cal/unit',    icon: '🔄', desc: '길이·무게·온도 등 단위 변환' },
+      { name: '글자수 세기',      url: '/cal/char-count', icon: '✍️', desc: '공백 포함/제외·바이트·단어 수 실시간 계산' },
+      { name: '단위 변환기',      url: '/cal/unit',       icon: '🔄', desc: '길이·무게·온도 등 단위 변환' },
     ],
   },
 ]
