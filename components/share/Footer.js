@@ -112,6 +112,8 @@ export default function Footer() {
               admin@serenkit.com
             </a>
             <span className="text-stone-700">·</span>
+            <Link href="/about" className="hover:text-amber-400 transition-colors">소개</Link>
+            <span className="text-stone-700">·</span>
             <Link href="/privacy" className="hover:text-amber-400 transition-colors">개인정보처리방침</Link>
             <span className="text-stone-700">·</span>
             <Link href="/terms" className="hover:text-amber-400 transition-colors">이용약관</Link>

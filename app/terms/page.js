@@ -8,19 +8,28 @@ export const metadata = {
 const SECTIONS = [
   {
     title: '제1조 (목적)',
-    content: `본 약관은 serenkit(이하 "서비스")이 제공하는 날짜 계산기 서비스의 이용 조건 및 절차, 서비스 제공자와 이용자 간의 권리·의무 및 책임 사항을 규정함을 목적으로 합니다.`,
+    content: `본 약관은 serenkit(이하 "서비스")이 제공하는 생활 계산기 서비스의 이용 조건 및 절차, 서비스 제공자와 이용자 간의 권리·의무 및 책임 사항을 규정함을 목적으로 합니다.`,
   },
   {
     title: '제2조 (서비스의 제공)',
-    content: `서비스는 다음과 같은 기능을 제공합니다.
-• D-day 계산기: 특정 날짜까지 남은 일수 및 경과 일수 계산
-• 날짜 차이 계산기: 두 날짜 사이의 기간 계산
-• 날짜 더하기/빼기: 날짜에 기간을 더하거나 빼는 계산
-• 영업일 계산기: 주말 및 공휴일을 제외한 영업일 계산
-• 만 나이 계산기: 생년월일 기반 법적 만 나이 계산
-• 기념일 계산기: 특정 날짜 기준 기념일 자동 계산
+    content: `서비스는 다음과 같은 계산기 기능을 제공합니다.
 
-서비스는 별도의 회원가입 없이 무료로 이용할 수 있습니다.`,
+[날짜 · 시간]
+• D-day 계산기, 날짜 차이 계산기, 날짜 더하기/빼기, 영업일 계산기, 만 나이 계산기, 기념일 계산기, 양력 음력 변환기
+
+[건강 · 신체]
+• 적정 체중 계산기, 기초대사량 계산기, 생리주기 계산기
+
+[금융 · 급여]
+• 월급 실수령액 계산기, 퇴직금 계산기, 실업급여 계산기, 시급 계산기, 대출 이자 계산기, 부가세 계산기, 종합소득세 계산기
+
+[운세 · 라이프]
+• 띠/별자리 계산기, MBTI 궁합 계산기
+
+[단위 변환]
+• 단위 변환기 (길이, 무게, 온도, 넓이, 부피)
+
+서비스는 별도의 회원가입 없이 이용할 수 있으며, 향후 제공 기능은 추가되거나 변경될 수 있습니다.`,
   },
   {
     title: '제3조 (서비스 이용)',
@@ -78,7 +87,7 @@ export default function TermsPage() {
       <section className="w-full bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 py-14 pt-[calc(3.5rem+3.5rem)] text-center text-white">
         <p className="text-xs font-black opacity-75 mb-3 tracking-[0.3em] uppercase">Legal</p>
         <h1 className="text-2xl md:text-3xl font-black tracking-tight">이용약관</h1>
-        <p className="text-xs opacity-75 mt-3">최종 업데이트: 2025년 1월 1일</p>
+        <p className="text-xs opacity-75 mt-3">최종 업데이트: 2026년 2월 28일</p>
       </section>
 
       {/* 본문 */}

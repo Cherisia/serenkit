@@ -26,7 +26,7 @@ const SECTIONS = [
     title: '3. 쿠키(Cookie) 사용',
     content: `serenkit은 서비스 이용 편의 및 광고 최적화를 위해 쿠키를 사용합니다.
 
-쿠키란 웹사이트가 사용자의 브라우저에 저장하는 소규모 텍스트 파일입니다. 사용자는 브라우저 설정을 통해 쿠키 저장을 거부하거나 삭제할 수 있습니다. 단, 쿠키를 차단할 경우 일부 서비스 이용에 불편이 생길 수 있습니다.
+쿠키란 웹사이트가 사용자의 브라우저에 저장하는 소규모 텍스트 파일입니다. 사용자는 처음 방문 시 화면 하단에 표시되는 쿠키 동의 배너를 통해 동의 여부를 선택할 수 있으며, 브라우저 설정을 통해 언제든지 쿠키를 삭제하거나 차단할 수 있습니다. 단, 쿠키를 차단할 경우 일부 서비스 이용에 불편이 생길 수 있습니다.
 
 • Google Analytics: 서비스 이용 통계 수집
 • Google AdSense: 관심 기반 광고 노출`,
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
       <section className="w-full bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 py-14 pt-[calc(3.5rem+3.5rem)] text-center text-white">
         <p className="text-xs font-black opacity-75 mb-3 tracking-[0.3em] uppercase">Legal</p>
         <h1 className="text-2xl md:text-3xl font-black tracking-tight">개인정보처리방침</h1>
-        <p className="text-xs opacity-75 mt-3">최종 업데이트: 2025년 1월 1일</p>
+        <p className="text-xs opacity-75 mt-3">최종 업데이트: 2026년 2월 28일</p>
       </section>
 
       {/* 본문 */}
