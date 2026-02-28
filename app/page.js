@@ -41,6 +41,7 @@ const jsonLd = {
     { '@type': 'ListItem', position: 19, name: '종합소득세 계산기',    url: 'https://serenkit.com/cal/income-tax/' },
     { '@type': 'ListItem', position: 20, name: 'MBTI 궁합 계산기',    url: 'https://serenkit.com/cal/mbti/' },
     { '@type': 'ListItem', position: 21, name: '글자수 세기',          url: 'https://serenkit.com/cal/char-count/' },
+    { '@type': 'ListItem', position: 22, name: '평수 계산기',          url: 'https://serenkit.com/cal/pyeong/' },
   ],
 }
 
@@ -123,6 +124,7 @@ const categories = [
     labelColor: 'text-sky-600',
     calcs: [
       { name: '글자수 세기',      url: '/cal/char-count', icon: '✍️', desc: '공백 포함/제외·바이트·단어 수를 실시간으로 계산해요. 자소서·SNS 글자 제한도 확인 가능',  color: 'from-sky-400 to-blue-500' },
+      { name: '평수 계산기',      url: '/cal/pyeong',     icon: '📐', desc: '평↔m² 즉시 변환 및 아파트 평형 참고표. 공급면적·전용면적 기준도 안내해요',               color: 'from-sky-500 to-indigo-500' },
       { name: '단위 변환기',      url: '/cal/unit',       icon: '🔄', desc: '길이·무게·온도·넓이·부피·속도·데이터 단위를 한 번에 변환해요',                          color: 'from-teal-400 to-cyan-500' },
     ],
   },

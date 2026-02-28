@@ -44,6 +44,7 @@ const categories = [
     label: '🛠️ 유틸리티',
     links: [
       { name: '글자수 세기',  url: '/cal/char-count' },
+      { name: '평수 계산기',  url: '/cal/pyeong' },
       { name: '단위 변환기',  url: '/cal/unit' },
     ],
   },
