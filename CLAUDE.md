@@ -137,7 +137,7 @@ export default function Page() {
 | 건강·신체 | emerald/teal |
 | 금융·급여 | green/emerald |
 | 운세·라이프 | violet/purple |
-| 단위 변환 | teal/cyan |
+| 유틸리티 | sky/blue |
 
 ## 빌드 & 배포
 
@@ -157,11 +157,12 @@ npx wrangler deploy  # Cloudflare Workers에 배포
 - SEO 최적화를 위한 semantic tag 사용하여 요소 구현
 - h1 태그에 명확한 키워드 명시
 - 모든 기능은 2026년 규정을 기준으로 명시하고 구현
+- 구글 애드센스 승인을 목표로 기능 구현, 새로운 기능을 추가할때마다 갱신
 
-## 현재 계산기 목록 (15개)
+## 현재 계산기 목록 (17개)
 
 날짜: dday, date-diff, date-add, business-days, age, anniversary, lunar
 건강: weight, calorie, period
-금융: salary, severance, unemployment
-라이프: zodiac
-변환: unit
+금융: salary, severance, unemployment, hourly, loan, vat, income-tax
+라이프: zodiac, mbti
+유틸리티: char-count, pyeong, unit
