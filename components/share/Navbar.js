@@ -157,10 +157,10 @@ export default function Navbar() {
 
                 {favCalcs.length === 0 ? (
                   <div className="px-4 py-8 text-center">
-                    <p className="text-2xl mb-2">⭐</p>
+                    <p className="text-2xl mb-2">🤍</p>
                     <p className="text-xs font-bold text-stone-500 mb-1">아직 즐겨찾기가 없어요</p>
                     <p className="text-[11px] text-stone-300 leading-relaxed">
-                      계산기 카드의 ★ 버튼을 눌러<br />자주 쓰는 계산기를 추가해보세요
+                      계산기 카드의 ♡ 버튼을 눌러<br />자주 쓰는 계산기를 추가해보세요
                     </p>
                   </div>
                 ) : (
