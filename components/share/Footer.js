@@ -24,7 +24,7 @@ export default function Footer() {
               생활에 꼭 필요한 계산기를 모아둔 서비스입니다.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
-              {['빠른계산', '간편하게'].map(tag => (
+              {['빠른계산', '간편하게', '즐겨찾기'].map(tag => (
                 <span key={tag} className="text-[10px] font-bold text-stone-400 border border-stone-700 rounded-full px-2.5 py-1">
                   {tag}
                 </span>

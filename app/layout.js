@@ -2,6 +2,7 @@ import './globals.css'
 import Navbar from '@/components/share/Navbar'
 import Footer from '@/components/share/Footer'
 import CookieBanner from '@/components/share/CookieBanner'
+import { FavoritesProvider } from '@/components/share/FavoritesProvider'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -59,10 +60,12 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Navbar />
-        {children}
-        <Footer />
-        <CookieBanner />
+        <FavoritesProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <CookieBanner />
+        </FavoritesProvider>
       </body>
     </html>
   )

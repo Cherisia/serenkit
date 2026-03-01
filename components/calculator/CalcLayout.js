@@ -2,6 +2,7 @@ import Link from 'next/link'
 import FaqSection from '@/components/calculator/FaqSection'
 import { CATEGORIES } from '@/lib/categories'
 import { HERO_PATTERN } from '@/lib/constants'
+import { FavoriteBannerButton } from '@/components/share/FavoriteButton'
 
 export default function CalcLayout({ title, desc, currentUrl, faqs, children }) {
   const filteredCategories = CATEGORIES
@@ -17,6 +18,7 @@ export default function CalcLayout({ title, desc, currentUrl, faqs, children }) 
         <div className="relative container mx-auto px-4 py-14 text-center text-white">
           <h1 className="text-2xl font-black tracking-tight mb-2">{title}</h1>
           <p className="text-sm opacity-85">{desc}</p>
+          <FavoriteBannerButton url={currentUrl} />
         </div>
       </section>
 

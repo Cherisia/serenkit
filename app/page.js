@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { CATEGORIES } from '@/lib/categories'
 import { HERO_PATTERN } from '@/lib/constants'
+import { FavoriteCardButton } from '@/components/share/FavoriteButton'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -178,7 +179,8 @@ export default function Home() {
 
             <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 list-none p-0">
               {cat.calcs.map((calc) => (
-                <li key={calc.url}>
+                <li key={calc.url} className="relative">
+                  <FavoriteCardButton url={calc.url} />
                   <Link href={calc.url}
                     className="group bg-white border border-stone-200 rounded-2xl p-5 hover:border-amber-300 hover:shadow-md transition-all duration-200 hover:-translate-y-1 flex flex-col h-full">
                     <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${calc.color} flex items-center justify-center text-xl mb-4`}>

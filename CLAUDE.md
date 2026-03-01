@@ -26,6 +26,10 @@ components/calculator/
   FaqSection.js             # FAQ + JSON-LD FAQPage 스키마 자동 생성
   [Feature]Calc.js          # 계산기 로직+UI ('use client')
 
+components/share/
+  FavoritesProvider.js      # 즐겨찾기 Context+Provider (localStorage: 'serenkit_favorites', slug 배열)
+  FavoriteButton.js         # FavoriteCardButton(카드), FavoriteBannerButton(CalcLayout 배너)
+
 lib/
   categories.js             # 단일 소스: 전체 카테고리·계산기 목록 (CalcLayout/Footer/page.js 공유)
   constants.js              # 공유 상수: INPUT_CLS, HERO_PATTERN
