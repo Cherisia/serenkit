@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import KoreanLunarCalendar from 'korean-lunar-calendar'
+import { INPUT_CLS } from '@/lib/constants'
 
 const MONTHS = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
 
@@ -26,7 +27,6 @@ function toLunarResult(year, month, day, intercalation) {
 
 function padTwo(n) { return String(n).padStart(2, '0') }
 
-const INPUT_CLS = 'w-full bg-stone-50 border border-stone-200 text-stone-800 text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-400 transition-colors'
 
 export default function LunarCalc() {
   const [tab, setTab] = useState('solar')

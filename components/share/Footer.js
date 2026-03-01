@@ -1,54 +1,5 @@
 import Link from 'next/link'
-
-const categories = [
-  {
-    label: '📅 날짜 · 시간',
-    links: [
-      { name: 'D-day 계산기',    url: '/cal/dday' },
-      { name: '날짜 차이 계산기', url: '/cal/date-diff' },
-      { name: '날짜 더하기/빼기', url: '/cal/date-add' },
-      { name: '영업일 계산기',    url: '/cal/business-days' },
-      { name: '만 나이 계산기',   url: '/cal/age' },
-      { name: '기념일 계산기',    url: '/cal/anniversary' },
-      { name: '양력 음력 변환기', url: '/cal/lunar' },
-    ],
-  },
-  {
-    label: '💪 건강 · 신체',
-    links: [
-      { name: '적정 체중 계산기',  url: '/cal/weight' },
-      { name: '기초대사량 계산기', url: '/cal/calorie' },
-      { name: '생리주기 계산기',   url: '/cal/period' },
-    ],
-  },
-  {
-    label: '💰 금융 · 급여',
-    links: [
-      { name: '월급 실수령액 계산기', url: '/cal/salary' },
-      { name: '퇴직금 계산기',       url: '/cal/severance' },
-      { name: '실업급여 계산기',      url: '/cal/unemployment' },
-      { name: '시급 계산기',          url: '/cal/hourly' },
-      { name: '대출 이자 계산기',     url: '/cal/loan' },
-      { name: '부가세 계산기',        url: '/cal/vat' },
-      { name: '종합소득세 계산기',    url: '/cal/income-tax' },
-    ],
-  },
-  {
-    label: '✨ 운세 · 라이프',
-    links: [
-      { name: '띠/별자리 계산기', url: '/cal/zodiac' },
-      { name: 'MBTI 궁합 계산기', url: '/cal/mbti' },
-    ],
-  },
-  {
-    label: '🛠️ 유틸리티',
-    links: [
-      { name: '글자수 세기',  url: '/cal/char-count' },
-      { name: '평수 계산기',  url: '/cal/pyeong' },
-      { name: '단위 변환기',  url: '/cal/unit' },
-    ],
-  },
-]
+import { CATEGORIES } from '@/lib/categories'
 
 export default function Footer() {
   return (
@@ -82,15 +33,16 @@ export default function Footer() {
           </div>
 
           {/* 카테고리별 링크 */}
-          {categories.map(cat => (
-            <nav key={cat.label} aria-label={cat.label}>
-              <h2 className="text-xs font-black text-stone-300 mb-3 whitespace-nowrap">{cat.label}</h2>
+          {CATEGORIES.map(cat => (
+            <nav key={cat.key} aria-label={cat.label}>
+              <h2 className="text-xs font-black text-stone-300 mb-3 whitespace-nowrap">
+                {cat.icon} {cat.label}
+              </h2>
               <ul className="space-y-2">
-                {cat.links.map(l => (
-                  <li key={l.url}>
-                    <Link href={l.url}
-                      className="text-xs text-stone-500 hover:text-amber-400 transition-colors">
-                      {l.name}
+                {cat.calcs.map(c => (
+                  <li key={c.url}>
+                    <Link href={c.url} className="text-xs text-stone-500 hover:text-amber-400 transition-colors">
+                      {c.name}
                     </Link>
                   </li>
                 ))}

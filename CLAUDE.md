@@ -8,46 +8,49 @@ URL: `https://serenkit.com`
 ## 기술 스택
 
 - **Next.js 15** (App Router, `output: 'export'`, `trailingSlash: true`)
-- **React 19**
-- **Tailwind CSS v4** (`@tailwindcss/postcss` 플러그인 방식, `tailwind.config.js` 없음)
-- **배포:** `wrangler` → Cloudflare Workers (`./out` 디렉토리)
+- **React 19** · **Tailwind CSS v4** (`@tailwindcss/postcss`, `tailwind.config.js` 없음)
+- **배포:** `npx wrangler deploy` → Cloudflare Workers (`./out`)
 - **특수 라이브러리:** `korean-lunar-calendar` (음력 변환)
 
 ## 프로젝트 구조
 
 ```
 app/
-  page.js                   # 홈 (카테고리별 카드 그리드 + JSON-LD)
-  layout.js                 # 루트 레이아웃 (Navbar, Footer, 기본 메타데이터)
-  cal/[calculator]/page.js  # 각 계산기 페이지 (메타데이터 + CalcLayout 래핑)
+  page.js                   # 홈 (카테고리 카드 그리드 + JSON-LD)
+  layout.js                 # 루트 레이아웃 (Navbar, Footer, 메타데이터)
+  cal/[calculator]/page.js  # 계산기 페이지 (메타데이터 + CalcLayout 래핑)
   privacy/, terms/
 
 components/calculator/
-  CalcLayout.js             # 공통 계산기 레이아웃 (배너 + 사이드바 + FAQ)
+  CalcLayout.js             # 공통 레이아웃 (배너 + 사이드바 + FAQ)
   FaqSection.js             # FAQ + JSON-LD FAQPage 스키마 자동 생성
-  [Feature]Calc.js          # 각 계산기 로직+UI ('use client')
+  [Feature]Calc.js          # 계산기 로직+UI ('use client')
+
+lib/
+  categories.js             # 단일 소스: 전체 카테고리·계산기 목록 (CalcLayout/Footer/page.js 공유)
+  constants.js              # 공유 상수: INPUT_CLS, HERO_PATTERN
 ```
 
 ## 새 계산기 추가 체크리스트
 
 1. **`components/calculator/[Feature]Calc.js`** — 계산기 컴포넌트 작성
 2. **`app/cal/[slug]/page.js`** — 페이지 파일 작성 (메타데이터, JSON-LD, FAQ, CalcLayout 래핑)
-3. **`components/calculator/CalcLayout.js`** — `CATEGORIES` 배열에 항목 추가
-4. **`app/page.js`** — `categories` 배열 카드 추가 + `jsonLd.itemListElement` 추가
+3. **`lib/categories.js`** — `CATEGORIES` 배열에 항목 추가 (CalcLayout·Footer·홈 자동 반영)
+4. **`public/sitemap.xml`** — 신규 URL 추가
+5. **`CLAUDE.md`** — 계산기 목록 갱신
 
 ## 계산기 컴포넌트 패턴
 
 ```js
 'use client'
 import { useState } from 'react'
+import { INPUT_CLS } from '@/lib/constants'
 
 // 1. 순수 계산 함수 (컴포넌트 외부)
 function calcFeature({ input1, input2 }) { /* ... */ return result }
 
-// 2. 상수 (UPPER_SNAKE_CASE)
-const RATES = { ... }
+// 2. 기타 상수
 const fmt = (n) => Math.floor(n).toLocaleString('ko-KR') + '원'
-const INPUT_CLS = 'w-full bg-stone-50 border border-stone-200 text-stone-800 text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-400 transition-colors'
 
 // 3. 컴포넌트
 export default function FeatureCalc() {
@@ -55,32 +58,25 @@ export default function FeatureCalc() {
   const [result, setResult] = useState(null)
   const [error, setError] = useState('')
 
-  const calculate = () => { /* 유효성 검사 → setResult */ }
-
   return (
     <div className="space-y-4">
-      {/* 입력 섹션 */}
       <section className="bg-white border border-stone-200 rounded-2xl p-6">
         <h2 className="text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-amber-400">조건 입력</h2>
-        {/* ... */}
-        <button onClick={calculate} disabled={!input}
-          className="w-full mt-5 bg-amber-400 hover:bg-amber-500 disabled:bg-stone-200 disabled:text-stone-400 text-white font-black rounded-xl py-3.5 text-sm transition-colors">
+        <input className={INPUT_CLS} />
+        <button className="w-full mt-5 bg-amber-400 hover:bg-amber-500 disabled:bg-stone-200 disabled:text-stone-400 text-white font-black rounded-xl py-3.5 text-sm transition-colors">
           계산하기
         </button>
       </section>
 
-      {/* 결과 섹션 */}
       {result && (
         <section className="bg-white border border-stone-200 rounded-2xl p-6">
           <h2 className="text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-orange-400">계산 결과</h2>
-          {/* 메인 결과: 그라데이션 박스 → 상세 table */}
+          {/* 메인: 그라데이션 박스 → 상세 table */}
         </section>
       )}
 
-      {/* 안내 */}
       <aside className="bg-amber-50 border border-amber-100 rounded-2xl p-5 text-xs text-stone-500 leading-relaxed">
         <h3 className="font-bold text-stone-600 mb-1.5">💡 계산 기준</h3>
-        <p>...</p>
       </aside>
     </div>
   )
@@ -103,7 +99,6 @@ export const metadata = {
 }
 
 const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', ... }
-
 const faqs = [{ q: '질문?', a: '답변.' }, ...]
 
 export default function Page() {
@@ -122,10 +117,9 @@ export default function Page() {
 |------|--------|
 | 카드 래퍼 | `bg-white border border-stone-200 rounded-2xl p-6` |
 | 섹션 제목 | `text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-amber-400` |
-| 입력 필드 | `INPUT_CLS` 상수 사용 |
+| 입력 필드 | `INPUT_CLS` (`@/lib/constants` import) |
 | 기본 버튼 | `bg-amber-400 hover:bg-amber-500 disabled:bg-stone-200 text-white font-black rounded-xl py-3.5` |
 | 메인 결과 박스 | `bg-gradient-to-br from-[색]-400 to-[색]-500 rounded-2xl p-5 text-white text-center` |
-| 상세 테이블 행 | `border-b border-stone-100 last:border-none` |
 | 안내 박스 | `bg-amber-50 border border-amber-100 rounded-2xl p-5 text-xs text-stone-500` |
 | 오류 텍스트 | `text-xs text-red-500` |
 
@@ -139,30 +133,24 @@ export default function Page() {
 | 운세·라이프 | violet/purple |
 | 유틸리티 | sky/blue |
 
-## 빌드 & 배포
-
-```bash
-npm run build    # ./out 정적 파일 생성
-npx wrangler deploy  # Cloudflare Workers에 배포
-```
-
 ## 주의사항
 
 - `output: 'export'` → API Route, Server Actions, 이미지 최적화 사용 불가
-- 모든 계산기 페이지 URL은 trailing slash 포함: `/cal/salary/`
-- `@/` 경로 별칭은 프로젝트 루트를 가리킴 (`jsconfig.json`)
-- 폰트: `font-black` = NanumSquareEB, `font-bold` = NanumSquareB (globals.css 오버라이드)
-- 기존 계산기 로직 수정 시 관련 법령·기준 연도 확인 필요 (급여 세율, 최저임금 등)
-- 신규 URL 생성시 sitemap.xml, footer 링크 추가, README.md 와 CLAUDE.md 계산기 목록 갱신
-- SEO 최적화를 위한 semantic tag 사용하여 요소 구현
-- h1 태그에 명확한 키워드 명시
-- 모든 기능은 2026년 규정을 기준으로 명시하고 구현
-- 구글 애드센스 승인을 목표로 기능 구현, 새로운 기능을 추가할때마다 갱신
+- 계산기 URL은 trailing slash 포함: `/cal/salary/`
+- `@/` = 프로젝트 루트 (`jsconfig.json`)
+- 폰트: `font-black` = NanumSquareEB, `font-bold` = NanumSquareB (globals.css)
+- 기존 계산기 로직 수정 시 관련 법령·기준 연도 확인 (급여 세율, 최저임금 등)
+- SEO: semantic tag 사용, h1에 명확한 키워드 명시
+- 모든 기능은 2026년 규정 기준으로 구현
+- 구글 애드센스 승인을 목표로 품질 유지
 
-## 현재 계산기 목록 (17개)
+## 현재 계산기 목록 (22개)
 
-날짜: dday, date-diff, date-add, business-days, age, anniversary, lunar
-건강: weight, calorie, period
-금융: salary, severance, unemployment, hourly, loan, vat, income-tax
-라이프: zodiac, mbti
-유틸리티: char-count, pyeong, unit
+날짜(7): dday, date-diff, date-add, business-days, age, anniversary, lunar
+건강(3): weight, calorie, period
+금융(7): salary, severance, unemployment, hourly, loan, vat, income-tax
+라이프(2): zodiac, mbti
+유틸리티(3): char-count, pyeong, unit
+
+# currentDate
+Today's date is 2026-03-01.

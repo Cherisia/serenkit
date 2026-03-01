@@ -1,12 +1,11 @@
 'use client'
 import { useState } from 'react'
+import { INPUT_CLS } from '@/lib/constants'
 
 const VAT_RATE = 0.1
 
 const fmt = (n) => Math.round(n).toLocaleString('ko-KR')
 
-const INPUT_CLS =
-  'w-full bg-stone-50 border border-stone-200 text-stone-800 text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-400 transition-colors'
 
 const QUICK_AMOUNTS = [
   { label: '10만', value: 100000 },

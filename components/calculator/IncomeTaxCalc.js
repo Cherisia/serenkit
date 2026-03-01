@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { INPUT_CLS } from '@/lib/constants'
 
 // ===== 2025년 귀속 종합소득세율 (2026년 5월 신고) =====
 const TAX_BRACKETS = [
@@ -51,7 +52,6 @@ function calcChildCredit(n) {
 
 // ===== 상수 =====
 const fmt = (n) => Math.round(n).toLocaleString('ko-KR')
-const INPUT_CLS = 'w-full bg-stone-50 border border-stone-200 text-stone-800 text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-400 transition-colors'
 const INCOME_TYPES = ['근로소득', '사업·프리랜서', '직접 입력']
 
 export default function IncomeTaxCalc() {

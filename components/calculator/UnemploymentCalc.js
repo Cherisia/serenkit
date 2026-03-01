@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { INPUT_CLS } from '@/lib/constants'
 
 // 연도별 최저시급 (원)
 const MIN_WAGE = { 2022: 9160, 2023: 9620, 2024: 9860, 2025: 10030, 2026: 10320 }
@@ -52,7 +53,6 @@ function calcUnemployment({ exitDate, age, insuredPeriod, monthlyWage, hoursPerD
 }
 
 const fmt = (n) => Math.floor(n).toLocaleString('ko-KR') + '원'
-const INPUT_CLS = 'w-full bg-stone-50 border border-stone-200 text-stone-800 text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-400 transition-colors'
 
 const INSURED_PERIODS = [
   { value: 'lt1',   label: '1년 미만' },

@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { INPUT_CLS } from '@/lib/constants'
 
 // ===== 순수 계산 함수 =====
 
@@ -79,8 +80,6 @@ function calcBullet(principal, annualRate, months) {
 
 // ===== 상수 =====
 const fmt = (n) => Math.round(n).toLocaleString('ko-KR')
-const INPUT_CLS =
-  'w-full bg-stone-50 border border-stone-200 text-stone-800 text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-400 transition-colors'
 const METHODS = ['원리금균등', '원금균등', '만기일시']
 const YEAR_OPTIONS = [1,2,3,4,5,6,7,8,9,10,12,15,20,25,30,35,40]
 
