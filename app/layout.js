@@ -20,6 +20,7 @@ export const metadata = {
   verification: {
     other: {
       'naver-site-verification': 'bbad3f80de8df232b88deb29abbda71d2159c1da',
+      'google-adsense-account': 'ca-pub-7505734558280029',
     },
   },
   robots: { index: true, follow: true },
