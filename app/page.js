@@ -176,7 +176,7 @@ export default function Home() {
               <span className="text-[11px] font-bold text-stone-300">{cat.calcs.length}개</span>
             </div>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 list-none p-0">
+            <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 list-none p-0">
               {cat.calcs.map((calc) => (
                 <li key={calc.url}>
                   <Link href={calc.url}
