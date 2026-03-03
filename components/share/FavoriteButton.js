@@ -2,7 +2,7 @@
 
 import { useFavorites } from '@/components/share/FavoritesProvider'
 
-function HeartIcon({ filled }) {
+export function HeartIcon({ filled }) {
   return (
     <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0"
       fill={filled ? 'currentColor' : 'none'}

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { getContrastRatio, getWcagLevel, getTextColor, hexToRgb } from '@/lib/colorUtils'
-import { INPUT_CLS } from '@/lib/colorTools'
+import { COLOR_INPUT_CLS as INPUT_CLS } from '@/lib/colorTools'
 
 const COMMON_PAIRS = [
   { name: '흰 배경 + 검은 텍스트', bg: '#ffffff', fg: '#000000' },

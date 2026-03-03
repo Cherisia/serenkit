@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import FaqSection from '@/components/calculator/FaqSection'
 import { CATEGORIES } from '@/lib/categories'
-import { HERO_PATTERN } from '@/lib/constants'
+import { CALC_HERO_PATTERN } from '@/lib/constants'
 import { FavoriteBannerButton } from '@/components/share/FavoriteButton'
 
 export default function CalcLayout({ title, desc, currentUrl, faqs, children }) {
@@ -14,7 +14,7 @@ export default function CalcLayout({ title, desc, currentUrl, faqs, children }) 
 
       {/* 배너 */}
       <section className="w-full bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 relative overflow-hidden pt-[4.5rem]">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: HERO_PATTERN }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
         <div className="relative container mx-auto px-4 py-14 text-center text-white">
           <h1 className="text-2xl font-black tracking-tight mb-2">{title}</h1>
           <p className="text-sm opacity-85">{desc}</p>

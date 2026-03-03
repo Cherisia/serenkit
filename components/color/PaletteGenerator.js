@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { generatePalette, getTextColor, hexToRgb, rgbToHsl } from '@/lib/colorUtils'
-import { INPUT_CLS } from '@/lib/colorTools'
+import { COLOR_INPUT_CLS as INPUT_CLS } from '@/lib/colorTools'
 
 const SCHEME_TYPES = [
   { value: 'complementary', label: '보색', desc: '정반대 색상으로 강한 대비' },

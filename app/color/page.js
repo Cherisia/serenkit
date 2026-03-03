@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { COLOR_TOOLS, HERO_PATTERN } from '@/lib/colorTools'
+import { COLOR_TOOLS, COLOR_HERO_PATTERN } from '@/lib/colorTools'
 import { FavoriteCardButton } from '@/components/share/FavoriteButton'
 
 const BASE_URL = 'https://serenkit.com'
@@ -66,7 +66,7 @@ export default function ColorHomePage() {
       <div className="w-full bg-slate-50 pb-20">
         {/* Hero */}
         <section className="w-full bg-gradient-to-br from-emerald-400 via-green-400 to-teal-500 relative overflow-hidden pt-[4.5rem]">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: HERO_PATTERN }} />
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: COLOR_HERO_PATTERN }} />
           <div className="relative container mx-auto px-4 py-24 text-center text-white">
             <p className="text-xs font-black opacity-75 mb-4 tracking-[0.3em] uppercase">색상 도구 모음</p>
             <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4 leading-tight">

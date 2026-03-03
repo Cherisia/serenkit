@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { CATEGORIES } from '@/lib/categories'
 import { COLOR_TOOLS } from '@/lib/colorTools'
-import { HERO_PATTERN } from '@/lib/constants'
+import { CALC_HERO_PATTERN } from '@/lib/constants'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* 히어로 */}
       <section className="w-full bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 relative overflow-hidden pt-[4.5rem]">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: HERO_PATTERN }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
         <div className="relative container mx-auto px-4 py-20 text-center text-white">
           <p className="text-xs font-black opacity-75 mb-4 tracking-[0.3em] uppercase">Everyday Tools</p>
           <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4 leading-tight">
@@ -58,7 +58,7 @@ export default function Home() {
           <Link href="/cal"
             className="group block bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-amber-300">
             <div className="bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 p-8 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: HERO_PATTERN }} />
+              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
               <div className="relative">
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-4xl">🧮</span>
@@ -105,7 +105,7 @@ export default function Home() {
           <Link href="/color"
             className="group block bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-emerald-300">
             <div className="bg-gradient-to-br from-emerald-400 via-green-400 to-teal-500 p-8 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: HERO_PATTERN }} />
+              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
               <div className="relative">
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-4xl">🎨</span>

@@ -6,7 +6,8 @@
       "Bash(node:*)",
       "Bash(tail:*)",
       "Bash(grep:*)",
-      "Bash(cd /c/Project/serenkit && npm run build 2>&1)"
+      "Bash(cd /c/Project/serenkit && npm run build 2>&1)",
+      "Bash(cd:*)"
     ]
   }
 }

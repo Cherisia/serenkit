@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { CSS_COLOR_NAMES, INPUT_CLS } from '@/lib/colorTools'
+import { CSS_COLOR_NAMES, COLOR_INPUT_CLS as INPUT_CLS } from '@/lib/colorTools'
 import { hexToRgb, rgbToHex, getTextColor } from '@/lib/colorUtils'
 import { findClosestTailwindColor, TAILWIND_COLORS } from '@/lib/tailwindColors'
 

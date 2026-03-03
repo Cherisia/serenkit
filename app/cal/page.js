@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { CATEGORIES } from '@/lib/categories'
-import { HERO_PATTERN } from '@/lib/constants'
+import { CALC_HERO_PATTERN } from '@/lib/constants'
 import { FavoriteCardButton } from '@/components/share/FavoriteButton'
 
 const BASE_URL = 'https://serenkit.com'
@@ -144,7 +144,7 @@ export default function CalPage() {
 
       {/* 히어로 */}
       <section className="w-full bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 relative overflow-hidden pt-[4.5rem]">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: HERO_PATTERN }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
         <div className="relative container mx-auto px-4 py-24 text-center text-white">
           <p className="text-xs font-black opacity-75 mb-4 tracking-[0.3em] uppercase">생활 계산기 모음</p>
           <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4 leading-tight">

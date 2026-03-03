@@ -6,7 +6,7 @@ import {
   rgbToCmyk, cmykToRgb, parseColor, isValidHex, normalizeHex, getTextColor
 } from '@/lib/colorUtils'
 import { findClosestTailwindColor } from '@/lib/tailwindColors'
-import { INPUT_CLS } from '@/lib/colorTools'
+import { COLOR_INPUT_CLS as INPUT_CLS } from '@/lib/colorTools'
 
 const MODES = ['HEX', 'RGB', 'HSL', 'HSB', 'CMYK']
 
