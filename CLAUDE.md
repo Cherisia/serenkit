@@ -205,6 +205,74 @@ export default function Page() {
 - `COLOR_INPUT_CLS` — 색상도구 입력 필드 클래스 (`lib/colorTools.js`, emerald focus)
 - `HeartIcon` — named export from `components/share/FavoriteButton.js`
 
+## SEO 가이드
+
+### 메타데이터 작성 규칙
+
+| 필드 | 규칙 |
+|------|------|
+| `title` | 40자 이내. `[계산기명] - [핵심 키워드]` 형태. "무료" 문구 금지 |
+| `description` | 80~120자. 계산기가 해결하는 문제 + 주요 기능 2~3가지 명시 |
+| `keywords` | 5~10개. 도구명(정확), 관련 검색어, 상위 카테고리 포함 |
+| `canonical` | 반드시 trailing slash 포함: `https://serenkit.com/cal/salary/` |
+| OG `title` | `[계산기명] | serenkit` (파이프 구분) |
+| OG `image` | `/og-image.png?v=2` 고정 |
+
+### HTML 헤딩 계층
+
+```
+h1 — 배너 타이틀 (CalcLayout/ToolLayout이 렌더, 페이지당 1개)
+h2 — 카드 섹션 제목 ("조건 입력", "계산 결과", "다른 계산기", "FAQ")
+h3 — FAQ 개별 질문, 결과 세부 항목
+```
+- `h1`에 반드시 핵심 키워드 포함 (예: "월급 실수령액 계산기")
+- 계산기 컴포넌트 내부는 `h2`부터 시작 (h1은 CalcLayout 배너가 담당)
+
+### JSON-LD 스키마 타입
+
+| 페이지 유형 | 스키마 타입 | 비고 |
+|------------|------------|------|
+| 계산기 개별 | `WebApplication` | `applicationCategory: 'FinanceApplication'` 등 |
+| 색상도구 개별 | `WebApplication` | `applicationCategory: 'DesignApplication'` |
+| FAQ (`FaqSection`) | `FAQPage` | FaqSection이 자동 생성 — 별도 작성 불필요 |
+| 목록 페이지 (`/cal/`, `/color/`) | `ItemList` | `ListItem`으로 하위 도구 열거 |
+| 홈 | `WebSite` | `name`, `url`, `description` |
+
+WebApplication 필수 필드:
+```js
+{
+  '@type': 'WebApplication',
+  name: '계산기 이름',
+  url: 'https://serenkit.com/cal/[slug]/',
+  description: '한 줄 설명',
+  applicationCategory: 'FinanceApplication', // 또는 UtilityApplication, HealthApplication
+  operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
+}
+```
+
+### FAQ 작성 기준
+
+- 최소 4개, 권장 5~7개
+- 실제 사용자 검색 의도를 반영한 질문 (예: "퇴직금 어떻게 계산하나요?")
+- 질문은 `?`로 끝내고, 답변은 2~3문장 이내로 구체적으로 작성
+- FaqSection이 FAQPage JSON-LD를 자동 생성하므로 `faqs` 배열만 작성
+
+### sitemap.xml 업데이트 규칙
+
+- 새 페이지 추가 시 반드시 `public/sitemap.xml`에 URL 추가
+- `lastmod`: 페이지 콘텐츠/로직 수정 시 해당 날짜로 갱신 (YYYY-MM-DD)
+- `priority`: 홈 `1.0` → 목록 `0.95` → 계산기 `0.9` → 색상도구 `0.8` → 법적 페이지 `0.3~0.4`
+- `changefreq`: 계산기/도구 `monthly`, 법령 연동 페이지(hourly, income-tax) `yearly`
+
+### 콘텐츠 품질 (애드센스 기준)
+
+- 각 페이지에 고유한 본문 콘텐츠 확보 (CalcLayout의 "다른 계산기" 섹션이 내부 링크 역할)
+- 계산 결과 섹션에 수식·기준 설명 추가 (결과만 출력하지 말 것)
+- "💡 계산 기준" aside 박스에 법적 근거·기준 연도 명시
+- 광고 친화적 레이아웃: 콘텐츠 위주, 팝업·자동재생 없음
+
 ## 주의사항
 
 - `output: 'export'` → API Route, Server Actions, 이미지 최적화 사용 불가
@@ -213,7 +281,6 @@ export default function Page() {
 - `@/` = 프로젝트 루트 (`jsconfig.json`)
 - 폰트: `font-black` = NanumSquareEB, `font-bold` = NanumSquareB (globals.css)
 - 기존 계산기 로직 수정 시 관련 법령·기준 연도 확인 (급여 세율, 최저임금 등)
-- SEO: semantic tag 사용, h1에 명확한 키워드 명시
 - 모든 기능은 2026년 규정 기준으로 구현
 - 구글 애드센스 승인을 목표로 품질 유지
 
