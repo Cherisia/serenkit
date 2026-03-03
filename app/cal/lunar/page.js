@@ -2,16 +2,16 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import LunarCalc from '@/components/calculator/LunarCalc'
 
 export const metadata = {
-  title: '양력 음력 변환기 — 윤달·간지 확인',
+  title: '양력 음력 변환기 - 윤달·간지 확인',
   description: '양력을 음력으로, 음력을 양력으로 즉시 변환해요. 윤달 여부, 간지(갑자), 음력 생일의 양력 날짜까지 한번에 확인하세요.',
   keywords: ['양력 음력 변환', '음력 양력 변환', '음력 계산기', '양력 변환기', '윤달 계산', '간지 계산', '갑자 계산', '음력 날짜 변환', '음력 생일 양력', '설날 날짜'],
   alternates: { canonical: 'https://serenkit.com/cal/lunar/' },
   openGraph: {
-    title: '양력 음력 변환기 | serenkit',
+    title: '양력 음력 변환기 - serenkit',
     description: '양력을 음력으로, 음력을 양력으로 즉시 변환해요.',
     url: 'https://serenkit.com/cal/lunar/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '양력 음력 변환기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '양력 음력 변환기 - serenkit' }],
   },
 }
 

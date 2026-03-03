@@ -2,16 +2,16 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import MbtiCalc from '@/components/calculator/MbtiCalc'
 
 export const metadata = {
-  title: 'MBTI 궁합 계산기 — 황금비율·점수 분석',
+  title: 'MBTI 궁합 계산기 - 황금비율·점수 분석',
   description: '두 사람의 MBTI를 선택하면 궁합 점수와 4가지 차원 분석, 황금비율 여부를 알려드려요. 연인·친구·동료 궁합을 한눈에 확인하세요.',
   keywords: ['MBTI 궁합', 'MBTI 궁합 계산기', 'MBTI 연애 궁합', 'mbti 궁합표', '황금비율 mbti', 'MBTI 친구 궁합', 'MBTI 직장 궁합', 'MBTI 검사', 'MBTI 유형 변화', 'MBTI 16가지'],
   alternates: { canonical: 'https://serenkit.com/cal/mbti/' },
   openGraph: {
-    title: 'MBTI 궁합 계산기 | serenkit',
+    title: 'MBTI 궁합 계산기 - serenkit',
     description: '두 사람의 MBTI 궁합 점수와 황금비율 여부를 바로 확인해보세요.',
     url: 'https://serenkit.com/cal/mbti/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'MBTI 궁합 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'MBTI 궁합 계산기 - serenkit' }],
   },
 }
 

@@ -2,16 +2,16 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import PeriodCalc from '@/components/calculator/PeriodCalc'
 
 export const metadata = {
-  title: '생리주기 계산기 | 다음 생리 예정일·배란일·가임기 계산',
+  title: '생리주기 계산기 - 다음 생리 예정일·배란일·가임기 계산',
   description: '마지막 생리 시작일을 입력하면 다음 생리 예정일, 배란일, 가임기, PMS 예상일, 향후 4개월 주기를 자동으로 계산해요.',
   keywords: ['생리주기 계산기', '다음 생리 예정일', '배란일 계산기', '가임기 계산', '생리 예측', '생리 계산기', 'PMS 예상일', '생리주기 예측'],
   alternates: { canonical: 'https://serenkit.com/cal/period/' },
   openGraph: {
-    title: '생리주기 계산기 | serenkit',
+    title: '생리주기 계산기 - serenkit',
     description: '다음 생리 예정일, 배란일, 가임기, PMS 예상일을 한 번에 계산해보세요.',
     url: 'https://serenkit.com/cal/period/',
     type: 'website',
-    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '생리주기 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '생리주기 계산기 - serenkit' }],
   },
 }
 

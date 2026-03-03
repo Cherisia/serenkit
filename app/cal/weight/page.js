@@ -2,16 +2,16 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import WeightCalc from '@/components/calculator/WeightCalc'
 
 export const metadata = {
-  title: '적정 체중 계산기 | BMI·비만도·표준 체중',
+  title: '적정 체중 계산기 - BMI·비만도·표준 체중',
   description: '키와 몸무게를 입력하면 BMI(체질량지수)와 표준 체중, 적정 체중 범위를 바로 계산해요. 대한비만학회 기준 한국인 비만도 판정과 감량·증량 목표 체중까지 한눈에 확인하세요.',
   keywords: ['적정 체중 계산기', 'BMI 계산기', '체질량지수 계산', '표준 체중', '비만도 계산기', '체중 계산기', '정상 체중 범위', 'BMI 계산 공식', '한국인 비만 기준', '다이어트 목표 체중'],
   alternates: { canonical: 'https://serenkit.com/cal/weight/' },
   openGraph: {
-    title: '적정 체중 계산기 | serenkit',
+    title: '적정 체중 계산기 - serenkit',
     description: 'BMI와 표준 체중으로 나의 적정 체중 범위를 확인해보세요.',
     url: 'https://serenkit.com/cal/weight/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '적정 체중 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '적정 체중 계산기 - serenkit' }],
   },
 }
 

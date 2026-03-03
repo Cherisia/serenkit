@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['기념일 계산기', '100일 계산', '200일 계산', '1주년 날짜', '커플 기념일 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/anniversary/' },
   openGraph: {
-    title: '기념일 계산기 | serenkit',
+    title: '기념일 계산기 - serenkit',
     description: '100일, 200일, 1주년 등 기념일 날짜를 바로 계산해요.',
     url: 'https://serenkit.com/cal/anniversary/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '기념일 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '기념일 계산기 - serenkit' }],
   },
 }
 

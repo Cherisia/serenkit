@@ -13,20 +13,33 @@ function HeartIcon({ filled }) {
   )
 }
 
+const CARD_COLORS = {
+  amber: {
+    fav: 'bg-amber-50 text-amber-400 hover:bg-amber-100',
+    idle: 'bg-stone-50 text-stone-300 hover:bg-amber-50 hover:text-amber-400',
+  },
+  sky: {
+    fav: 'bg-sky-50 text-sky-400 hover:bg-sky-100',
+    idle: 'bg-stone-50 text-stone-300 hover:bg-sky-50 hover:text-sky-400',
+  },
+  emerald: {
+    fav: 'bg-emerald-50 text-emerald-400 hover:bg-emerald-100',
+    idle: 'bg-slate-50 text-slate-300 hover:bg-emerald-50 hover:text-emerald-400',
+  },
+}
+
 /** 계산기 카드 우상단 즐겨찾기 버튼 */
-export function FavoriteCardButton({ url }) {
+export function FavoriteCardButton({ url, color = 'amber' }) {
   const { isFav, toggle } = useFavorites()
   const fav = isFav(url)
+  const cls = CARD_COLORS[color] ?? CARD_COLORS.amber
 
   return (
     <button
       onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle(url) }}
       aria-label={fav ? '즐겨찾기 해제' : '즐겨찾기 추가'}
       className={`absolute top-3 right-3 z-10 w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200
-        ${fav
-          ? 'bg-amber-50 text-amber-400 hover:bg-amber-100'
-          : 'bg-stone-50 text-stone-300 hover:bg-amber-50 hover:text-amber-400'
-        }`}
+        ${fav ? cls.fav : cls.idle}`}
     >
       <HeartIcon filled={fav} />
     </button>

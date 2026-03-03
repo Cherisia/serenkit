@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['종합소득세 계산기', '소득세 계산기', '프리랜서 세금 계산기', '사업소득세 계산기', '세금 계산기', '실효세율 계산기', '연금저축 세액공제', '종합소득세 신고'],
   alternates: { canonical: 'https://serenkit.com/cal/income-tax/' },
   openGraph: {
-    title: '종합소득세 계산기 2026 | serenkit',
+    title: '종합소득세 계산기 2026 - serenkit',
     description: '2026년 신고분(2025년 귀속) 종합소득세를 근로·사업·프리랜서 소득별로 단계별 계산해요.',
     url: 'https://serenkit.com/cal/income-tax/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '종합소득세 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '종합소득세 계산기 - serenkit' }],
   },
 }
 

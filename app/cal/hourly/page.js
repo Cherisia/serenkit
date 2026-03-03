@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['시급 계산기', '최저시급 계산기', '2026 최저시급', '주휴수당 계산', '월급 계산기', '시급 월급 환산', '알바 시급 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/hourly/' },
   openGraph: {
-    title: '시급 계산기 | serenkit',
+    title: '시급 계산기 - serenkit',
     description: '2026년 최저시급 10,320원 기준으로 시급·일급·주급·월급·연봉을 한 번에 계산해요.',
     url: 'https://serenkit.com/cal/hourly/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '시급 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '시급 계산기 - serenkit' }],
   },
 }
 

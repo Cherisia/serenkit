@@ -35,3 +35,8 @@ body {
 .font-black { font-family: 'NanumSquareEB', sans-serif !important; }
 .font-bold  { font-family: 'NanumSquareB',  sans-serif !important; }
 .font-light { font-family: 'NanumSquareL',  sans-serif !important; }
+
+.color-swatch { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.color-swatch:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+@keyframes copyFlash { 0% { opacity:1; } 50% { opacity:0.4; } 100% { opacity:1; } }
+.copy-flash { animation: copyFlash 0.3s ease; }

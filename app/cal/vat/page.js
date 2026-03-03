@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['부가세 계산기', 'VAT 계산기', '부가가치세 계산기', '공급가액 계산', '세금계산서', '부가세 역산', '부가세 포함 가격'],
   alternates: { canonical: 'https://serenkit.com/cal/vat/' },
   openGraph: {
-    title: '부가세 계산기 | serenkit',
+    title: '부가세 계산기 - serenkit',
     description: '공급가액 → 부가세·합계금액 계산, 합계금액 → 공급가액 역산을 즉시 계산해요.',
     url: 'https://serenkit.com/cal/vat/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '부가세 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '부가세 계산기 - serenkit' }],
   },
 }
 

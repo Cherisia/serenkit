@@ -7,7 +7,7 @@ export const metadata = {
   keywords: ['글자수 세기', '글자수 계산기', '공백 포함 글자수', '공백 제외 글자수', '바이트 계산기', '자기소개서 글자수', '단어 수 세기', '문자 수 계산', '글자 수 확인', 'byte 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/char-count/' },
   openGraph: {
-    title: '글자수 세기 | serenkit',
+    title: '글자수 세기 - serenkit',
     description: '텍스트를 입력하면 공백 포함/제외 글자수, 바이트 수, 단어 수를 실시간으로 계산해요. 자기소개서·트위터·SMS 글자 제한도 바로 확인하세요.',
     url: 'https://serenkit.com/cal/char-count/',
     type: 'website',

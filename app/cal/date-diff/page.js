@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['날짜 차이 계산기', '두 날짜 사이 일수', '날짜 간격 계산', '기간 계산기', '일수 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/date-diff/' },
   openGraph: {
-    title: '날짜 차이 계산기 | serenkit',
+    title: '날짜 차이 계산기 - serenkit',
     description: '두 날짜 사이의 일수, 주, 월, 년을 바로 계산해요.',
     url: 'https://serenkit.com/cal/date-diff/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 차이 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 차이 계산기 - serenkit' }],
   },
 }
 

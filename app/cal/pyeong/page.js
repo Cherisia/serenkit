@@ -7,7 +7,7 @@ export const metadata = {
   keywords: ['평수 계산기', '평 m2 변환', '제곱미터 평수', '아파트 평수 계산', '평방미터 평수 변환', '평 계산기', '공급면적 전용면적', '평수 m2'],
   alternates: { canonical: 'https://serenkit.com/cal/pyeong/' },
   openGraph: {
-    title: '평수 계산기 | serenkit',
+    title: '평수 계산기 - serenkit',
     description: '평↔m² 즉시 변환! 아파트 평수를 제곱미터로, 제곱미터를 평수로 실시간 계산해요.',
     url: 'https://serenkit.com/cal/pyeong/',
     type: 'website',

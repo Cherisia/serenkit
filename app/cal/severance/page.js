@@ -7,11 +7,11 @@ export const metadata = {
   keywords: ['퇴직금 계산기', '퇴직금 계산', '평균임금 계산', '퇴직금 얼마', '1일 평균임금', '근로기준법 퇴직금', '퇴직금 산정'],
   alternates: { canonical: 'https://serenkit.com/cal/severance/' },
   openGraph: {
-    title: '퇴직금 계산기 | serenkit',
+    title: '퇴직금 계산기 - serenkit',
     description: '입사일, 퇴직일, 월 급여를 입력하면 법정 퇴직금을 바로 계산해요.',
     url: 'https://serenkit.com/cal/severance/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '퇴직금 계산기 | serenkit' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '퇴직금 계산기 - serenkit' }],
   },
 }
 

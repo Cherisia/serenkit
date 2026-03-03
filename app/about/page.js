@@ -5,7 +5,7 @@ export const metadata = {
   description: 'serenkit은 날짜 계산, 건강, 금융, 단위 변환 등 생활에 필요한 계산기를 제공하는 서비스입니다.',
   alternates: { canonical: 'https://serenkit.com/about/' },
   openGraph: {
-    title: 'serenkit 소개 | serenkit',
+    title: 'serenkit 소개 - serenkit',
     description: 'serenkit은 날짜 계산, 건강, 금융, 단위 변환 등 생활에 필요한 계산기를 제공하는 서비스입니다.',
     url: 'https://serenkit.com/about/',
     type: 'website',
@@ -61,7 +61,7 @@ export default function AboutPage() {
             serenkit은 일상에서 자주 필요한 계산을 빠르고 간편하게 해결할 수 있는 생활 계산기 모음 서비스입니다.
           </p>
           <p className="text-xs text-stone-500 leading-7 mt-2">
-            날짜 계산부터 건강 지표, 급여·세금, 단위 변환까지 — 복잡한 계산을 공식을 몰라도 누구나 쉽게 사용할 수 있도록 만들었습니다.
+            날짜 계산부터 건강 지표, 급여·세금, 단위 변환까지 - 복잡한 계산을 공식을 몰라도 누구나 쉽게 사용할 수 있도록 만들었습니다.
             회원가입 없이 바로 이용 가능하며, 모바일과 PC 어디서든 편하게 사용할 수 있습니다.
           </p>
         </article>
