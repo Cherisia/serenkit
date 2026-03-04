@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // ── 날짜 유틸 ────────────────────────────────────────────
 const addDays = (date, days) => {
@@ -78,8 +79,18 @@ export default function PeriodCalc() {
 
   const canCalc = lastDate && cycleLen && periodLen
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.lastDate) {
+      const cl = p.cycleLen || '28', pl = p.periodLen || '5'
+      setLastDate(p.lastDate); setCycleLen(cl); setPeriodLen(pl)
+      setResult(calcCycle(p.lastDate, cl, pl))
+    }
+  }, [])
+
   const calculate = () => {
     if (!canCalc) return
+    pushParams({ lastDate, cycleLen, periodLen })
     setResult(calcCycle(lastDate, cycleLen, periodLen))
   }
 

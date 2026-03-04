@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // 1평 = 400/121 m² ≈ 3.305785m²
 const SQM_PER_PYEONG = 400 / 121
@@ -23,6 +24,22 @@ export default function PyeongCalc() {
   const [sqm,    setSqm]    = useState('')
   const [pyeong, setPyeong] = useState('')
   const [active, setActive] = useState(null) // 'sqm' | 'pyeong'
+
+  useEffect(() => {
+    const p = readParams()
+    if (p.sqm && p.active === 'sqm') {
+      setSqm(p.sqm); setActive('sqm')
+      setPyeong(String(parseFloat(sqmToPyeong(parseFloat(p.sqm)).toFixed(2))))
+    } else if (p.pyeong && p.active === 'pyeong') {
+      setPyeong(p.pyeong); setActive('pyeong')
+      setSqm(String(parseFloat(pyeongToSqm(parseFloat(p.pyeong)).toFixed(2))))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (active === 'sqm' && sqm) pushParams({ sqm, active: 'sqm' })
+    else if (active === 'pyeong' && pyeong) pushParams({ pyeong, active: 'pyeong' })
+  }, [sqm, pyeong, active])
 
   const handleSqmChange = (e) => {
     const val = e.target.value

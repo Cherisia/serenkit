@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 const DOW = ['일','월','화','수','목','금','토']
 function toStr(d) { return d.toISOString().split('T')[0] }
@@ -12,7 +13,21 @@ export default function DateAddCalc() {
   const [days,   setDays]   = useState(0)
   const [result, setResult] = useState(null)
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.base) {
+      const b = p.base, m = p.mode || 'add', yr = p.years || 0, mo = p.months || 0, dy = p.days || 0
+      setBase(b); setMode(m); setYears(yr); setMonths(mo); setDays(dy)
+      const d = new Date(b), s = m === 'add' ? 1 : -1
+      d.setFullYear(d.getFullYear() + s * Number(yr))
+      d.setMonth(d.getMonth() + s * Number(mo))
+      d.setDate(d.getDate() + s * Number(dy))
+      setResult(d)
+    }
+  }, [])
+
   const calculate = () => {
+    pushParams({ base, mode, years, months, days })
     const d = new Date(base)
     const s = mode === 'add' ? 1 : -1
     d.setFullYear(d.getFullYear() + s * Number(years))

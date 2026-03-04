@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 const DOW = ['일','월','화','수','목','금','토']
 const DAY_MARKS  = [100, 200, 300, 365, 500, 700, 1000]
@@ -20,8 +21,20 @@ export default function AnniversaryCalc() {
   const [start,  setStart]  = useState('')
   const [result, setResult] = useState(null)
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.start) {
+      setStart(p.start)
+      const s = new Date(p.start)
+      const dayResults  = DAY_MARKS.map((n) => { const d = new Date(s); d.setDate(d.getDate() + n - 1); return { label: `${n}일`, date: d } })
+      const yearResults = YEAR_MARKS.map((n) => { const d = new Date(s); d.setFullYear(d.getFullYear() + n); return { label: `${n}주년`, date: d } })
+      setResult({ dayResults, yearResults })
+    }
+  }, [])
+
   const calculate = () => {
     if (!start) return
+    pushParams({ start })
     const s = new Date(start)
     const dayResults  = DAY_MARKS.map((n) => {
       const d = new Date(s); d.setDate(d.getDate() + n - 1)

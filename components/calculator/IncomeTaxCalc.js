@@ -1,6 +1,7 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { INPUT_CLS } from '@/lib/constants'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // ===== 2025년 귀속 종합소득세율 (2026년 5월 신고) =====
 const TAX_BRACKETS = [
@@ -74,6 +75,42 @@ export default function IncomeTaxCalc() {
     setResult(null)
   }
   const toNum = (str) => parseFloat((str || '0').replace(/,/g, '')) || 0
+  const fmtMoney = (n) => n ? Number(n).toLocaleString('ko-KR') : ''
+
+  useEffect(() => {
+    const p = readParams()
+    const it = Number(p.incomeType) || 0
+    if ((it === 2 && p.directIncome) || ((it === 0 || it === 1) && p.grossIncome)) {
+      setIncomeType(it)
+      if (p.grossIncome) setGrossIncome(fmtMoney(p.grossIncome))
+      if (p.directIncome) setDirectIncome(fmtMoney(p.directIncome))
+      const bc = Number(p.basicCount) || 1, ec = Number(p.elderCount) || 0, dc = Number(p.disabledCount) || 0, cc = Number(p.childCount) || 0
+      setBasicCount(bc); setElderCount(ec); setDisabledCount(dc); setChildCount(cc)
+      if (p.pension) setPension(fmtMoney(p.pension))
+      if (p.annuity) setAnnuity(fmtMoney(p.annuity))
+      if (p.otherDeduction) setOtherDeduction(fmtMoney(p.otherDeduction))
+      // auto-calculate
+      const gv = Number(p.grossIncome) || 0, dv = Number(p.directIncome) || 0
+      const pv = Number(p.pension) || 0, av = Number(p.annuity) || 0, ov = Number(p.otherDeduction) || 0
+      let totalIncome = 0, workDeduction = 0
+      if (it === 0) { workDeduction = calcWorkDeduction(gv); totalIncome = Math.max(0, gv - workDeduction) }
+      else if (it === 1) { totalIncome = gv }
+      else { totalIncome = dv }
+      const basicDeduction = bc * 1500000, elderDeduction = ec * 1000000, disabledDeduction = dc * 2000000
+      const totalDeductions = basicDeduction + elderDeduction + disabledDeduction + pv + ov
+      const taxBase = Math.max(0, totalIncome - totalDeductions)
+      const calculatedTax = calcTaxAmount(taxBase)
+      const workTaxCredit = it === 0 ? calcWorkTaxCredit(calculatedTax, gv) : 0
+      const annuityCapped = Math.min(av, 9000000), annuityRate = totalIncome <= 45000000 ? 0.165 : 0.132
+      const annuityCredit = annuityCapped * annuityRate, childCredit = calcChildCredit(cc)
+      const standardCredit = it === 0 ? 130000 : 70000
+      const totalTaxCredit = workTaxCredit + annuityCredit + childCredit + standardCredit
+      const finalTax = Math.max(0, calculatedTax - totalTaxCredit), localTax = finalTax * 0.1
+      const totalTax = finalTax + localTax, effectiveRate = totalIncome > 0 ? (totalTax / totalIncome) * 100 : 0
+      const marginalRate = getMarginalRate(taxBase)
+      setResult({ incomeType: it, grossVal: gv, totalIncome, workDeduction, basicDeduction, elderDeduction, disabledDeduction, pensionVal: pv, otherVal: ov, totalDeductions, taxBase, calculatedTax, workTaxCredit, annuityCredit, annuityRatePct: Math.round(annuityRate * 100 * 10) / 10, childCredit, standardCredit, totalTaxCredit, finalTax, localTax, totalTax, effectiveRate, marginalRate })
+    }
+  }, [])
 
   const calculate = () => {
     setError('')
@@ -125,6 +162,16 @@ export default function IncomeTaxCalc() {
     const effectiveRate  = totalIncome > 0 ? (totalTax / totalIncome) * 100 : 0
     const marginalRate   = getMarginalRate(taxBase)
 
+    pushParams({
+      incomeType,
+      ...(grossVal && { grossIncome: grossVal }),
+      ...(directVal && { directIncome: directVal }),
+      basicCount, elderCount, disabledCount,
+      ...(pensionVal && { pension: pensionVal }),
+      ...(annuityVal && { annuity: annuityVal }),
+      ...(childCount && { childCount }),
+      ...(otherVal && { otherDeduction: otherVal }),
+    })
     setResult({
       incomeType, grossVal, totalIncome, workDeduction,
       basicDeduction, elderDeduction, disabledDeduction, pensionVal, otherVal, totalDeductions,

@@ -1,6 +1,7 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { INPUT_CLS } from '@/lib/constants'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // 연도별 최저시급 (원)
 const MIN_WAGE = { 2022: 9160, 2023: 9620, 2024: 9860, 2025: 10030, 2026: 10320 }
@@ -74,12 +75,23 @@ export default function UnemploymentCalc() {
   const [result,        setResult]        = useState(null)
   const [error,         setError]         = useState('')
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.age && p.monthlyWage) {
+      const ed = p.exitDate || today, ip = p.insuredPeriod || '1-3', hpd = p.hoursPerDay || '8', disabled = p.isDisabled === '1'
+      setExitDate(ed); setAge(p.age); setInsuredPeriod(ip)
+      setMonthlyWage(p.monthlyWage); setHoursPerDay(hpd); setIsDisabled(disabled)
+      setResult(calcUnemployment({ exitDate: ed, age: Number(p.age), insuredPeriod: ip, monthlyWage: Number(p.monthlyWage), hoursPerDay: Number(hpd), isDisabled: disabled }))
+    }
+  }, [])
+
   const calculate = () => {
     setError('')
     setResult(null)
     if (!age || Number(age) < 15 || Number(age) > 100) { setError('유효한 만 나이를 입력해주세요.'); return }
     if (!monthlyWage || Number(monthlyWage) <= 0) { setError('월 평균임금을 입력해주세요.'); return }
 
+    pushParams({ exitDate, age, insuredPeriod, monthlyWage, hoursPerDay, isDisabled: isDisabled ? '1' : '0' })
     setResult(calcUnemployment({
       exitDate,
       age: Number(age),

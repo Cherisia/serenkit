@@ -1,6 +1,7 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { INPUT_CLS } from '@/lib/constants'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // 연도별 최저시급
 const MIN_WAGE = { 2024: 9860, 2025: 10030, 2026: 10320 }
@@ -54,6 +55,15 @@ export default function HourlyCalc() {
   const [result,      setResult]      = useState(null)
   const [error,       setError]       = useState('')
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.hourlyWage) {
+      const wage = Number(p.hourlyWage), hpd = p.hoursPerDay || '8', dpw = p.daysPerWeek || '5'
+      setHourlyWage(p.hourlyWage); setHoursPerDay(hpd); setDaysPerWeek(dpw)
+      if (wage >= 1000) setResult(calcHourly({ hourlyWage: wage, hoursPerDay: Number(hpd), daysPerWeek: Number(dpw) }))
+    }
+  }, [])
+
   const calculate = () => {
     setError('')
     setResult(null)
@@ -61,6 +71,7 @@ export default function HourlyCalc() {
     if (!hourlyWage || wage <= 0) { setError('시급을 입력해주세요.'); return }
     if (wage < 1000) { setError('시급이 너무 낮아요. 단위를 확인해주세요.'); return }
 
+    pushParams({ hourlyWage, hoursPerDay, daysPerWeek })
     setResult(calcHourly({
       hourlyWage:  wage,
       hoursPerDay: Number(hoursPerDay),

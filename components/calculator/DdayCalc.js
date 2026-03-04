@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 function toStr(d) { return d.toISOString().split('T')[0] }
 
@@ -42,8 +43,20 @@ export default function DdayCalc() {
   const [label, setLabel]           = useState('')
   const [result, setResult]         = useState(null)
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.targetDate) {
+      const bd = p.baseDate || toStr(new Date()), td = p.targetDate, lb = p.label || ''
+      setBaseDate(bd); setTargetDate(td); setLabel(lb)
+      const base = new Date(bd); base.setHours(0,0,0,0)
+      const target = new Date(td); target.setHours(0,0,0,0)
+      setResult({ diff: Math.round((target - base) / 86400000), base, target, label: lb })
+    }
+  }, [])
+
   const calculate = () => {
     if (!targetDate) return
+    pushParams({ baseDate, targetDate, ...(label && { label }) })
     const base   = new Date(baseDate);   base.setHours(0,0,0,0)
     const target = new Date(targetDate); target.setHours(0,0,0,0)
     const diff = Math.round((target - base) / 86400000)

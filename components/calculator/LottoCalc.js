@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 function ballCls(n) {
   if (n <= 10) return 'bg-yellow-400 text-yellow-900 shadow-yellow-200'
@@ -48,6 +49,18 @@ export default function LottoCalc() {
 
   useEffect(() => () => clearAll(), [])
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.results) {
+      const games = p.results.split(',').map(g => g.split('-').map(Number))
+      if (games.every(g => g.length === 6 && g.every(n => n >= 1 && n <= 45))) {
+        setFinalGames(games)
+        setPhase('done')
+        setHistory([games])
+      }
+    }
+  }, [])
+
   function draw() {
     clearAll()
 
@@ -92,6 +105,7 @@ export default function LottoCalc() {
       intervalRef.current = null
       setPhase('done')
       setHistory(prev => [games, ...prev].slice(0, 5))
+      pushParams({ results: games.map(g => g.join('-')).join(',') })
     }, ROLL_MS + 6 * SETTLE_MS + 150))
   }
 

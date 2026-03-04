@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 const HOLIDAYS = new Set([
   '2025-01-01','2025-01-28','2025-01-29','2025-01-30',
@@ -19,10 +20,36 @@ export default function BusinessDaysCalc() {
   const [exHol,  setExHol]  = useState(true)
   const [result, setResult] = useState(null)
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.start && p.end) {
+      setStart(p.start)
+      setEnd(p.end)
+      const exH = p.exHol !== '0'
+      setExHol(exH)
+      const s = new Date(p.start), e = new Date(p.end)
+      if (s <= e) {
+        let work = 0, weekend = 0, holiday = 0
+        const cur = new Date(s)
+        while (cur <= e) {
+          const dow = cur.getDay()
+          const str = toStr(cur)
+          if (dow === 0 || dow === 6) { weekend++ }
+          else if (exH && HOLIDAYS.has(str)) { holiday++ }
+          else { work++ }
+          cur.setDate(cur.getDate() + 1)
+        }
+        const total = Math.round((e - s) / 86400000) + 1
+        setResult({ work, weekend, holiday, total })
+      }
+    }
+  }, [])
+
   const calculate = () => {
     if (!start || !end) return
     const s = new Date(start), e = new Date(end)
     if (s > e) return
+    pushParams({ start, end, exHol: exHol ? '1' : '0' })
     let work = 0, weekend = 0, holiday = 0
     const cur = new Date(s)
     while (cur <= e) {

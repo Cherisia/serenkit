@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // EUC-KR 기준 바이트 계산 (한글 2B, 영문·숫자 1B)
 function getByteLength(str) {
@@ -21,6 +22,15 @@ const PRESETS = [
 
 export default function CharCountCalc() {
   const [text, setText] = useState('')
+
+  useEffect(() => {
+    const p = readParams()
+    if (p.text) setText(p.text)
+  }, [])
+
+  useEffect(() => {
+    pushParams(text ? { text } : {})
+  }, [text])
 
   const charCount   = text.length
   const charNoSpace = text.replace(/\s/g, '').length

@@ -1,10 +1,16 @@
+'use client'
+
+import { useRef } from 'react'
 import Link from 'next/link'
 import FaqSection from '@/components/calculator/FaqSection'
 import { CATEGORIES } from '@/lib/categories'
 import { CALC_HERO_PATTERN } from '@/lib/constants'
 import { FavoriteBannerButton } from '@/components/share/FavoriteButton'
+import ShareButtons from '@/components/share/ShareResultButton'
 
 export default function CalcLayout({ title, desc, currentUrl, faqs, children }) {
+  const shareRef = useRef(null)
+
   const filteredCategories = CATEGORIES
     .map(cat => ({ ...cat, calcs: cat.calcs.filter(c => c.url !== currentUrl) }))
     .filter(cat => cat.calcs.length > 0)
@@ -24,7 +30,20 @@ export default function CalcLayout({ title, desc, currentUrl, faqs, children }) 
 
       {/* 계산기 본체 */}
       <main className="container xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-8">
-        {children}
+        <div ref={shareRef}>
+          {children}
+        </div>
+        <div className="mt-4" data-share-ignore>
+          <div className="flex items-center gap-2 mb-2">
+            <div className="flex-1 h-px bg-stone-200" />
+            <p className="text-[10px] font-bold text-stone-400">결과 공유하기</p>
+            <div className="flex-1 h-px bg-stone-200" />
+          </div>
+          <ShareButtons targetRef={shareRef} />
+          <p className="text-[10px] text-stone-300 text-center mt-1.5">
+            🔗 SNS 공유 버튼을 누르면 현재 결과가 담긴 URL이 전달됩니다
+          </p>
+        </div>
       </main>
 
       {/* 다른 계산기 */}

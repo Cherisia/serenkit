@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // ===== 2025년 기준 4대보험 요율 =====
 const RATES = {
@@ -93,9 +94,19 @@ export default function SalaryCalc() {
   const [dependents, setDependents] = useState('1')
   const [result,     setResult]     = useState(null)
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.gross) {
+      const dep = p.dependents || '1'
+      setGross(p.gross); setDependents(dep)
+      setResult(calcSalary(Number(p.gross), dep))
+    }
+  }, [])
+
   const calculate = () => {
     const g = Number(gross)
     if (!g || g <= 0) return
+    pushParams({ gross, dependents })
     setResult(calcSalary(g, dependents))
   }
 

@@ -1,6 +1,7 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { INPUT_CLS } from '@/lib/constants'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // 퇴직금 계산 (근로기준법 제34조)
 // 퇴직금 = 1일 평균임금 × 30일 × (재직일수 / 365)
@@ -60,6 +61,18 @@ export default function SeveranceCalc() {
   const [result,       setResult]       = useState(null)
   const [error,        setError]        = useState('')
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.startDate && p.monthlyWage) {
+      const ed = p.endDate || today, ab = p.annualBonus || '0', al = p.annualLeave || '0'
+      setStartDate(p.startDate); setEndDate(ed)
+      setMonthlyWage(p.monthlyWage); setAnnualBonus(ab); setAnnualLeave(al)
+      if (new Date(ed) > new Date(p.startDate)) {
+        setResult(calcSeverance({ startDate: p.startDate, endDate: ed, monthlyWage: Number(p.monthlyWage), annualBonus: Number(ab), annualLeave: Number(al) }))
+      }
+    }
+  }, [])
+
   const calculate = () => {
     setError('')
     setResult(null)
@@ -68,6 +81,7 @@ export default function SeveranceCalc() {
     if (!monthlyWage || Number(monthlyWage) <= 0) { setError('월 평균 급여를 입력해주세요.'); return }
     if (new Date(endDate) <= new Date(startDate)) { setError('퇴직일은 입사일보다 늦어야 해요.'); return }
 
+    pushParams({ startDate, endDate, monthlyWage, ...(annualBonus && { annualBonus }), ...(annualLeave && { annualLeave }) })
     const res = calcSeverance({
       startDate,
       endDate,

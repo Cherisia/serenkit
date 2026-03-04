@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 function calcWeight(height, weight, gender) {
   const h = Number(height)
@@ -62,8 +63,18 @@ export default function WeightCalc() {
 
   const canCalc = height && weight && Number(height) > 0 && Number(weight) > 0
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.height && p.weight) {
+      const g = p.gender || 'male'
+      setHeight(p.height); setWeight(p.weight); setGender(g)
+      setResult(calcWeight(p.height, p.weight, g))
+    }
+  }, [])
+
   const calculate = () => {
     if (!canCalc) return
+    pushParams({ height, weight, gender })
     setResult(calcWeight(height, weight, gender))
   }
 

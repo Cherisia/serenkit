@@ -1,5 +1,6 @@
 'use client'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // ── 카테고리 정의 ──────────────────────────────────────────
 // base unit 기준 factor (온도는 special 처리)
@@ -114,6 +115,19 @@ export default function UnitCalc() {
   const [catKey,   setCatKey]   = useState('length')
   const [fromUnit, setFromUnit] = useState('m')
   const [inputVal, setInputVal] = useState('')
+
+  useEffect(() => {
+    const p = readParams()
+    if (p.catKey) {
+      setCatKey(p.catKey)
+      if (p.fromUnit) setFromUnit(p.fromUnit)
+      if (p.inputVal) setInputVal(p.inputVal)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (inputVal) pushParams({ catKey, fromUnit, inputVal })
+  }, [catKey, fromUnit, inputVal])
 
   const category = CATEGORIES.find(c => c.key === catKey)
 

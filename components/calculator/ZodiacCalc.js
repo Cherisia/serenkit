@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // 12간지 띠
 const ZODIACS = [
@@ -69,8 +70,17 @@ export default function ZodiacCalc() {
   const [birth, setBirth] = useState('')
   const [result, setResult] = useState(null)
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.birth) {
+      setBirth(p.birth)
+      setResult({ zodiac: getZodiac(p.birth), star: getStarSign(p.birth) })
+    }
+  }, [])
+
   const calculate = () => {
     if (!birth) return
+    pushParams({ birth })
     const zodiac = getZodiac(birth)
     const star = getStarSign(birth)
     setResult({ zodiac, star })

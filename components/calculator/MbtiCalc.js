@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // ===== 데이터 =====
 const TYPES = [
@@ -201,6 +202,20 @@ export default function MbtiCalc() {
   const [activeTab, setActiveTab] = useState('me')
   const [typeA, setTypeA] = useState(null)
   const [typeB, setTypeB] = useState(null)
+
+  useEffect(() => {
+    const p = readParams()
+    if (p.typeA) {
+      const a = TYPES.find(t => t.code === p.typeA)
+      const b = p.typeB ? TYPES.find(t => t.code === p.typeB) : null
+      if (a) setTypeA(a)
+      if (b) setTypeB(b)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeA && typeB) pushParams({ typeA: typeA.code, typeB: typeB.code })
+  }, [typeA, typeB])
 
   const handleSelect = (type) => {
     if (activeTab === 'me') {

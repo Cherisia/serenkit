@@ -1,6 +1,7 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { INPUT_CLS } from '@/lib/constants'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // ===== 순수 계산 함수 =====
 
@@ -92,6 +93,22 @@ export default function LoanCalc() {
   const [error, setError] = useState('')
   const [showAll, setShowAll] = useState(false)
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.principal && p.rate) {
+      const pr = Number(p.principal), r = Number(p.rate), yr = Number(p.years) || 20, mt = Number(p.method) || 0
+      setPrincipal(pr.toLocaleString('ko-KR')); setRate(String(r)); setYears(yr); setMethod(mt)
+      const n = yr * 12
+      if (pr > 0 && r >= 0 && r <= 100) {
+        let data
+        if (mt === 0) { const { monthlyPayment, schedule } = calcEqualInstallment(pr, r, n); data = { label: '원리금균등', monthlyLabel: '월 납입금', monthly: monthlyPayment, totalPayment: monthlyPayment * n, totalInterest: monthlyPayment * n - pr, schedule } }
+        else if (mt === 1) { const { firstPayment, lastPayment, schedule } = calcEqualPrincipal(pr, r, n); const totalInterest = schedule.reduce((s, x) => s + x.interest, 0); data = { label: '원금균등', monthlyLabel: '첫 달 납입금', monthly: firstPayment, lastMonthly: lastPayment, totalPayment: pr + totalInterest, totalInterest, schedule } }
+        else { const { monthlyInterest, schedule } = calcBullet(pr, r, n); data = { label: '만기일시', monthlyLabel: '월 이자', monthly: monthlyInterest, totalPayment: pr + monthlyInterest * n, totalInterest: monthlyInterest * n, schedule } }
+        setResult({ ...data, principal: pr, rate: r, years: yr })
+      }
+    }
+  }, [])
+
   const calculate = () => {
     setError('')
     const p = parseFloat(principal.replace(/,/g, ''))
@@ -101,6 +118,7 @@ export default function LoanCalc() {
     if (!p || p <= 0) return setError('대출 원금을 입력해주세요.')
     if (!r || r < 0) return setError('연 금리를 입력해주세요.')
     if (r > 100) return setError('금리가 너무 높습니다.')
+    pushParams({ principal: p, rate, years, method })
 
     let data
     if (method === 0) {

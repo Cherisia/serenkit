@@ -125,6 +125,7 @@ components/color/
 components/share/
   FavoritesProvider.js       # 즐겨찾기 Context (localStorage)
   FavoriteButton.js          # HeartIcon(named), FavoriteCardButton, FavoriteBannerButton
+  ShareResultButton.js       # 결과 공유 버튼 (클립보드·이미지·SNS)
   Navbar.js                  # 상단 네비게이션
 
 lib/
@@ -133,13 +134,34 @@ lib/
   colorUtils.js              # 색상 변환 순수 함수
   tailwindColors.js          # Tailwind 색상표 데이터
   constants.js               # 공유 상수 (INPUT_CLS, CALC_HERO_PATTERN)
+  urlParams.js               # URL 파라미터 읽기/쓰기 (pushParams, readParams)
 ```
+
+---
+
+## 주요 기능
+
+### 결과 공유
+
+모든 계산기 페이지 하단에 결과 공유 버튼 3종이 제공됩니다.
+
+| 버튼 | 동작 |
+|------|------|
+| 📋 클립보드 복사 | 현재 결과가 담긴 URL을 클립보드에 복사 |
+| 💾 이미지 저장 | 계산 결과를 PNG 이미지로 저장 (2배 해상도, `serenkit.com` 워터마크) |
+| 🔗 SNS 공유 | 모바일: 기기 공유 시트 / 데스크탑: URL 클립보드 복사 |
+
+계산 후 URL이 자동으로 입력값을 포함하도록 업데이트되어, 링크만 공유해도 동일한 결과를 재현할 수 있습니다.
+
+### 즐겨찾기
+
+Navbar의 하트 아이콘으로 자주 쓰는 계산기를 즐겨찾기에 추가할 수 있습니다. 즐겨찾기는 브라우저 `localStorage`에 저장됩니다.
 
 ---
 
 ## 새 계산기 추가하기
 
-1. `components/calculator/[Feature]Calc.js` — 계산기 컴포넌트 작성
+1. `components/calculator/[Feature]Calc.js` — 계산기 컴포넌트 작성 (`pushParams`/`readParams` 포함)
 2. `app/cal/[slug]/page.js` — 페이지 파일 작성 (메타데이터, JSON-LD, FAQ)
 3. `lib/categories.js` — `CATEGORIES` 배열에 항목 추가
 4. `public/sitemap.xml` — 신규 URL 추가

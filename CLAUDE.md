@@ -36,6 +36,7 @@ components/color/
 components/share/
   FavoritesProvider.js      # 즐겨찾기 Context+Provider (localStorage: 'serenkit_favorites', slug 배열)
   FavoriteButton.js         # HeartIcon(named export), FavoriteCardButton, FavoriteBannerButton
+  ShareResultButton.js      # 결과 공유 버튼 3종 (클립보드·이미지저장·SNS), html-to-image 사용
   Navbar.js                 # 상단 네비게이션
 
 lib/
@@ -44,11 +45,12 @@ lib/
   colorUtils.js             # 색상 변환 순수 함수
   tailwindColors.js         # Tailwind 색상표 데이터
   constants.js              # 공유 상수: INPUT_CLS, CALC_HERO_PATTERN (계산기용)
+  urlParams.js              # URL 파라미터 읽기/쓰기 유틸리티 (pushParams, readParams)
 ```
 
 ## 새 계산기 추가 체크리스트
 
-1. **`components/calculator/[Feature]Calc.js`** — 계산기 컴포넌트 작성
+1. **`components/calculator/[Feature]Calc.js`** — 계산기 컴포넌트 작성 (URL 파라미터 패턴 포함)
 2. **`app/cal/[slug]/page.js`** — 페이지 파일 작성 (메타데이터, JSON-LD, FAQ, CalcLayout 래핑)
 3. **`lib/categories.js`** — `CATEGORIES` 배열에 항목 추가 (CalcLayout·Footer·홈 자동 반영)
 4. **`public/sitemap.xml`** — 신규 URL 추가
@@ -66,27 +68,46 @@ lib/
 
 ```js
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { INPUT_CLS } from '@/lib/constants'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // 1. 순수 계산 함수 (컴포넌트 외부)
-function calcFeature({ input1, input2 }) { /* ... */ return result }
+function calcFeature(input1, input2) { /* ... */ return result }
 
 // 2. 기타 상수
 const fmt = (n) => Math.floor(n).toLocaleString('ko-KR') + '원'
 
 // 3. 컴포넌트
 export default function FeatureCalc() {
-  const [input, setInput] = useState('')
+  const [input1, setInput1] = useState('')
   const [result, setResult] = useState(null)
   const [error, setError] = useState('')
+
+  // URL 파라미터 복원 (페이지 진입 시 1회)
+  useEffect(() => {
+    const p = readParams()
+    if (p.input1) {
+      setInput1(p.input1)
+      setResult(calcFeature(p.input1))
+    }
+  }, [])
+
+  const calculate = () => {
+    setError('')
+    if (!input1) { setError('값을 입력해주세요.'); return }
+    pushParams({ input1 })          // URL에 입력값 반영
+    setResult(calcFeature(input1))
+  }
 
   return (
     <div className="space-y-4">
       <section className="bg-white border border-stone-200 rounded-2xl p-6">
         <h2 className="text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-amber-400">조건 입력</h2>
-        <input className={INPUT_CLS} />
-        <button className="w-full mt-5 bg-amber-400 hover:bg-amber-500 disabled:bg-stone-200 disabled:text-stone-400 text-white font-black rounded-xl py-3.5 text-sm transition-colors">
+        <input className={INPUT_CLS} value={input1} onChange={e => setInput1(e.target.value)} />
+        {error && <p className="mt-2 text-xs text-red-500">{error}</p>}
+        <button onClick={calculate}
+          className="w-full mt-5 bg-amber-400 hover:bg-amber-500 disabled:bg-stone-200 disabled:text-stone-400 text-white font-black rounded-xl py-3.5 text-sm transition-colors">
           계산하기
         </button>
       </section>
@@ -205,6 +226,70 @@ export default function Page() {
 - `COLOR_INPUT_CLS` — 색상도구 입력 필드 클래스 (`lib/colorTools.js`, emerald focus)
 - `HeartIcon` — named export from `components/share/FavoriteButton.js`
 
+## URL 파라미터 & 결과 공유
+
+모든 계산기는 계산 결과를 URL 쿼리 파라미터로 인코딩하여 링크 공유를 지원한다.
+`CalcLayout`은 결과 섹션 하단에 공유 버튼 3종을 자동으로 렌더링한다.
+
+### lib/urlParams.js
+
+```js
+import { pushParams, readParams } from '@/lib/urlParams'
+
+pushParams({ key: value })   // history.replaceState로 URL 갱신 (페이지 이동 없음)
+readParams()                 // 현재 URL 쿼리 파라미터를 { key: string } 객체로 반환
+```
+
+- 빈 값(`''`, `null`, `undefined`)은 자동으로 제외
+- 서버 사이드에서는 빈 객체 반환 (`typeof window === 'undefined'` 가드)
+- 포맷된 금액 필드(`"1,000,000"`)는 URL에 raw 숫자로 저장, 복원 시 재포맷
+
+### URL 파라미터 패턴별 가이드
+
+**버튼 계산기** (계산 버튼 클릭 후 결과 표시):
+```js
+// 복원: useEffect([], []) — 마운트 1회
+useEffect(() => {
+  const p = readParams()
+  if (p.input1) { setInput1(p.input1); setResult(calc(p.input1)) }
+}, [])
+// 저장: calculate() 내부에서 pushParams 호출
+const calculate = () => { pushParams({ input1 }); setResult(calc(input1)) }
+```
+
+**실시간 계산기** (입력 즉시 결과):
+```js
+useEffect(() => { const p = readParams(); if (p.text) setText(p.text) }, [])
+useEffect(() => { pushParams(text ? { text } : {}) }, [text])
+```
+
+**선택형 계산기** (MbtiCalc 등):
+```js
+useEffect(() => { if (typeA && typeB) pushParams({ typeA: typeA.code, typeB: typeB.code }) }, [typeA, typeB])
+```
+
+**Boolean 파라미터**: 문자열 `'1'`/`'0'`으로 인코딩
+`pushParams({ flag: val ? '1' : '0' })` → 복원: `p.flag === '1'`
+
+### ShareResultButton.js
+
+CalcLayout이 자동으로 포함. 직접 사용 시:
+
+```jsx
+import ShareButtons from '@/components/share/ShareResultButton'
+const ref = useRef(null)
+
+<div ref={ref}>{/* 캡처할 영역 */}</div>
+<ShareButtons targetRef={ref} />
+```
+
+- 📋 **클립보드 복사** — 현재 URL을 클립보드에 복사
+- 💾 **이미지 저장** — `html-to-image` toPng (pixelRatio: 2) + `serenkit.com` 워터마크
+- 🔗 **SNS 공유** — 모바일: `navigator.share` API / 데스크탑: URL 클립보드 복사
+
+`data-share-ignore` 속성: 이미지 캡처 시 해당 요소를 일시 숨김 처리
+(공유 버튼 영역, 힌트 텍스트 등에 사용)
+
 ## SEO 가이드
 
 ### 메타데이터 작성 규칙
@@ -284,7 +369,7 @@ WebApplication 필수 필드:
 - 모든 기능은 2026년 규정 기준으로 구현
 - 구글 애드센스 승인을 목표로 품질 유지
 
-## 현재 계산기 목록 (22개)
+## 현재 계산기 목록 (23개)
 
 날짜(7): dday, date-diff, date-add, business-days, age, anniversary, lunar
 건강(3): weight, calorie, period

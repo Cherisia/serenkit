@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 function toStr(d) { return d.toISOString().split('T')[0] }
 
@@ -21,7 +22,22 @@ export default function AgeCalc() {
   const [base,   setBase]   = useState(toStr(new Date()))
   const [result, setResult] = useState(null)
 
-  const calculate = () => { if (birth) setResult(calcAge(birth, base)) }
+  useEffect(() => {
+    const p = readParams()
+    if (p.birth) {
+      const b = p.base || toStr(new Date())
+      setBirth(p.birth)
+      setBase(b)
+      setResult(calcAge(p.birth, b))
+    }
+  }, [])
+
+  const calculate = () => {
+    if (birth) {
+      pushParams({ birth, base })
+      setResult(calcAge(birth, base))
+    }
+  }
 
   return (
     <div className="space-y-4">

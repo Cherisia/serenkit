@@ -1,6 +1,7 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { INPUT_CLS } from '@/lib/constants'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 const VAT_RATE = 0.1
 
@@ -24,6 +25,18 @@ export default function VatCalc() {
   const [result, setResult] = useState(null)
   const [error, setError] = useState('')
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.amount) {
+      const m = Number(p.mode) || 0, raw = Number(p.amount)
+      setMode(m); setAmount(raw.toLocaleString('ko-KR'))
+      if (raw > 0) {
+        if (m === 0) { setResult({ supply: raw, vat: raw * VAT_RATE, total: raw + raw * VAT_RATE }) }
+        else { const supply = raw / (1 + VAT_RATE); setResult({ supply, vat: raw - supply, total: raw }) }
+      }
+    }
+  }, [])
+
   const handleAmountChange = (e) => {
     const raw = e.target.value.replace(/[^0-9]/g, '')
     setAmount(raw ? Number(raw).toLocaleString('ko-KR') : '')
@@ -46,7 +59,7 @@ export default function VatCalc() {
     setError('')
     const raw = parseFloat(amount.replace(/,/g, ''))
     if (!raw || raw <= 0) return setError('금액을 입력해주세요.')
-
+    pushParams({ mode, amount: raw })
     if (mode === 0) {
       // 공급가액 → 부가세, 합계
       const vat = raw * VAT_RATE

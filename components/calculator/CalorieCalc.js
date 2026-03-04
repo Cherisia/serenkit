@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 // Mifflin-St Jeor 공식 (가장 정확도 높은 표준)
 function calcBMR(gender, weight, height, age) {
@@ -42,8 +43,22 @@ export default function CalorieCalc() {
   const canCalc = age && height && weight &&
     Number(age) > 0 && Number(height) > 0 && Number(weight) > 0
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.age && p.height && p.weight) {
+      const g = p.gender || 'male', act = Number(p.activity) || 1.55
+      setGender(g); setAge(p.age); setHeight(p.height); setWeight(p.weight); setActivity(act)
+      const bmr  = Math.round(calcBMR(g, Number(p.weight), Number(p.height), Number(p.age)))
+      const tdee = Math.round(bmr * act)
+      const goals = GOALS.map(go => ({ ...go, kcal: Math.max(1200, tdee + go.delta) }))
+      const macros = (kcal) => ({ carb: Math.round(kcal * 0.4 / 4), protein: Math.round(kcal * 0.3 / 4), fat: Math.round(kcal * 0.3 / 9) })
+      setResult({ bmr, tdee, goals, macros })
+    }
+  }, [])
+
   const calculate = () => {
     if (!canCalc) return
+    pushParams({ gender, age, height, weight, activity })
     const bmr  = Math.round(calcBMR(gender, Number(weight), Number(height), Number(age)))
     const tdee = Math.round(bmr * activity)
 

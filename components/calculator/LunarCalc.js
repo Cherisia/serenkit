@@ -1,7 +1,8 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import KoreanLunarCalendar from 'korean-lunar-calendar'
 import { INPUT_CLS } from '@/lib/constants'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 const MONTHS = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
 
@@ -46,6 +47,21 @@ export default function LunarCalc() {
   const [lunarResult, setLunarResult] = useState(null)
   const [lunarError, setLunarError] = useState('')
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.tab === 'solar' && p.solarYear && p.solarDay) {
+      setTab('solar')
+      setSolarYear(p.solarYear); setSolarMonth(p.solarMonth || '1'); setSolarDay(p.solarDay)
+      try { setSolarResult(toSolarResult(Number(p.solarYear), Number(p.solarMonth || '1'), Number(p.solarDay))) } catch {}
+    } else if (p.tab === 'lunar' && p.lunarYear && p.lunarDay) {
+      setTab('lunar')
+      setLunarYear(p.lunarYear); setLunarMonth(p.lunarMonth || '1'); setLunarDay(p.lunarDay)
+      const intercalation = p.isIntercalation === '1'
+      setIsIntercalation(intercalation)
+      try { setLunarResult(toLunarResult(Number(p.lunarYear), Number(p.lunarMonth || '1'), Number(p.lunarDay), intercalation)) } catch {}
+    }
+  }, [])
+
   const calcSolarToLunar = () => {
     setSolarError('')
     setSolarResult(null)
@@ -56,6 +72,7 @@ export default function LunarCalc() {
     if (y < 1900 || y > 2050) { setSolarError('1900년 ~ 2050년 범위의 연도를 입력해주세요.'); return }
     if (d < 1 || d > 31) { setSolarError('일(日)은 1~31 범위로 입력해주세요.'); return }
     try {
+      pushParams({ tab: 'solar', solarYear, solarMonth, solarDay })
       const result = toSolarResult(y, m, d)
       setSolarResult(result)
     } catch {
@@ -73,6 +90,7 @@ export default function LunarCalc() {
     if (y < 1900 || y > 2050) { setLunarError('1900년 ~ 2050년 범위의 연도를 입력해주세요.'); return }
     if (d < 1 || d > 30) { setLunarError('일(日)은 1~30 범위로 입력해주세요.'); return }
     try {
+      pushParams({ tab: 'lunar', lunarYear, lunarMonth, lunarDay, isIntercalation: isIntercalation ? '1' : '0' })
       const result = toLunarResult(y, m, d, isIntercalation)
       setLunarResult(result)
     } catch {

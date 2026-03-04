@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { pushParams, readParams } from '@/lib/urlParams'
 
 function toStr(d) { return d.toISOString().split('T')[0] }
 
@@ -26,8 +27,20 @@ export default function DateDiffCalc() {
   const [includeEnd, setIncludeEnd] = useState(false)
   const [result, setResult]         = useState(null)
 
+  useEffect(() => {
+    const p = readParams()
+    if (p.start && p.end) {
+      const inc = p.includeEnd === '1'
+      setStart(p.start)
+      setEnd(p.end)
+      setIncludeEnd(inc)
+      setResult(calcDiff(p.start, p.end, inc))
+    }
+  }, [])
+
   const calculate = () => {
     if (!start || !end) return
+    pushParams({ start, end, includeEnd: includeEnd ? '1' : '0' })
     setResult(calcDiff(start, end, includeEnd))
   }
 
