@@ -56,11 +56,11 @@ export default function Home() {
 
           {/* 계산기 */}
           <Link href="/cal"
-            className="group block bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-amber-300">
-            <div className="bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 p-8 relative overflow-hidden">
+            className="group flex flex-col bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-amber-300">
+            <div className="bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 p-8 relative overflow-hidden h-52">
               <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
               <div className="relative">
-                <div className="flex items-center gap-3 mb-5">
+                <div className="flex items-center gap-3 mb-7">
                   <span className="text-4xl">🧮</span>
                   <div>
                     <p className="text-xs font-black text-white/70 uppercase tracking-widest">Calculators</p>
@@ -78,7 +78,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
               <p className="text-sm text-stone-500 leading-relaxed mb-5">
                 날짜·건강·금융·운세·유틸리티까지 <strong className="text-stone-700">{totalCalcs}개 계산기</strong>가 모여 있어요.
                 공식 기준으로 정확하게, 필요할 때 바로 꺼내 쓰세요.
@@ -91,7 +91,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-auto">
                 <span className="text-xs text-stone-400">{totalCalcs}개 계산기</span>
                 <span className="flex items-center gap-1.5 bg-amber-400 group-hover:bg-amber-500 text-white text-sm font-black px-5 py-2.5 rounded-xl transition-colors">
                   계산기 보러가기
@@ -103,11 +103,11 @@ export default function Home() {
 
           {/* 색상 도구 */}
           <Link href="/color"
-            className="group block bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-emerald-300">
-            <div className="bg-gradient-to-br from-emerald-400 via-green-400 to-teal-500 p-8 relative overflow-hidden">
+            className="group flex flex-col bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-emerald-300">
+            <div className="bg-gradient-to-br from-emerald-400 via-green-400 to-teal-500 p-8 relative overflow-hidden h-52">
               <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
               <div className="relative">
-                <div className="flex items-center gap-3 mb-5">
+                <div className="flex items-center gap-3 mb-7">
                   <span className="text-4xl">🎨</span>
                   <div>
                     <p className="text-xs font-black text-white/70 uppercase tracking-widest">Color Tools</p>
@@ -124,7 +124,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
               <p className="text-sm text-stone-500 leading-relaxed mb-5">
                 색상 변환·추출·팔레트 생성·명도 대비 검사까지 <strong className="text-stone-700">{COLOR_TOOLS.length}개 도구</strong>가 준비되어 있어요.
                 브라우저에서 바로, 서버 전송 없이 안전하게 쓸 수 있어요.
@@ -137,7 +137,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-auto">
                 <span className="text-xs text-stone-400">{COLOR_TOOLS.length}개 도구</span>
                 <span className="flex items-center gap-1.5 bg-emerald-500 group-hover:bg-emerald-600 text-white text-sm font-black px-5 py-2.5 rounded-xl transition-colors">
                   색상 도구 보러가기
