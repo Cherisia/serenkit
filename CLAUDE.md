@@ -289,7 +289,7 @@ WebApplication 필수 필드:
 날짜(7): dday, date-diff, date-add, business-days, age, anniversary, lunar
 건강(3): weight, calorie, period
 금융(7): salary, severance, unemployment, hourly, loan, vat, income-tax
-라이프(2): zodiac, mbti
+라이프(3): zodiac, mbti, lotto
 유틸리티(3): char-count, pyeong, unit
 
 ## 현재 색상 도구 목록 (8개)
