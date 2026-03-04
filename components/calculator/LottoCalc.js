@@ -236,7 +236,7 @@ export default function LottoCalc() {
                     )}
                   </div>
 
-                  <div className="flex gap-2.5 flex-wrap">
+                  <div className="flex gap-1.5 md:gap-2.5">
                     {game.map((num, bi) => {
                       const isSettledBall = settled[bi]
                       const isJust = justSettled.has(bi)
@@ -246,8 +246,8 @@ export default function LottoCalc() {
                       return (
                         <div key={bi}
                           className={[
-                            'w-12 h-12 rounded-full flex items-center justify-center',
-                            'text-base font-black shadow-md select-none',
+                            'w-9 h-9 md:w-12 md:h-12 rounded-full flex items-center justify-center',
+                            'text-sm md:text-base font-black shadow-md select-none',
                             showFinal ? ballCls(finalNum) : 'bg-stone-200 text-stone-500',
                             isJust ? 'ball-pop' : (isRolling && !isSettledBall ? 'ball-rolling' : ''),
                           ].join(' ')}>
