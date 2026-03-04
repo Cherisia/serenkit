@@ -140,7 +140,7 @@ export default function FeatureTool() {
       <section className="bg-white border border-slate-200 rounded-2xl p-6">
         <h2 className="text-sm font-black text-slate-800 mb-4 pb-3 border-b border-slate-100">입력</h2>
         <input className={COLOR_INPUT_CLS} />
-        <button className="w-full mt-4 bg-emerald-500 hover:bg-emerald-600 text-white font-black rounded-xl py-3.5 text-sm transition-colors">
+        <button className="w-full mt-4 bg-indigo-500 hover:bg-indigo-600 text-white font-black rounded-xl py-3.5 text-sm transition-colors">
           변환하기
         </button>
       </section>
@@ -202,9 +202,9 @@ export default function Page() {
 | 카드 래퍼 | `bg-white border border-stone-200 rounded-2xl p-6` | `bg-white border border-slate-200 rounded-2xl p-6` |
 | 섹션 제목 | `text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-amber-400` | `text-sm font-black text-slate-800 mb-4 pb-3 border-b border-slate-100` |
 | 입력 필드 | `INPUT_CLS` (`@/lib/constants`) | `COLOR_INPUT_CLS` (`@/lib/colorTools`) |
-| 기본 버튼 | `bg-amber-400 hover:bg-amber-500 text-white font-black rounded-xl py-3.5` | `bg-emerald-500 hover:bg-emerald-600 text-white font-black rounded-xl py-3.5` |
+| 기본 버튼 | `bg-amber-400 hover:bg-amber-500 text-white font-black rounded-xl py-3.5` | `bg-indigo-500 hover:bg-indigo-600 text-white font-black rounded-xl py-3.5` |
 | 메인 결과 박스 | `bg-gradient-to-br from-[색]-400 to-[색]-500 rounded-2xl p-5 text-white text-center` | 동일 |
-| 안내 박스 | `bg-amber-50 border border-amber-100 rounded-2xl p-5 text-xs text-stone-500` | `bg-emerald-50 border border-emerald-100 rounded-2xl p-5 text-xs text-slate-500` |
+| 안내 박스 | `bg-amber-50 border border-amber-100 rounded-2xl p-5 text-xs text-stone-500` | `bg-indigo-50 border border-indigo-100 rounded-2xl p-5 text-xs text-slate-500` |
 | 오류 텍스트 | `text-xs text-red-500` | 동일 |
 
 ## 카테고리 색상
@@ -216,14 +216,14 @@ export default function Page() {
 | 금융·급여 | green/emerald |
 | 운세·라이프 | violet/purple |
 | 유틸리티 | sky/blue |
-| 색상 도구 | emerald/teal/green |
+| 색상 도구 | indigo/violet/purple |
 
 ## 공유 상수
 
 - `CALC_HERO_PATTERN` — 계산기 배너용 별/플러스 SVG 패턴 (`lib/constants.js`)
 - `COLOR_HERO_PATTERN` — 색상도구 배너용 점 SVG 패턴 (`lib/colorTools.js`)
 - `INPUT_CLS` — 계산기 입력 필드 클래스 (`lib/constants.js`, amber focus)
-- `COLOR_INPUT_CLS` — 색상도구 입력 필드 클래스 (`lib/colorTools.js`, emerald focus)
+- `COLOR_INPUT_CLS` — 색상도구 입력 필드 클래스 (`lib/colorTools.js`, indigo focus)
 - `HeartIcon` — named export from `components/share/FavoriteButton.js`
 
 ## URL 파라미터 & 결과 공유

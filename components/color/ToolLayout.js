@@ -11,7 +11,7 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
     <div className="bg-slate-50 pb-20 min-h-screen">
       {/* Hero Banner */}
       <section
-        className={`relative bg-gradient-to-br ${tool?.color ?? 'from-emerald-400 to-teal-500'} pt-20 pb-12`}
+        className={`relative bg-gradient-to-br ${tool?.color ?? 'from-indigo-400 to-purple-500'} pt-20 pb-12`}
         aria-label="페이지 소개"
       >
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: COLOR_HERO_PATTERN }} aria-hidden="true" />
@@ -36,7 +36,7 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
       <aside className="container xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-10" aria-label="관련 도구">
         <section>
           <h2 className="text-base font-black text-slate-700 mb-4 flex items-center gap-2">
-            <span className="w-1 h-5 bg-emerald-400 rounded-full inline-block" aria-hidden="true"></span>
+            <span className="w-1 h-5 bg-indigo-400 rounded-full inline-block" aria-hidden="true"></span>
             다른 색상 도구
           </h2>
           <ul className="grid grid-cols-2 md:grid-cols-4 gap-2">
@@ -44,10 +44,10 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
               <li key={t.key}>
                 <Link
                   href={t.url}
-                  className="flex flex-col items-center gap-1.5 p-3 bg-white border border-slate-200 rounded-xl hover:border-emerald-300 hover:shadow-sm transition-all text-center group"
+                  className="flex flex-col items-center gap-1.5 p-3 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-sm transition-all text-center group"
                 >
                   <span className="text-2xl" aria-hidden="true">{t.icon}</span>
-                  <span className="text-xs font-bold text-slate-600 group-hover:text-emerald-600 leading-tight">{t.shortName}</span>
+                  <span className="text-xs font-bold text-slate-600 group-hover:text-indigo-600 leading-tight">{t.shortName}</span>
                 </Link>
               </li>
             ))}

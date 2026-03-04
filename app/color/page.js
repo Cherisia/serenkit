@@ -21,8 +21,8 @@ export const metadata = {
 const USE_CASES = [
   {
     icon: '🎨', title: '디자이너',
-    color: 'from-emerald-400 to-teal-500',
-    bg: 'bg-emerald-50', border: 'border-emerald-100', titleColor: 'text-emerald-700',
+    color: 'from-indigo-400 to-purple-500',
+    bg: 'bg-indigo-50', border: 'border-indigo-100', titleColor: 'text-indigo-700',
     items: [
       '이미지에서 브랜드 컬러 자동 추출',
       'HEX·RGB·HSL 포맷 즉시 변환',
@@ -45,8 +45,8 @@ const USE_CASES = [
   },
   {
     icon: '📊', title: '마케터 · 기획자',
-    color: 'from-green-400 to-emerald-500',
-    bg: 'bg-green-50', border: 'border-green-100', titleColor: 'text-green-700',
+    color: 'from-violet-400 to-indigo-500',
+    bg: 'bg-violet-50', border: 'border-violet-100', titleColor: 'text-violet-700',
     items: [
       '경쟁사 이미지에서 브랜드 컬러 역분석',
       '브랜드 컬러 가이드라인 정리',
@@ -69,8 +69,8 @@ const USE_CASES = [
   },
   {
     icon: '🏠', title: '인테리어 · 홈데코',
-    color: 'from-emerald-500 to-green-600',
-    bg: 'bg-emerald-50', border: 'border-emerald-200', titleColor: 'text-emerald-800',
+    color: 'from-indigo-500 to-violet-600',
+    bg: 'bg-indigo-50', border: 'border-indigo-200', titleColor: 'text-indigo-800',
     items: [
       '참고 이미지에서 인테리어 컬러 추출',
       '벽지·가구 색상 조화 미리 확인',
@@ -81,8 +81,8 @@ const USE_CASES = [
   },
   {
     icon: '🎓', title: '학생 · 교육',
-    color: 'from-teal-400 to-emerald-400',
-    bg: 'bg-teal-50', border: 'border-teal-100', titleColor: 'text-teal-700',
+    color: 'from-purple-400 to-indigo-400',
+    bg: 'bg-purple-50', border: 'border-purple-100', titleColor: 'text-purple-700',
     items: [
       '색채학 과제에서 색상 이론 실습',
       'HEX·RGB·HSL 개념 직접 변환하며 학습',
@@ -95,17 +95,17 @@ const USE_CASES = [
 
 const FEATURES = [
   { icon: '⚡', title: '즉시 처리', desc: '서버 전송 없이 브라우저에서 실시간 변환. 어떤 포맷이든 입력 즉시 결과가 나와요.',
-    color: 'from-emerald-400 to-teal-400', bg: 'bg-emerald-50', border: 'border-emerald-100', titleColor: 'text-emerald-700' },
+    color: 'from-indigo-400 to-purple-400', bg: 'bg-indigo-50', border: 'border-indigo-100', titleColor: 'text-indigo-700' },
   { icon: '🔒', title: '프라이버시 보호', desc: '이미지를 포함한 모든 데이터가 서버로 전송되지 않고 브라우저 안에서만 처리돼요.',
     color: 'from-teal-400 to-cyan-400', bg: 'bg-teal-50', border: 'border-teal-100', titleColor: 'text-teal-700' },
   { icon: '📋', title: '한 번에 복사', desc: 'HEX, RGB, HSL, Tailwind 등 원하는 포맷을 클릭 한 번으로 클립보드로 복사해요.',
-    color: 'from-green-400 to-emerald-400', bg: 'bg-green-50', border: 'border-green-100', titleColor: 'text-green-700' },
+    color: 'from-violet-400 to-indigo-400', bg: 'bg-violet-50', border: 'border-violet-100', titleColor: 'text-violet-700' },
   { icon: '♿', title: '접근성 검사', desc: 'WCAG 2.1 AA/AAA 기준으로 명도 대비를 자동 측정하고 등급을 표시해요.',
     color: 'from-cyan-400 to-teal-400', bg: 'bg-cyan-50', border: 'border-cyan-100', titleColor: 'text-cyan-700' },
   { icon: '🎨', title: '팔레트 자동 생성', desc: '보색, 유사색, 삼각배색 등 색채학적으로 조화로운 색상 조합을 자동으로 만들어줘요.',
-    color: 'from-emerald-400 to-green-400', bg: 'bg-emerald-50', border: 'border-emerald-100', titleColor: 'text-emerald-700' },
+    color: 'from-indigo-400 to-violet-400', bg: 'bg-indigo-50', border: 'border-indigo-100', titleColor: 'text-indigo-700' },
   { icon: '📱', title: '모바일 최적화', desc: '스마트폰, 태블릿, 데스크탑 모든 환경에서 편리하게 사용 가능해요.',
-    color: 'from-teal-400 to-emerald-400', bg: 'bg-teal-50', border: 'border-teal-100', titleColor: 'text-teal-700' },
+    color: 'from-purple-400 to-indigo-400', bg: 'bg-purple-50', border: 'border-purple-100', titleColor: 'text-purple-700' },
 ]
 
 export default function ColorHomePage() {
@@ -134,7 +134,7 @@ export default function ColorHomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* 히어로 */}
-      <section className="w-full bg-gradient-to-br from-emerald-400 via-green-400 to-teal-500 relative overflow-hidden pt-[4.5rem]">
+      <section className="w-full bg-gradient-to-br from-indigo-400 via-violet-400 to-purple-500 relative overflow-hidden pt-[4.5rem]">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: COLOR_HERO_PATTERN }} />
         <div className="relative container mx-auto px-4 py-24 text-center text-white">
           <p className="text-xs font-black opacity-75 mb-4 tracking-[0.3em] uppercase">색상 도구 모음</p>
@@ -165,11 +165,11 @@ export default function ColorHomePage() {
         {/* 도구 목록 */}
         <section>
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-base shrink-0">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-base shrink-0">
               🎨
             </div>
             <div>
-              <h2 className="text-sm font-black text-emerald-600">색상 유틸리티 도구</h2>
+              <h2 className="text-sm font-black text-indigo-600">색상 유틸리티 도구</h2>
               <p className="text-[11px] text-stone-400">Color Tools</p>
             </div>
             <div className="flex-1 h-px bg-stone-200 ml-1" />
@@ -178,19 +178,19 @@ export default function ColorHomePage() {
           <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {COLOR_TOOLS.map(tool => (
               <li key={tool.key} className="relative">
-                <FavoriteCardButton url={tool.url} color="emerald" />
+                <FavoriteCardButton url={tool.url} color="indigo" />
                 <Link
                   href={tool.url}
-                  className="group flex flex-col h-full bg-white border border-stone-200 rounded-2xl p-5 hover:border-emerald-300 hover:shadow-md transition-all duration-200 hover:-translate-y-1"
+                  className="group flex flex-col h-full bg-white border border-stone-200 rounded-2xl p-5 hover:border-indigo-300 hover:shadow-md transition-all duration-200 hover:-translate-y-1"
                 >
                   <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center text-xl mb-4`}>
                     {tool.icon}
                   </div>
-                  <h3 className="text-sm font-black text-stone-800 mb-1.5 group-hover:text-emerald-600 transition-colors">
+                  <h3 className="text-sm font-black text-stone-800 mb-1.5 group-hover:text-indigo-600 transition-colors">
                     {tool.name}
                   </h3>
                   <p className="text-xs text-stone-400 leading-relaxed flex-1">{tool.desc}</p>
-                  <div className="mt-4 text-xs font-bold text-emerald-500 flex items-center gap-1">
+                  <div className="mt-4 text-xs font-bold text-indigo-500 flex items-center gap-1">
                     바로 사용하기 <span>→</span>
                   </div>
                 </Link>
@@ -202,11 +202,11 @@ export default function ColorHomePage() {
         {/* 활용 예시 */}
         <section>
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-base shrink-0">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-base shrink-0">
               📌
             </div>
             <div>
-              <h2 className="text-sm font-black text-emerald-600">활용 예시</h2>
+              <h2 className="text-sm font-black text-indigo-600">활용 예시</h2>
               <p className="text-[11px] text-stone-400">Use Cases</p>
             </div>
             <div className="flex-1 h-px bg-stone-200 ml-1" />
@@ -236,11 +236,11 @@ export default function ColorHomePage() {
         {/* 도구 특징 */}
         <section>
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-base shrink-0">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-base shrink-0">
               ✨
             </div>
             <div>
-              <h2 className="text-sm font-black text-emerald-600">도구 특징</h2>
+              <h2 className="text-sm font-black text-indigo-600">도구 특징</h2>
               <p className="text-[11px] text-stone-400">Features</p>
             </div>
             <div className="flex-1 h-px bg-stone-200 ml-1" />

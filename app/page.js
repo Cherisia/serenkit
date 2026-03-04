@@ -103,8 +103,8 @@ export default function Home() {
 
           {/* 색상 도구 */}
           <Link href="/color"
-            className="group flex flex-col bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-emerald-300">
-            <div className="bg-gradient-to-br from-emerald-400 via-green-400 to-teal-500 p-8 relative overflow-hidden h-52">
+            className="group flex flex-col bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-indigo-300">
+            <div className="bg-gradient-to-br from-indigo-400 via-violet-400 to-purple-500 p-8 relative overflow-hidden h-52">
               <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
               <div className="relative">
                 <div className="flex items-center gap-3 mb-7">
@@ -139,7 +139,7 @@ export default function Home() {
               </ul>
               <div className="flex items-center justify-between mt-auto">
                 <span className="text-xs text-stone-400">{COLOR_TOOLS.length}개 도구</span>
-                <span className="flex items-center gap-1.5 bg-emerald-500 group-hover:bg-emerald-600 text-white text-sm font-black px-5 py-2.5 rounded-xl transition-colors">
+                <span className="flex items-center gap-1.5 bg-indigo-500 group-hover:bg-indigo-600 text-white text-sm font-black px-5 py-2.5 rounded-xl transition-colors">
                   색상 도구 보러가기
                   <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
                 </span>
