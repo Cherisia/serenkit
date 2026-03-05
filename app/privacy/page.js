@@ -1,7 +1,7 @@
 export const metadata = {
   title: '개인정보처리방침',
   description: 'serenkit 서비스의 개인정보처리방침을 안내합니다.',
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
   alternates: { canonical: 'https://serenkit.com/privacy/' },
 }
 
