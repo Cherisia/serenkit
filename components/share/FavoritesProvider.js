@@ -3,8 +3,9 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { CATEGORIES } from '@/lib/categories'
 import { COLOR_TOOLS } from '@/lib/colorTools'
+import { DEV_TOOLS } from '@/lib/devTools'
 
-const ALL_ITEMS = [...CATEGORIES.flatMap(cat => cat.calcs), ...COLOR_TOOLS]
+const ALL_ITEMS = [...CATEGORIES.flatMap(cat => cat.calcs), ...COLOR_TOOLS, ...DEV_TOOLS]
 
 const FavoritesContext = createContext({
   favUrls: [],

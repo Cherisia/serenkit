@@ -2,7 +2,7 @@
 
 ## 프로젝트 개요
 
-한국어 생활 계산기 + 색상 도구 모음 사이트. Next.js App Router 기반 정적 사이트(Cloudflare Workers 배포).
+한국어 생활 계산기 + 색상 도구 + 개발자 도구 모음 사이트. Next.js App Router 기반 정적 사이트(Cloudflare Workers 배포).
 URL: `https://serenkit.com`
 
 ## 기술 스택
@@ -22,6 +22,8 @@ app/
   cal/[calculator]/page.js  # 계산기 페이지 (메타데이터 + CalcLayout 래핑)
   color/page.js             # 색상도구 목록 페이지
   color/[tool]/page.js      # 색상도구 페이지 (메타데이터 + ToolLayout 래핑)
+  dev/page.js               # 개발자도구 목록 페이지
+  dev/[tool]/page.js        # 개발자도구 페이지 (메타데이터 + DevLayout 래핑)
   about/, privacy/, terms/
 
 components/calculator/
@@ -32,6 +34,10 @@ components/calculator/
 components/color/
   ToolLayout.js             # 색상도구 공통 레이아웃 (배너 + 관련도구 + FAQ)
   [Feature].js              # 색상도구 로직+UI ('use client')
+
+components/dev/
+  DevLayout.js              # 개발자도구 공통 레이아웃 (배너 + 관련도구 + FAQ)
+  [Feature].js              # 개발자도구 로직+UI ('use client')
 
 components/share/
   FavoritesProvider.js      # 즐겨찾기 Context+Provider (localStorage: 'serenkit_favorites', slug 배열)
@@ -381,6 +387,24 @@ WebApplication 필수 필드:
 
 color-extractor, color-converter, color-picker, tailwind-palette,
 gradient-generator, contrast-checker, palette-generator, color-names
+
+## 현재 개발자 도구 목록 (4개)
+
+timestamp, base64, url-encoder, uuid
+
+## 새 개발자 도구 추가 체크리스트
+
+1. **`components/dev/[Feature].js`** — 도구 컴포넌트 작성 (`'use client'`, `DEV_INPUT_CLS` 사용)
+2. **`app/dev/[slug]/page.js`** — 페이지 파일 작성 (메타데이터, JSON-LD, FAQ, DevLayout 래핑)
+3. **`lib/devTools.js`** — `DEV_TOOLS` 배열에 항목 추가 (DevLayout·개발자도구홈 자동 반영)
+4. **`public/sitemap.xml`** — 신규 URL 추가
+5. **`CLAUDE.md`** — 개발자 도구 목록 갱신
+
+## 개발자 도구 색상 체계
+
+- 카테고리 전체: `violet/slate` 계열
+- `DEV_INPUT_CLS`: slate 배경 + violet focus + `font-mono`
+- DevLayout 버튼: 도구별 색상 (timestamp: sky, base64: emerald, url-encoder: violet, uuid: indigo)
 
 # currentDate
 Today's date is 2026-03-01.

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { CATEGORIES } from '@/lib/categories'
 import { COLOR_TOOLS } from '@/lib/colorTools'
+import { DEV_TOOLS } from '@/lib/devTools'
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
 
       {/* 메인 푸터 */}
       <div className="container mx-auto px-6 xl:w-10/12 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-10">
 
           {/* 브랜드 */}
           <div>
@@ -59,7 +60,23 @@ export default function Footer() {
             <ul className="space-y-2">
               {COLOR_TOOLS.map(t => (
                 <li key={t.url}>
-                  <Link href={t.url} className="text-xs text-stone-500 hover:text-emerald-400 transition-colors">
+                  <Link href={t.url} className="text-xs text-stone-500 hover:text-indigo-400 transition-colors">
+                    {t.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* 개발자 도구 링크 */}
+          <nav aria-label="개발자 도구">
+            <h2 className="text-xs font-black text-stone-300 mb-3 whitespace-nowrap">
+              🛠️ 개발자 도구
+            </h2>
+            <ul className="space-y-2">
+              {DEV_TOOLS.map(t => (
+                <li key={t.url}>
+                  <Link href={t.url} className="text-xs text-stone-500 hover:text-slate-300 transition-colors">
                     {t.name}
                   </Link>
                 </li>

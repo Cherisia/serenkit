@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { CATEGORIES } from '@/lib/categories'
 import { COLOR_TOOLS } from '@/lib/colorTools'
+import { DEV_TOOLS, DEV_HERO_PATTERN } from '@/lib/devTools'
 import { CALC_HERO_PATTERN } from '@/lib/constants'
 
 const BASE_URL = 'https://serenkit.com'
@@ -8,16 +9,16 @@ const BASE_URL = 'https://serenkit.com'
 const totalCalcs = CATEGORIES.reduce((sum, cat) => sum + cat.calcs.length, 0)
 
 export const metadata = {
-  title: 'serenkit - 생활 계산기 · 색상 도구 모음',
-  description: `날짜·건강·금융·단위 변환 계산기 ${totalCalcs}개, 색상 변환·추출·팔레트 도구 ${COLOR_TOOLS.length}개가 모여 있어요. 필요할 때 바로 꺼내 쓰세요.`,
-  keywords: ['생활 계산기', '색상 변환', '날짜 계산기', '월급 계산기', 'HEX RGB 변환', '색상 도구'],
+  title: 'serenkit - 생활 계산기 · 색상 도구 · 개발자 도구 모음',
+  description: `자주 쓰는 도구들을 한 곳에 모았어요. 계산기 ${totalCalcs}개, 색상 도구 ${COLOR_TOOLS.length}개, 개발자 도구 ${DEV_TOOLS.length}개. 북마크 하나면 충분합니다.`,
+  keywords: ['생활 계산기', '색상 변환', '날짜 계산기', '월급 계산기', 'HEX RGB 변환', '색상 도구', '개발자 도구', 'UUID 생성기', 'Base64 인코딩'],
   alternates: { canonical: `${BASE_URL}/` },
   openGraph: {
-    title: 'serenkit - 생활 계산기 · 색상 도구 모음',
-    description: `날짜·건강·금융 계산기 ${totalCalcs}개, 색상 변환·팔레트 도구 ${COLOR_TOOLS.length}개가 모여 있어요.`,
+    title: 'serenkit - 생활 계산기 · 색상 도구 · 개발자 도구 모음',
+    description: `날짜·건강·금융 계산기 ${totalCalcs}개, 색상 변환·팔레트 도구 ${COLOR_TOOLS.length}개, 개발자 도구 ${DEV_TOOLS.length}개가 모여 있어요.`,
     url: `${BASE_URL}/`,
     type: 'website',
-    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit - 생활 계산기 · 색상 도구 모음' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit - 생활 계산기 · 색상 도구 · 개발자 도구 모음' }],
   },
 }
 
@@ -26,7 +27,7 @@ const jsonLd = {
   '@type': 'WebSite',
   name: 'serenkit',
   url: BASE_URL,
-  description: '생활 계산기와 색상 유틸리티 도구 모음',
+  description: '생활 계산기, 색상 유틸리티, 개발자 도구 모음',
   inLanguage: 'ko-KR',
 }
 
@@ -39,20 +40,21 @@ export default function Home() {
       <section className="w-full bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 relative overflow-hidden pt-[4.5rem]">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
         <div className="relative container mx-auto px-4 py-20 text-center text-white">
-          <p className="text-xs font-black opacity-75 mb-4 tracking-[0.3em] uppercase">Everyday Tools</p>
+          <p className="text-xs font-black opacity-75 mb-4 tracking-[0.3em] uppercase">Always by your side</p>
           <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4 leading-tight">
-            숫자와 색상, <span className="underline decoration-white/50 decoration-2 underline-offset-4">모든 작업</span>을 한 곳에서
+            자주 쓰는 도구들,<br />
+            <span className="underline decoration-white/50 decoration-2 underline-offset-4">한 곳에 모았어요.</span>
           </h1>
           <p className="text-sm md:text-base opacity-85 max-w-sm mx-auto leading-relaxed">
-            생활 계산기 {totalCalcs}개 · 색상 도구 {COLOR_TOOLS.length}개<br />
-            필요할 때 언제든, 바로 꺼내 쓰세요
+            계산기, 색상, 개발 도구까지<br />
+            필요할 때 바로 꺼내 쓰세요.
           </p>
         </div>
       </section>
 
-      {/* 두 카테고리 카드 */}
+      {/* 세 카테고리 카드 */}
       <main className="container xl:w-10/12 md:w-11/12 w-[92%] mx-auto mt-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
           {/* 계산기 */}
           <Link href="/cal"
@@ -141,6 +143,52 @@ export default function Home() {
                 <span className="text-xs text-stone-400">{COLOR_TOOLS.length}개 도구</span>
                 <span className="flex items-center gap-1.5 bg-indigo-500 group-hover:bg-indigo-600 text-white text-sm font-black px-5 py-2.5 rounded-xl transition-colors">
                   색상 도구 보러가기
+                  <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
+                </span>
+              </div>
+            </div>
+          </Link>
+
+          {/* 개발자 도구 */}
+          <Link href="/dev"
+            className="group flex flex-col bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-slate-400">
+            <div className="bg-gradient-to-br from-slate-600 via-slate-700 to-zinc-800 p-8 relative overflow-hidden h-52">
+              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: DEV_HERO_PATTERN }} />
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-7">
+                  <span className="text-4xl">🛠️</span>
+                  <div>
+                    <p className="text-xs font-black text-white/70 uppercase tracking-widest">Dev Tools</p>
+                    <h2 className="text-2xl font-black text-white">개발자 도구</h2>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {DEV_TOOLS.map(tool => (
+                    <span key={tool.key}
+                      className="flex items-center gap-1 bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                      {tool.icon} {tool.shortName}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="p-6 flex flex-col flex-1">
+              <p className="text-sm text-stone-500 leading-relaxed mb-5">
+                타임스탬프 변환·Base64 인코딩·URL 인코딩·UUID 생성까지 <strong className="text-stone-700">{DEV_TOOLS.length}개 도구</strong>가 준비되어 있어요.
+                브라우저에서 바로, 서버 전송 없이 안전하게 쓸 수 있어요.
+              </p>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+                {DEV_TOOLS.map(tool => (
+                  <li key={tool.url} className="flex items-center gap-1.5 text-xs text-stone-400">
+                    <span className="shrink-0">{tool.icon}</span>
+                    <span className="truncate">{tool.name}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center justify-between mt-auto">
+                <span className="text-xs text-stone-400">{DEV_TOOLS.length}개 도구</span>
+                <span className="flex items-center gap-1.5 bg-slate-600 group-hover:bg-slate-700 text-white text-sm font-black px-5 py-2.5 rounded-xl transition-colors">
+                  개발자 도구 보러가기
                   <span className="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
                 </span>
               </div>

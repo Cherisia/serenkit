@@ -26,6 +26,14 @@ const CARD_COLORS = {
     fav: 'bg-emerald-50 text-emerald-400 hover:bg-emerald-100',
     idle: 'bg-slate-50 text-slate-300 hover:bg-emerald-50 hover:text-emerald-400',
   },
+  slate: {
+    fav: 'bg-slate-100 text-slate-500 hover:bg-slate-200',
+    idle: 'bg-stone-50 text-stone-300 hover:bg-slate-100 hover:text-slate-500',
+  },
+  indigo: {
+    fav: 'bg-indigo-50 text-indigo-400 hover:bg-indigo-100',
+    idle: 'bg-stone-50 text-stone-300 hover:bg-indigo-50 hover:text-indigo-400',
+  },
 }
 
 /** 계산기 카드 우상단 즐겨찾기 버튼 */
