@@ -388,9 +388,9 @@ WebApplication 필수 필드:
 color-extractor, color-converter, color-picker, tailwind-palette,
 gradient-generator, contrast-checker, palette-generator, color-names
 
-## 현재 개발자 도구 목록 (4개)
+## 현재 개발자 도구 목록 (5개)
 
-timestamp, base64, url-encoder, uuid
+timestamp, base64, url-encoder, uuid, regex-tester
 
 ## 새 개발자 도구 추가 체크리스트
 
