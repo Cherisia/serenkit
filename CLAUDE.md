@@ -7,7 +7,7 @@ URL: `https://serenkit.com`
 
 ## 기술 스택
 
-- **Next.js 15** (App Router, `output: 'export'`, `trailingSlash: true`)
+- **Next.js 16** (App Router, `output: 'export'`, `trailingSlash: true`)
 - **React 19** · **Tailwind CSS v4** (`@tailwindcss/postcss`, `tailwind.config.js` 없음)
 - **배포:** `npx wrangler deploy` → Cloudflare Workers (`./out`)
 - **특수 라이브러리:** `korean-lunar-calendar` (음력 변환)
@@ -44,6 +44,8 @@ components/share/
   FavoriteButton.js         # HeartIcon(named export), FavoriteCardButton, FavoriteBannerButton
   ShareResultButton.js      # 결과 공유 버튼 3종 (클립보드·이미지저장·SNS), html-to-image 사용
   Navbar.js                 # 상단 네비게이션
+  Footer.js                 # 하단 푸터 (카테고리 링크 + 색상도구 + 개발자도구 링크)
+  CookieBanner.js           # 쿠키/개인정보 동의 배너
 
 lib/
   categories.js             # 단일 소스: 전체 카테고리·계산기 목록 (CalcLayout/Footer/page.js 공유)
@@ -402,9 +404,9 @@ timestamp, base64, url-encoder, uuid, regex-tester
 
 ## 개발자 도구 색상 체계
 
-- 카테고리 전체: `violet/slate` 계열
-- `DEV_INPUT_CLS`: slate 배경 + violet focus + `font-mono`
-- DevLayout 버튼: 도구별 색상 (timestamp: sky, base64: emerald, url-encoder: violet, uuid: indigo)
+- 카테고리 전체: `slate/zinc` 다크 계열 (DevLayout 배너)
+- `DEV_INPUT_CLS`: slate 배경 + slate focus + `font-mono`
+- 도구별 강조 색상: timestamp(sky), base64(emerald), url-encoder(violet), uuid(indigo), regex-tester(rose)
 
 # currentDate
-Today's date is 2026-03-01.
+Today's date is 2026-03-08.
