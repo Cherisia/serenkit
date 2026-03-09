@@ -70,7 +70,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="🏦 대출 이자 계산기" desc="원리금균등·원금균등·만기일시 상환 방식별 이자를 계산해요" currentUrl="/cal/loan" faqs={faqs}>
+    <CalcLayout title="🏦 대출 이자 계산기" desc="원리금균등·원금균등·만기일시 상환 방식별 이자를 계산해요" currentUrl="/cal/loan/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <LoanCalc />
     </CalcLayout>

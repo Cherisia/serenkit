@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="💼 영업일 계산기" desc="주말·공휴일을 제외한 실제 근무 가능 일수를 계산해요" currentUrl="/cal/business-days" faqs={faqs}>
+    <CalcLayout title="💼 영업일 계산기" desc="주말·공휴일을 제외한 실제 근무 가능 일수를 계산해요" currentUrl="/cal/business-days/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <BusinessDaysCalc />
     </CalcLayout>

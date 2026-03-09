@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="💰 월급 실수령액 계산기" desc="2025년 기준 4대보험·소득세 공제 후 실수령액을 계산해요" currentUrl="/cal/salary" faqs={faqs}>
+    <CalcLayout title="💰 월급 실수령액 계산기" desc="2025년 기준 4대보험·소득세 공제 후 실수령액을 계산해요" currentUrl="/cal/salary/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SalaryCalc />
     </CalcLayout>

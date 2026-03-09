@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="💰 시급 계산기" desc="2026년 최저시급 기준으로 일급·주급·월급·연봉을 한 번에 계산해요" currentUrl="/cal/hourly" faqs={faqs}>
+    <CalcLayout title="💰 시급 계산기" desc="2026년 최저시급 기준으로 일급·주급·월급·연봉을 한 번에 계산해요" currentUrl="/cal/hourly/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <HourlyCalc />
     </CalcLayout>

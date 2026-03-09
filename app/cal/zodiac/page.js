@@ -47,7 +47,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="🐾 띠/별자리 계산기" desc="생년월일로 나의 띠와 별자리를 확인해요" currentUrl="/cal/zodiac" faqs={faqs}>
+    <CalcLayout title="🐾 띠/별자리 계산기" desc="생년월일로 나의 띠와 별자리를 확인해요" currentUrl="/cal/zodiac/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <ZodiacCalc />
     </CalcLayout>

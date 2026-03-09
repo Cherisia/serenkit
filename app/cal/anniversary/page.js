@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="💑 기념일 계산기" desc="처음 만난 날로부터 100일·1주년 등 기념일을 자동 계산해요" currentUrl="/cal/anniversary" faqs={faqs}>
+    <CalcLayout title="💑 기념일 계산기" desc="처음 만난 날로부터 100일·1주년 등 기념일을 자동 계산해요" currentUrl="/cal/anniversary/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <AnniversaryCalc />
     </CalcLayout>

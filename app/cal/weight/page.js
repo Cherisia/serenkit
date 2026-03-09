@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="⚖️ 적정 체중 계산기" desc="BMI와 표준 체중으로 나의 적정 체중 범위를 확인해요" currentUrl="/cal/weight" faqs={faqs}>
+    <CalcLayout title="⚖️ 적정 체중 계산기" desc="BMI와 표준 체중으로 나의 적정 체중 범위를 확인해요" currentUrl="/cal/weight/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <WeightCalc />
     </CalcLayout>

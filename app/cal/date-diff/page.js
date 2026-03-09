@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="📆 날짜 차이 계산기" desc="두 날짜 사이의 기간을 일·주·월·년 단위로 계산해요" currentUrl="/cal/date-diff" faqs={faqs}>
+    <CalcLayout title="📆 날짜 차이 계산기" desc="두 날짜 사이의 기간을 일·주·월·년 단위로 계산해요" currentUrl="/cal/date-diff/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <DateDiffCalc />
     </CalcLayout>

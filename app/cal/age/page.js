@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="🎂 만 나이 계산기" desc="생년월일로 법적 만 나이를 정확하게 계산해요" currentUrl="/cal/age" faqs={faqs}>
+    <CalcLayout title="🎂 만 나이 계산기" desc="생년월일로 법적 만 나이를 정확하게 계산해요" currentUrl="/cal/age/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <AgeCalc />
     </CalcLayout>

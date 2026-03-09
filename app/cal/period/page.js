@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="🌸 생리주기 계산기" desc="다음 생리 예정일·배란일·가임기를 한 번에 계산해요" currentUrl="/cal/period" faqs={faqs}>
+    <CalcLayout title="🌸 생리주기 계산기" desc="다음 생리 예정일·배란일·가임기를 한 번에 계산해요" currentUrl="/cal/period/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PeriodCalc />
     </CalcLayout>

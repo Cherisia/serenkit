@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="💼 퇴직금 계산기" desc="입사일부터 퇴직일까지 법정 퇴직금을 계산해요" currentUrl="/cal/severance" faqs={faqs}>
+    <CalcLayout title="💼 퇴직금 계산기" desc="입사일부터 퇴직일까지 법정 퇴직금을 계산해요" currentUrl="/cal/severance/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SeveranceCalc />
     </CalcLayout>

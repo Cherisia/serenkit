@@ -70,7 +70,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="📊 종합소득세 계산기" desc="2025년 귀속 (2026년 5월 신고) 기준 종합소득세를 단계별로 계산해요" currentUrl="/cal/income-tax" faqs={faqs}>
+    <CalcLayout title="📊 종합소득세 계산기" desc="2025년 귀속 (2026년 5월 신고) 기준 종합소득세를 단계별로 계산해요" currentUrl="/cal/income-tax/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <IncomeTaxCalc />
     </CalcLayout>

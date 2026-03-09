@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="📋 실업급여 계산기" desc="고용보험 가입기간과 월급으로 구직급여 수령액을 계산해요" currentUrl="/cal/unemployment" faqs={faqs}>
+    <CalcLayout title="📋 실업급여 계산기" desc="고용보험 가입기간과 월급으로 구직급여 수령액을 계산해요" currentUrl="/cal/unemployment/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <UnemploymentCalc />
     </CalcLayout>

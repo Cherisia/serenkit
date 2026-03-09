@@ -70,7 +70,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="🧾 부가세 계산기" desc="공급가액 ↔ 합계금액, 부가세(VAT 10%) 즉시 계산" currentUrl="/cal/vat" faqs={faqs}>
+    <CalcLayout title="🧾 부가세 계산기" desc="공급가액 ↔ 합계금액, 부가세(VAT 10%) 즉시 계산" currentUrl="/cal/vat/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <VatCalc />
     </CalcLayout>

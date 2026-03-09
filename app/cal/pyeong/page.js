@@ -55,7 +55,7 @@ export default function Page() {
     <CalcLayout
       title="📐 평수 계산기"
       desc="평 ↔ m² 실시간 변환 · 아파트 평형 참고표"
-      currentUrl="/cal/pyeong"
+      currentUrl="/cal/pyeong/"
       faqs={faqs}
     >
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

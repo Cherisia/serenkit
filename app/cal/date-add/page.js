@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="➕ 날짜 더하기/빼기" desc="날짜에 년·월·일을 더하거나 빼서 결과 날짜를 구해요" currentUrl="/cal/date-add" faqs={faqs}>
+    <CalcLayout title="➕ 날짜 더하기/빼기" desc="날짜에 년·월·일을 더하거나 빼서 결과 날짜를 구해요" currentUrl="/cal/date-add/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <DateAddCalc />
     </CalcLayout>

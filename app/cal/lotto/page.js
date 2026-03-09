@@ -40,7 +40,7 @@ export default function Page() {
     <CalcLayout
       title="🎱 로또 번호 추첨기"
       desc="행운의 번호를 뽑아드려요 — 제외 번호 설정, 최대 5게임 동시 추첨"
-      currentUrl="/cal/lotto"
+      currentUrl="/cal/lotto/"
       faqs={faqs}
     >
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

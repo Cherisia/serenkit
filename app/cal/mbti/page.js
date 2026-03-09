@@ -70,7 +70,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="💘 MBTI 궁합 계산기" desc="두 사람의 MBTI로 궁합 점수와 황금비율 여부를 확인해보세요" currentUrl="/cal/mbti" faqs={faqs}>
+    <CalcLayout title="💘 MBTI 궁합 계산기" desc="두 사람의 MBTI로 궁합 점수와 황금비율 여부를 확인해보세요" currentUrl="/cal/mbti/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <MbtiCalc />
     </CalcLayout>

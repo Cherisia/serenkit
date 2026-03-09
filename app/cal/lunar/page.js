@@ -47,7 +47,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="🌙 양력 음력 변환기" desc="양력↔음력 상호 변환 및 간지(갑자) 확인" currentUrl="/cal/lunar" faqs={faqs}>
+    <CalcLayout title="🌙 양력 음력 변환기" desc="양력↔음력 상호 변환 및 간지(갑자) 확인" currentUrl="/cal/lunar/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <LunarCalc />
     </CalcLayout>

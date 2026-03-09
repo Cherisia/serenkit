@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="🔄 단위 변환기" desc="길이·무게·온도·넓이·부피·속도·데이터를 한 번에 변환해요" currentUrl="/cal/unit" faqs={faqs}>
+    <CalcLayout title="🔄 단위 변환기" desc="길이·무게·온도·넓이·부피·속도·데이터를 한 번에 변환해요" currentUrl="/cal/unit/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <UnitCalc />
     </CalcLayout>

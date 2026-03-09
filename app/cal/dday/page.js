@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="📅 D-day 계산기" desc="특정 날짜까지 남은 일수, 경과 일수를 계산해요" currentUrl="/cal/dday" faqs={faqs}>
+    <CalcLayout title="📅 D-day 계산기" desc="특정 날짜까지 남은 일수, 경과 일수를 계산해요" currentUrl="/cal/dday/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <DdayCalc />
     </CalcLayout>

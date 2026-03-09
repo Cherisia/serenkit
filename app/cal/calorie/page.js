@@ -46,7 +46,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="🔥 기초대사량 계산기" desc="나이·키·몸무게·활동량으로 하루 필요 칼로리를 계산해요" currentUrl="/cal/calorie" faqs={faqs}>
+    <CalcLayout title="🔥 기초대사량 계산기" desc="나이·키·몸무게·활동량으로 하루 필요 칼로리를 계산해요" currentUrl="/cal/calorie/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <CalorieCalc />
     </CalcLayout>

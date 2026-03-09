@@ -55,7 +55,7 @@ export default function Page() {
     <CalcLayout
       title="✍️ 글자수 세기"
       desc="공백 포함/제외 · 바이트 · 단어 수 실시간 계산"
-      currentUrl="/cal/char-count"
+      currentUrl="/cal/char-count/"
       faqs={faqs}
     >
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
