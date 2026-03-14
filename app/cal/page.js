@@ -1,7 +1,9 @@
+import { Fragment } from 'react'
 import Link from 'next/link'
 import { CATEGORIES } from '@/lib/categories'
 import { CALC_HERO_PATTERN } from '@/lib/constants'
 import { FavoriteCardButton } from '@/components/share/FavoriteButton'
+import AdUnit, { AD_SLOT_TOP, AD_SLOT_MIDDLE } from '@/components/share/AdUnit'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -169,8 +171,9 @@ export default function CalPage() {
 
       {/* 카테고리별 계산기 */}
       <main className="container xl:w-10/12 md:w-11/12 w-[92%] mx-auto mt-10 space-y-10">
-        {CATEGORIES.map(cat => (
-          <section key={cat.key} id={cat.key} className="scroll-mt-20">
+        {CATEGORIES.map((cat, idx) => (
+          <Fragment key={cat.key}>
+          <section id={cat.key} className="scroll-mt-20">
             <div className="flex items-center gap-3 mb-5">
               <div className={`w-8 h-8 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-base shrink-0`}>
                 {cat.icon}
@@ -204,6 +207,11 @@ export default function CalPage() {
               ))}
             </ul>
           </section>
+          {/* 광고 — 카테고리 2번째 아래 (건강·신체 다음, 모든 디바이스) */}
+          {idx === 1 && <AdUnit slot={AD_SLOT_TOP} className="my-2" />}
+          {/* 광고 — 카테고리 4번째 아래 (라이프 다음, 태블릿·데스크탑) */}
+          {idx === 3 && <AdUnit slot={AD_SLOT_MIDDLE} className="my-2 hidden md:block" />}
+          </Fragment>
         ))}
       </main>
 

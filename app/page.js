@@ -3,6 +3,7 @@ import { CATEGORIES } from '@/lib/categories'
 import { COLOR_TOOLS } from '@/lib/colorTools'
 import { DEV_TOOLS, DEV_HERO_PATTERN } from '@/lib/devTools'
 import { CALC_HERO_PATTERN } from '@/lib/constants'
+import AdUnit, { AD_SLOT_TOP } from '@/components/share/AdUnit'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -197,6 +198,11 @@ export default function Home() {
 
         </div>
       </main>
+
+      {/* 광고 — 카드 그리드 아래 (태블릿·데스크탑 전용) */}
+      <div className="container xl:w-10/12 md:w-11/12 w-[92%] mx-auto mt-6 hidden md:block">
+        <AdUnit slot={AD_SLOT_TOP} />
+      </div>
     </div>
   )
 }

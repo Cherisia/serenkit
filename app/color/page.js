@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { COLOR_TOOLS, COLOR_HERO_PATTERN } from '@/lib/colorTools'
 import { FavoriteCardButton } from '@/components/share/FavoriteButton'
+import AdUnit, { AD_SLOT_TOP, AD_SLOT_MIDDLE } from '@/components/share/AdUnit'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -199,6 +200,9 @@ export default function ColorHomePage() {
           </ul>
         </section>
 
+        {/* 광고 — 도구 목록 아래 (모든 디바이스) */}
+        <AdUnit slot={AD_SLOT_TOP} className="my-2" />
+
         {/* 활용 예시 */}
         <section>
           <div className="flex items-center gap-3 mb-5">
@@ -232,6 +236,9 @@ export default function ColorHomePage() {
             ))}
           </div>
         </section>
+
+        {/* 광고 — 활용 예시 아래 (태블릿·데스크탑 전용) */}
+        <AdUnit slot={AD_SLOT_MIDDLE} className="my-2 hidden md:block" />
 
         {/* 도구 특징 */}
         <section>
