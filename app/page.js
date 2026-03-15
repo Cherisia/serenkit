@@ -54,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* 데스크탑: 좌측사이드바 | 중앙콘텐츠 | 우측사이드바 */}
-      <div className="xl:grid xl:grid-cols-[1fr_minmax(0,860px)_1fr] xl:items-start">
+      <div className="xl:grid xl:grid-cols-[220px_1fr_220px] 2xl:grid-cols-[320px_1fr_320px] xl:items-start">
 
         {/* 좌측 사이드바 광고 — 데스크탑(xl+) 전용 */}
         <div className="hidden xl:flex justify-center pt-10">
