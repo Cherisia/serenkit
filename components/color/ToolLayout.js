@@ -33,7 +33,7 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
 
         {/* 좌측 사이드바 광고 — 데스크탑(xl+) 전용 */}
         <div className="hidden xl:flex justify-center pt-6">
-          <div className="sticky top-24 w-[160px]">
+          <div className="sticky top-24 w-[300px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
 
         {/* 우측 사이드바 광고 — 데스크탑(xl+) 전용 */}
         <div className="hidden xl:flex justify-center pt-6">
-          <div className="sticky top-24 w-[160px]">
+          <div className="sticky top-24 w-[300px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
           </div>
         </div>

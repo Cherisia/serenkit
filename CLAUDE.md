@@ -43,6 +43,7 @@ components/share/
   FavoritesProvider.js      # 즐겨찾기 Context+Provider (localStorage: 'serenkit_favorites', slug 배열)
   FavoriteButton.js         # HeartIcon(named export), FavoriteCardButton, FavoriteBannerButton
   ShareResultButton.js      # 결과 공유 버튼 3종 (클립보드·이미지저장·SNS), html-to-image 사용
+  AdUnit.js                 # AdSense 광고 유닛 (5슬롯 export, fullWidth prop, StrictMode 가드)
   Navbar.js                 # 상단 네비게이션
   Footer.js                 # 하단 푸터 (카테고리 링크 + 색상도구 + 개발자도구 링크)
   CookieBanner.js           # 쿠키/개인정보 동의 배너
@@ -234,6 +235,82 @@ export default function Page() {
 - `COLOR_INPUT_CLS` — 색상도구 입력 필드 클래스 (`lib/colorTools.js`, indigo focus)
 - `HeartIcon` — named export from `components/share/FavoriteButton.js`
 
+## 광고 배치 시스템 (AdUnit.js)
+
+`components/share/AdUnit.js` — Google AdSense 수동 배치 컴포넌트. 자동 광고는 사용하지 않음.
+
+### 슬롯 ID
+
+| export 상수 | 슬롯 ID | 배치 위치 |
+|------------|---------|---------|
+| `AD_SLOT_TOP` | `4137164165` | 배너 직후 (모바일·태블릿만, `xl:hidden`) |
+| `AD_SLOT_MIDDLE` | `5883193399` | 도구/계산기 아래 (전체 디바이스) |
+| `AD_SLOT_BOTTOM` | `4570111729` | FAQ 위 (태블릿+ `hidden md:block`) |
+| `AD_SLOT_SIDEBAR_L` | `7996518124` | 좌측 사이드바 (데스크탑 `xl+` 전용) |
+| `AD_SLOT_SIDEBAR_R` | `7746939400` | 우측 사이드바 (데스크탑 `xl+` 전용) |
+
+### AdUnit props
+
+```jsx
+import AdUnit, { AD_SLOT_TOP, AD_SLOT_SIDEBAR_L } from '@/components/share/AdUnit'
+
+<AdUnit slot={AD_SLOT_TOP} />                      // 인라인 (반응형)
+<AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} /> // 사이드바 (고정 컨테이너)
+<AdUnit slot={AD_SLOT_TOP} className="my-2" />     // 추가 클래스
+```
+
+- `fullWidth={true}` (기본): `data-full-width-responsive="true"` 포함 → 인라인 반응형
+- `fullWidth={false}`: 해당 속성 생략 → 사이드바 등 고정 너비 컨테이너용
+- React StrictMode 이중 push 방지: `useRef(false)` 가드 내장
+
+### 데스크탑 3-컬럼 사이드바 레이아웃 패턴
+
+모든 레이아웃(CalcLayout, ToolLayout, DevLayout)과 목록 페이지(홈, /cal, /color, /dev)에 적용:
+
+```jsx
+{/* 도구 페이지: 중앙 콘텐츠 고정 너비 */}
+<div className="xl:grid xl:grid-cols-[1fr_560px_1fr] xl:items-start">
+  <div className="hidden xl:flex justify-center pt-6">
+    <div className="sticky top-24 w-[300px]">
+      <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
+    </div>
+  </div>
+  <div>{/* 중앙 콘텐츠 */}</div>
+  <div className="hidden xl:flex justify-center pt-6">
+    <div className="sticky top-24 w-[300px]">
+      <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
+    </div>
+  </div>
+</div>
+
+{/* 목록 페이지: 사이드바 고정 너비, xl/2xl 반응 */}
+<div className="xl:grid xl:grid-cols-[220px_1fr_220px] 2xl:grid-cols-[320px_1fr_320px] xl:items-start">
+  <div className="hidden xl:flex justify-center pt-10">
+    <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+      <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
+    </div>
+  </div>
+  <div>{/* 중앙 콘텐츠 (xl:w-full 사용, xl:w-10/12 금지) */}</div>
+  <div className="hidden xl:flex justify-center pt-10">
+    <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+      <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
+    </div>
+  </div>
+</div>
+```
+
+> **주의**: 그리드 셀 내부에서 `xl:w-10/12` 등 퍼센트 너비 사용 금지.
+> 퍼센트는 뷰포트가 아닌 그리드 셀 기준으로 계산되어 레이아웃이 좁아짐.
+> 대신 `xl:w-full` 사용.
+
+### 브레이크포인트별 광고 노출
+
+| 디바이스 | TOP | MIDDLE | BOTTOM | SIDEBAR |
+|---------|-----|--------|--------|---------|
+| 모바일 (`< md`) | ✅ | ✅ | ❌ | ❌ |
+| 태블릿 (`md ~ xl`) | ✅ | ✅ | ✅ | ❌ |
+| 데스크탑 (`xl+`) | ❌ | ✅ | ✅ | ✅ (좌+우) |
+
 ## URL 파라미터 & 결과 공유
 
 모든 계산기는 계산 결과를 URL 쿼리 파라미터로 인코딩하여 링크 공유를 지원한다.
@@ -409,4 +486,4 @@ timestamp, base64, url-encoder, uuid, regex-tester
 - 도구별 강조 색상: timestamp(sky), base64(emerald), url-encoder(violet), uuid(indigo), regex-tester(rose)
 
 # currentDate
-Today's date is 2026-03-08.
+Today's date is 2026-03-15.

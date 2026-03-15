@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CATEGORIES } from '@/lib/categories'
 import { CALC_HERO_PATTERN } from '@/lib/constants'
 import { FavoriteCardButton } from '@/components/share/FavoriteButton'
-import AdUnit, { AD_SLOT_TOP, AD_SLOT_MIDDLE } from '@/components/share/AdUnit'
+import AdUnit, { AD_SLOT_TOP, AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/components/share/AdUnit'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -169,8 +169,21 @@ export default function CalPage() {
         </div>
       </section>
 
+      {/* 데스크탑: 좌측사이드바 | 중앙콘텐츠 | 우측사이드바 */}
+      <div className="xl:grid xl:grid-cols-[220px_1fr_220px] 2xl:grid-cols-[320px_1fr_320px] xl:items-start">
+
+        {/* 좌측 사이드바 광고 — 데스크탑(xl+) 전용 */}
+        <div className="hidden xl:flex justify-center pt-10">
+          <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+            <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
+          </div>
+        </div>
+
+        {/* 중앙 콘텐츠 */}
+        <div>
+
       {/* 카테고리별 계산기 */}
-      <main className="container xl:w-10/12 md:w-11/12 w-[92%] mx-auto mt-10 space-y-10">
+      <main className="container md:w-11/12 w-[92%] xl:w-full mx-auto mt-10 space-y-10">
         {CATEGORIES.map((cat, idx) => (
           <Fragment key={cat.key}>
           <section id={cat.key} className="scroll-mt-20">
@@ -216,7 +229,7 @@ export default function CalPage() {
       </main>
 
       {/* 활용 예시 */}
-      <section className="container xl:w-10/12 md:w-11/12 w-[92%] mx-auto mt-10">
+      <section className="container md:w-11/12 w-[92%] xl:w-full mx-auto mt-10">
         <div className="flex items-center gap-3 mb-5">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-orange-400 flex items-center justify-center text-base shrink-0">
             📌
@@ -248,6 +261,17 @@ export default function CalPage() {
           ))}
         </div>
       </section>
+
+        </div>{/* /중앙 콘텐츠 */}
+
+        {/* 우측 사이드바 광고 — 데스크탑(xl+) 전용 */}
+        <div className="hidden xl:flex justify-center pt-10">
+          <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+            <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
+          </div>
+        </div>
+
+      </div>{/* /사이드바 그리드 */}
 
     </div>
   )

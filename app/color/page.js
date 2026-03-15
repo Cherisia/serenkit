@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { COLOR_TOOLS, COLOR_HERO_PATTERN } from '@/lib/colorTools'
 import { FavoriteCardButton } from '@/components/share/FavoriteButton'
-import AdUnit, { AD_SLOT_TOP, AD_SLOT_MIDDLE } from '@/components/share/AdUnit'
+import AdUnit, { AD_SLOT_TOP, AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/components/share/AdUnit'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -161,7 +161,19 @@ export default function ColorHomePage() {
         </div>
       </section>
 
-      <main className="container xl:w-10/12 md:w-11/12 w-[92%] mx-auto mt-10 space-y-10">
+      {/* 데스크탑: 좌측사이드바 | 중앙콘텐츠 | 우측사이드바 */}
+      <div className="xl:grid xl:grid-cols-[220px_1fr_220px] 2xl:grid-cols-[320px_1fr_320px] xl:items-start">
+
+        {/* 좌측 사이드바 광고 — 데스크탑(xl+) 전용 */}
+        <div className="hidden xl:flex justify-center pt-10">
+          <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+            <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
+          </div>
+        </div>
+
+        {/* 중앙 콘텐츠 */}
+        <div>
+      <main className="container md:w-11/12 w-[92%] xl:w-full mx-auto mt-10 space-y-10">
 
         {/* 도구 목록 */}
         <section>
@@ -268,6 +280,16 @@ export default function ColorHomePage() {
         </section>
 
       </main>
+        </div>{/* /중앙 콘텐츠 */}
+
+        {/* 우측 사이드바 광고 — 데스크탑(xl+) 전용 */}
+        <div className="hidden xl:flex justify-center pt-10">
+          <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+            <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
+          </div>
+        </div>
+
+      </div>{/* /사이드바 그리드 */}
     </div>
   )
 }
