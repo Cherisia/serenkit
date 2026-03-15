@@ -32,7 +32,7 @@ export default function DevLayout({ toolKey, children, faqs = [] }) {
       <div className="xl:grid xl:grid-cols-[1fr_600px_1fr] xl:items-start">
 
         {/* 좌측 사이드바 광고 — 데스크탑(xl+) 전용 */}
-        <div className="hidden xl:flex justify-end pr-6 pt-6">
+        <div className="hidden xl:flex justify-center pt-6">
           <div className="sticky top-24 w-[160px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
           </div>
@@ -87,7 +87,7 @@ export default function DevLayout({ toolKey, children, faqs = [] }) {
         </div>
 
         {/* 우측 사이드바 광고 — 데스크탑(xl+) 전용 */}
-        <div className="hidden xl:flex justify-start pl-6 pt-6">
+        <div className="hidden xl:flex justify-center pt-6">
           <div className="sticky top-24 w-[160px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
           </div>
