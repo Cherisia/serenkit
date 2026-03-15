@@ -23,10 +23,10 @@ export default function AdUnit({ slot, className = '', fullWidth = true }) {
   }, [])
 
   return (
-    <div className={`overflow-hidden ${className}`}>
+    <div className={`overflow-hidden text-center ${className}`}>
       <ins
         className="adsbygoogle"
-        style={{ display: 'block' }}
+        style={{ display: 'block', textAlign: 'center' }}
         data-ad-client={PUB_ID}
         data-ad-slot={slot}
         data-ad-format="auto"
