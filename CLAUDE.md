@@ -283,8 +283,8 @@ import AdUnit, { AD_SLOT_TOP, AD_SLOT_SIDEBAR_L } from '@/components/share/AdUni
   </div>
 </div>
 
-{/* 목록 페이지: 사이드바 고정 너비, xl/2xl 반응 */}
-<div className="xl:grid xl:grid-cols-[220px_1fr_220px] 2xl:grid-cols-[320px_1fr_320px] xl:items-start">
+{/* 목록 페이지: 사이드바 1fr, 중앙 고정 너비 */}
+<div className="xl:grid xl:grid-cols-[1fr_minmax(0,860px)_1fr] xl:items-start">
   <div className="hidden xl:flex justify-center pt-10">
     <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
       <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
