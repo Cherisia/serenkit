@@ -11,7 +11,7 @@ export const metadata = {
     description: '평↔m² 즉시 변환! 아파트 평수를 제곱미터로, 제곱미터를 평수로 실시간 계산해요.',
     url: 'https://serenkit.com/cal/pyeong/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }
 

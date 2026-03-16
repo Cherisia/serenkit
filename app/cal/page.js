@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { CATEGORIES } from '@/lib/categories'
 import { CALC_HERO_PATTERN } from '@/lib/constants'
 import { FavoriteCardButton } from '@/components/share/FavoriteButton'
-import AdUnit, { AD_SLOT_TOP, AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/components/share/AdUnit'
+import AdUnit, { AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/components/share/AdUnit'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -221,7 +221,7 @@ export default function CalPage() {
             </ul>
           </section>
           {/* 광고 — 카테고리 2번째 아래 (건강·신체 다음, 모든 디바이스) */}
-          {idx === 1 && <AdUnit slot={AD_SLOT_TOP} className="my-2" />}
+          {idx === 1 && <AdUnit slot={AD_SLOT_MIDDLE} className="my-2" />}
           {/* 광고 — 카테고리 4번째 아래 (라이프 다음, 태블릿·데스크탑) */}
           {idx === 3 && <AdUnit slot={AD_SLOT_MIDDLE} className="my-2 hidden md:block" />}
           </Fragment>

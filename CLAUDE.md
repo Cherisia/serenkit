@@ -188,7 +188,7 @@ export const metadata = {
   keywords: ['...'],
   alternates: { canonical: 'https://serenkit.com/cal/[slug]/' },
   openGraph: { title: '계산기 이름 | serenkit', description: '...', url: '...', type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }] },
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }] },
 }
 
 const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', ... }
@@ -206,15 +206,15 @@ export default function Page() {
 
 ## 스타일 규칙
 
-| 요소 | 계산기 | 색상도구 |
-|------|--------|---------|
-| 카드 래퍼 | `bg-white border border-stone-200 rounded-2xl p-6` | `bg-white border border-slate-200 rounded-2xl p-6` |
-| 섹션 제목 | `text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-amber-400` | `text-sm font-black text-slate-800 mb-4 pb-3 border-b border-slate-100` |
-| 입력 필드 | `INPUT_CLS` (`@/lib/constants`) | `COLOR_INPUT_CLS` (`@/lib/colorTools`) |
-| 기본 버튼 | `bg-amber-400 hover:bg-amber-500 text-white font-black rounded-xl py-3.5` | `bg-indigo-500 hover:bg-indigo-600 text-white font-black rounded-xl py-3.5` |
-| 메인 결과 박스 | `bg-gradient-to-br from-[색]-400 to-[색]-500 rounded-2xl p-5 text-white text-center` | 동일 |
-| 안내 박스 | `bg-amber-50 border border-amber-100 rounded-2xl p-5 text-xs text-stone-500` | `bg-indigo-50 border border-indigo-100 rounded-2xl p-5 text-xs text-slate-500` |
-| 오류 텍스트 | `text-xs text-red-500` | 동일 |
+| 요소 | 계산기 | 색상도구 | 개발자도구 |
+|------|--------|---------|----------|
+| 카드 래퍼 | `bg-white border border-stone-200 rounded-2xl p-6` | `bg-white border border-slate-200 rounded-2xl p-6` | 동일 (slate) |
+| 섹션 제목 | `text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-amber-400` | `text-sm font-black text-slate-800 mb-4 pb-3 border-b border-slate-100` | 동일 (slate) |
+| 입력 필드 | `INPUT_CLS` (`@/lib/constants`) | `COLOR_INPUT_CLS` (`@/lib/colorTools`) | `DEV_INPUT_CLS` (`@/lib/devTools`) |
+| 기본 버튼 | `bg-amber-400 hover:bg-amber-500 text-white font-black rounded-xl py-3.5` | `bg-indigo-500 hover:bg-indigo-600 text-white font-black rounded-xl py-3.5` | 도구별 색상 (sky/emerald/violet/indigo/rose) |
+| 메인 결과 박스 | `bg-gradient-to-br from-[색]-400 to-[색]-500 rounded-2xl p-5 text-white text-center` | 동일 | 동일 |
+| 안내 박스 | `bg-amber-50 border border-amber-100 rounded-2xl p-5 text-xs text-stone-500` | `bg-indigo-50 border border-indigo-100 rounded-2xl p-5 text-xs text-slate-500` | `bg-slate-50 border border-slate-200 rounded-2xl p-5 text-xs text-slate-500` |
+| 오류 텍스트 | `text-xs text-red-500` | 동일 | 동일 |
 
 ## 카테고리 색상
 
@@ -231,8 +231,10 @@ export default function Page() {
 
 - `CALC_HERO_PATTERN` — 계산기 배너용 별/플러스 SVG 패턴 (`lib/constants.js`)
 - `COLOR_HERO_PATTERN` — 색상도구 배너용 점 SVG 패턴 (`lib/colorTools.js`)
-- `INPUT_CLS` — 계산기 입력 필드 클래스 (`lib/constants.js`, amber focus)
-- `COLOR_INPUT_CLS` — 색상도구 입력 필드 클래스 (`lib/colorTools.js`, indigo focus)
+- `DEV_HERO_PATTERN` — 개발자도구 배너용 십자 SVG 패턴 (`lib/devTools.js`)
+- `INPUT_CLS` — 계산기 입력 필드 클래스 (`lib/constants.js`, amber focus + ring)
+- `COLOR_INPUT_CLS` — 색상도구 입력 필드 클래스 (`lib/colorTools.js`, indigo focus + ring)
+- `DEV_INPUT_CLS` — 개발자도구 입력 필드 클래스 (`lib/devTools.js`, slate focus + ring + font-mono)
 - `HeartIcon` — named export from `components/share/FavoriteButton.js`
 
 ## 광고 배치 시스템 (AdUnit.js)
@@ -243,11 +245,11 @@ export default function Page() {
 
 | export 상수 | 슬롯 ID | 배치 위치 |
 |------------|---------|---------|
-| `AD_SLOT_TOP` | `4137164165` | 배너 직후 (모바일·태블릿만, `xl:hidden`) |
-| `AD_SLOT_MIDDLE` | `5883193399` | 도구/계산기 아래 (전체 디바이스) |
-| `AD_SLOT_BOTTOM` | `4570111729` | FAQ 위 (태블릿+ `hidden md:block`) |
-| `AD_SLOT_SIDEBAR_L` | `7996518124` | 좌측 사이드바 (데스크탑 `xl+` 전용) |
-| `AD_SLOT_SIDEBAR_R` | `7746939400` | 우측 사이드바 (데스크탑 `xl+` 전용) |
+| `AD_SLOT_TOP` | `4137164165` | 배너 직후 (개별 도구: 모바일·태블릿만 `xl:hidden` / 목록: 전체 디바이스) |
+| `AD_SLOT_MIDDLE` | `5883193399` | 도구/계산기 아래 (개별 도구: 전체 디바이스 / 목록·홈: 태블릿+ `hidden md:block`) |
+| `AD_SLOT_BOTTOM` | `4570111729` | FAQ 위 또는 콘텐츠 하단 (태블릿+ `hidden md:block`) |
+| `AD_SLOT_SIDEBAR_L` | `7996518124` | 좌측 사이드바 (개별 도구 `xl+` / 목록·홈 `2xl+`) |
+| `AD_SLOT_SIDEBAR_R` | `7746939400` | 우측 사이드바 (개별 도구 `xl+` / 목록·홈 `2xl+`) |
 
 ### AdUnit props
 
@@ -263,19 +265,19 @@ import AdUnit, { AD_SLOT_TOP, AD_SLOT_SIDEBAR_L } from '@/components/share/AdUni
 - `fullWidth={false}`: 해당 속성 생략 → 사이드바 등 고정 너비 컨테이너용
 - React StrictMode 이중 push 방지: `useRef(false)` 가드 내장
 
-### 데스크탑 3-컬럼 사이드바 레이아웃 패턴
+### 3-컬럼 사이드바 레이아웃 패턴
 
-모든 레이아웃(CalcLayout, ToolLayout, DevLayout)과 목록 페이지(홈, /cal, /color, /dev)에 적용:
+페이지 유형에 따라 사이드바 브레이크포인트가 다릅니다.
 
 ```jsx
-{/* 도구 페이지: 중앙 콘텐츠 고정 너비 */}
+{/* 개별 도구/계산기 페이지 (CalcLayout, ToolLayout, DevLayout): xl+(1280px+) 사이드바 */}
 <div className="xl:grid xl:grid-cols-[1fr_560px_1fr] xl:items-start">
   <div className="hidden xl:flex justify-center pt-6">
     <div className="sticky top-24 w-[300px]">
       <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
     </div>
   </div>
-  <div>{/* 중앙 콘텐츠 */}</div>
+  <div>{/* 중앙 콘텐츠 (xl:w-[560px] md:w-[600px] w-[92%]) */}</div>
   <div className="hidden xl:flex justify-center pt-6">
     <div className="sticky top-24 w-[300px]">
       <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
@@ -283,16 +285,16 @@ import AdUnit, { AD_SLOT_TOP, AD_SLOT_SIDEBAR_L } from '@/components/share/AdUni
   </div>
 </div>
 
-{/* 목록 페이지: 사이드바 고정 너비, xl/2xl 반응 */}
-<div className="xl:grid xl:grid-cols-[220px_1fr_220px] 2xl:grid-cols-[320px_1fr_320px] xl:items-start">
-  <div className="hidden xl:flex justify-center pt-10">
-    <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+{/* 목록 페이지 (홈, /cal, /color, /dev): 2xl+(1536px+) 사이드바 */}
+<div className="2xl:grid 2xl:grid-cols-[320px_1fr_320px] 2xl:items-start">
+  <div className="hidden 2xl:flex justify-center pt-10">
+    <div className="sticky top-24 w-[300px]">
       <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
     </div>
   </div>
-  <div>{/* 중앙 콘텐츠 (xl:w-full 사용, xl:w-10/12 금지) */}</div>
-  <div className="hidden xl:flex justify-center pt-10">
-    <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+  <div>{/* 중앙 콘텐츠 (md:w-11/12 w-[92%] 2xl:w-full) */}</div>
+  <div className="hidden 2xl:flex justify-center pt-10">
+    <div className="sticky top-24 w-[300px]">
       <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
     </div>
   </div>
@@ -301,15 +303,29 @@ import AdUnit, { AD_SLOT_TOP, AD_SLOT_SIDEBAR_L } from '@/components/share/AdUni
 
 > **주의**: 그리드 셀 내부에서 `xl:w-10/12` 등 퍼센트 너비 사용 금지.
 > 퍼센트는 뷰포트가 아닌 그리드 셀 기준으로 계산되어 레이아웃이 좁아짐.
-> 대신 `xl:w-full` 사용.
+> 목록 페이지 그리드 셀 내부에서는 `2xl:w-full` 사용.
 
 ### 브레이크포인트별 광고 노출
+
+#### 개별 도구/계산기 페이지 (CalcLayout · ToolLayout · DevLayout)
 
 | 디바이스 | TOP | MIDDLE | BOTTOM | SIDEBAR |
 |---------|-----|--------|--------|---------|
 | 모바일 (`< md`) | ✅ | ✅ | ❌ | ❌ |
 | 태블릿 (`md ~ xl`) | ✅ | ✅ | ✅ | ❌ |
-| 데스크탑 (`xl+`) | ❌ | ✅ | ✅ | ✅ (좌+우) |
+| 노트북 (`xl ~ 2xl`) | ❌ | ✅ | ✅ | ✅ (좌+우) |
+| 데스크탑 (`2xl+`) | ❌ | ✅ | ✅ | ✅ (좌+우) |
+
+#### 목록 페이지 (홈 · /cal · /color · /dev)
+
+| 디바이스 | MIDDLE | SIDEBAR |
+|---------|--------|---------|
+| 모바일 (`< md`) | /cal·color·dev ✅ / 홈 ❌ | ❌ |
+| 태블릿 (`md ~ 2xl`) | ✅ × 2 | ❌ |
+| 데스크탑 (`2xl+`) | ✅ × 2 | ✅ (좌+우) |
+
+> 목록 페이지는 **TOP 슬롯 없음**. 모든 MIDDLE 배치는 콘텐츠 섹션 사이에 삽입.
+> 홈페이지 예외: MIDDLE + BOTTOM 모두 `hidden md:block` (모바일 미노출), 카드 아래 배치.
 
 ## URL 파라미터 & 결과 공유
 

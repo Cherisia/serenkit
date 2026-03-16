@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { DEV_TOOLS, DEV_HERO_PATTERN } from '@/lib/devTools'
 import { FavoriteCardButton } from '@/components/share/FavoriteButton'
-import AdUnit, { AD_SLOT_TOP, AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/components/share/AdUnit'
+import AdUnit, { AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/components/share/AdUnit'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -171,7 +171,7 @@ export default function DevHomePage() {
         </section>
 
         {/* 광고 — 도구 목록 아래 (모든 디바이스) */}
-        <AdUnit slot={AD_SLOT_TOP} className="my-2" />
+        <AdUnit slot={AD_SLOT_MIDDLE} className="my-2" />
 
         {/* 활용 예시 */}
         <section>

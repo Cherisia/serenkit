@@ -82,7 +82,7 @@ export default function Home() {
                         <h2 className="text-2xl font-black text-white">생활 계산기</h2>
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5 max-h-[60px] overflow-hidden">
                       {CATEGORIES.map(cat => (
                         <span key={cat.key}
                           className="flex items-center gap-1 bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full">
@@ -129,7 +129,7 @@ export default function Home() {
                         <h2 className="text-2xl font-black text-white">색상 도구</h2>
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5 max-h-[60px] overflow-hidden">
                       {COLOR_TOOLS.map(tool => (
                         <span key={tool.key}
                           className="flex items-center gap-1 bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full">
@@ -175,7 +175,7 @@ export default function Home() {
                         <h2 className="text-2xl font-black text-white">개발자 도구</h2>
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5 max-h-[60px] overflow-hidden">
                       {DEV_TOOLS.map(tool => (
                         <span key={tool.key}
                           className="flex items-center gap-1 bg-white/20 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-2.5 py-1 rounded-full">

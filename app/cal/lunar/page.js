@@ -11,7 +11,7 @@ export const metadata = {
     description: '양력을 음력으로, 음력을 양력으로 즉시 변환해요.',
     url: 'https://serenkit.com/cal/lunar/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '양력 음력 변환기 - serenkit' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '양력 음력 변환기 - serenkit' }],
   },
 }
 

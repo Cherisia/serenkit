@@ -11,7 +11,7 @@ export const metadata = {
     description: '2026년 신고분(2025년 귀속) 종합소득세를 근로·사업·프리랜서 소득별로 단계별 계산해요.',
     url: 'https://serenkit.com/cal/income-tax/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '종합소득세 계산기 - serenkit' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '종합소득세 계산기 - serenkit' }],
   },
 }
 

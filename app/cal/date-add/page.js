@@ -11,7 +11,7 @@ export const metadata = {
     description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 바로 계산해요.',
     url: 'https://serenkit.com/cal/date-add/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 - serenkit' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 - serenkit' }],
   },
 }
 

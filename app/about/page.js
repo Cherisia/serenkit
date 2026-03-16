@@ -13,7 +13,7 @@ export const metadata = {
     description: `serenkit은 날짜 계산, 건강, 금융, 단위 변환 등 생활 계산기 ${totalCalcs}개와 색상 변환·추출·팔레트 등 색상 도구 ${COLOR_TOOLS.length}개를 제공하는 서비스입니다.`,
     url: 'https://serenkit.com/about/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'serenkit 소개' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit 소개' }],
   },
 }
 

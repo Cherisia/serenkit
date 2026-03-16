@@ -11,7 +11,7 @@ export const metadata = {
     description: '원리금균등·원금균등·만기일시 상환 방식별 월 납입금과 총 이자를 계산해요.',
     url: 'https://serenkit.com/cal/loan/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '대출 이자 계산기 - serenkit' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '대출 이자 계산기 - serenkit' }],
   },
 }
 

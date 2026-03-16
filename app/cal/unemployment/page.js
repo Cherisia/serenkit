@@ -11,7 +11,7 @@ export const metadata = {
     description: '퇴직일, 나이, 고용보험 가입기간, 월급으로 실업급여(구직급여) 수령액을 바로 계산해요.',
     url: 'https://serenkit.com/cal/unemployment/',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: '실업급여 계산기 - serenkit' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '실업급여 계산기 - serenkit' }],
   },
 }
 
