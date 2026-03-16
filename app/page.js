@@ -3,7 +3,7 @@ import { CATEGORIES } from '@/lib/categories'
 import { COLOR_TOOLS } from '@/lib/colorTools'
 import { DEV_TOOLS, DEV_HERO_PATTERN } from '@/lib/devTools'
 import { CALC_HERO_PATTERN } from '@/lib/constants'
-import AdUnit, { AD_SLOT_TOP, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/components/share/AdUnit'
+import AdUnit, { AD_SLOT_MIDDLE, AD_SLOT_BOTTOM, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/components/share/AdUnit'
 
 const BASE_URL = 'https://serenkit.com'
 
@@ -54,11 +54,11 @@ export default function Home() {
       </section>
 
       {/* 데스크탑: 좌측사이드바 | 중앙콘텐츠 | 우측사이드바 */}
-      <div className="xl:grid xl:grid-cols-[220px_1fr_220px] 2xl:grid-cols-[320px_1fr_320px] xl:items-start">
+      <div className="2xl:grid 2xl:grid-cols-[320px_1fr_320px] 2xl:items-start">
 
-        {/* 좌측 사이드바 광고 — 데스크탑(xl+) 전용 */}
-        <div className="hidden xl:flex justify-center pt-10">
-          <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+        {/* 좌측 사이드바 광고 — 데스크탑(2xl+) 전용 */}
+        <div className="hidden 2xl:flex justify-center pt-10">
+          <div className="sticky top-24 w-[300px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function Home() {
         {/* 중앙 콘텐츠 */}
         <div>
           {/* 세 카테고리 카드 */}
-          <main className="container md:w-11/12 w-[92%] xl:w-full mx-auto mt-10">
+          <main className="container md:w-11/12 w-[92%] 2xl:w-full mx-auto mt-10">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
               {/* 계산기 */}
@@ -211,15 +211,19 @@ export default function Home() {
             </div>
           </main>
 
-          {/* 광고 — 카드 그리드 아래 (태블릿만 / 데스크탑은 사이드바로 대체) */}
-          <div className="container md:w-11/12 w-[92%] xl:w-full mx-auto mt-6 hidden md:block xl:hidden">
-            <AdUnit slot={AD_SLOT_TOP} />
+          {/* 광고 B — 카드 아래 (태블릿+) */}
+          <div className="container md:w-11/12 w-[92%] 2xl:w-full mx-auto mt-6 hidden md:block">
+            <AdUnit slot={AD_SLOT_MIDDLE} />
+          </div>
+          {/* 광고 C — 하단 (태블릿+) */}
+          <div className="container md:w-11/12 w-[92%] 2xl:w-full mx-auto mt-4 hidden md:block">
+            <AdUnit slot={AD_SLOT_BOTTOM} />
           </div>
         </div>
 
-        {/* 우측 사이드바 광고 — 데스크탑(xl+) 전용 */}
-        <div className="hidden xl:flex justify-center pt-10">
-          <div className="sticky top-24 w-[200px] 2xl:w-[300px]">
+        {/* 우측 사이드바 광고 — 데스크탑(2xl+) 전용 */}
+        <div className="hidden 2xl:flex justify-center pt-10">
+          <div className="sticky top-24 w-[300px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
           </div>
         </div>

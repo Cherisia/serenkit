@@ -16,7 +16,7 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
         aria-label="페이지 소개"
       >
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: COLOR_HERO_PATTERN }} aria-hidden="true" />
-        <div className="container xl:w-[600px] md:w-[640px] w-[92%] mx-auto text-center relative">
+        <div className="container 2xl:w-[600px] md:w-[640px] w-[92%] mx-auto text-center relative">
           <div className="text-5xl mb-4" aria-hidden="true">{tool?.icon}</div>
           <h1 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-tight">
             {tool?.name}
@@ -29,10 +29,10 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
       </section>
 
       {/* 데스크탑: 좌측사이드바 | 중앙콘텐츠(600px) | 우측사이드바 */}
-      <div className="xl:grid xl:grid-cols-[1fr_600px_1fr] xl:items-start">
+      <div className="2xl:grid 2xl:grid-cols-[1fr_600px_1fr] 2xl:items-start">
 
         {/* 좌측 사이드바 광고 — 데스크탑(xl+) 전용 */}
-        <div className="hidden xl:flex justify-center pt-6">
+        <div className="hidden 2xl:flex justify-center pt-6">
           <div className="sticky top-24 w-[300px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
           </div>
@@ -41,22 +41,22 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
         {/* 중앙 콘텐츠 */}
         <div>
           {/* 광고 A — 상단 (배너 직후, 모바일·태블릿만) */}
-          <div className="container xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-6 xl:hidden">
+          <div className="container 2xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-6 xl:hidden">
             <AdUnit slot={AD_SLOT_TOP} />
           </div>
 
           {/* Main content */}
-          <main className="container xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-4 space-y-4" id="main-content">
+          <main className="container 2xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-4 space-y-4" id="main-content">
             {children}
           </main>
 
           {/* 광고 B — 중간 (도구 아래, 모든 디바이스) */}
-          <div className="container xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-4">
+          <div className="container 2xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-4">
             <AdUnit slot={AD_SLOT_MIDDLE} />
           </div>
 
           {/* Related tools */}
-          <aside className="container xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-10" aria-label="관련 도구">
+          <aside className="container 2xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-10" aria-label="관련 도구">
             <section>
               <h2 className="text-base font-black text-slate-700 mb-4 flex items-center gap-2">
                 <span className="w-1 h-5 bg-indigo-400 rounded-full inline-block" aria-hidden="true"></span>
@@ -79,7 +79,7 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
           </aside>
 
           {/* 광고 C — 하단 (FAQ 위, 태블릿·데스크탑 전용) */}
-          <div className="container xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-6 hidden md:block">
+          <div className="container 2xl:w-[600px] md:w-[640px] w-[92%] mx-auto mt-6 hidden md:block">
             <AdUnit slot={AD_SLOT_BOTTOM} />
           </div>
 
@@ -87,7 +87,7 @@ export default function ToolLayout({ toolKey, children, faqs = [] }) {
         </div>
 
         {/* 우측 사이드바 광고 — 데스크탑(xl+) 전용 */}
-        <div className="hidden xl:flex justify-center pt-6">
+        <div className="hidden 2xl:flex justify-center pt-6">
           <div className="sticky top-24 w-[300px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
           </div>

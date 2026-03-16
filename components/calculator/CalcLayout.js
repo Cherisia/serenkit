@@ -30,10 +30,10 @@ export default function CalcLayout({ title, desc, currentUrl, faqs, children }) 
       </section>
 
       {/* 데스크탑: 좌측사이드바 | 중앙콘텐츠(560px) | 우측사이드바 */}
-      <div className="xl:grid xl:grid-cols-[1fr_560px_1fr] xl:items-start">
+      <div className="2xl:grid 2xl:grid-cols-[1fr_560px_1fr] 2xl:items-start">
 
         {/* 좌측 사이드바 광고 — 데스크탑(xl+) 전용 */}
-        <div className="hidden xl:flex justify-center pt-6">
+        <div className="hidden 2xl:flex justify-center pt-6">
           <div className="sticky top-24 w-[300px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_L} fullWidth={false} />
           </div>
@@ -42,12 +42,12 @@ export default function CalcLayout({ title, desc, currentUrl, faqs, children }) 
         {/* 중앙 콘텐츠 */}
         <div>
           {/* 광고 A — 상단 (배너 직후, 모바일·태블릿만 / 데스크탑은 사이드바로 대체) */}
-          <div className="container xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-6 xl:hidden">
+          <div className="container 2xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-6 xl:hidden">
             <AdUnit slot={AD_SLOT_TOP} />
           </div>
 
           {/* 계산기 본체 */}
-          <main className="container xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-4">
+          <main className="container 2xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-4">
             <div ref={shareRef}>
               {children}
             </div>
@@ -65,12 +65,12 @@ export default function CalcLayout({ title, desc, currentUrl, faqs, children }) 
           </main>
 
           {/* 광고 B — 중간 (계산기 아래, 모든 디바이스) */}
-          <div className="container xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-4">
+          <div className="container 2xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-4">
             <AdUnit slot={AD_SLOT_MIDDLE} />
           </div>
 
           {/* 다른 계산기 */}
-          <aside className="container xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-10">
+          <aside className="container 2xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-stone-400 to-stone-500 flex items-center justify-center text-sm shrink-0">
                 🧮
@@ -116,7 +116,7 @@ export default function CalcLayout({ title, desc, currentUrl, faqs, children }) 
           </aside>
 
           {/* 광고 C — 하단 (FAQ 위, 태블릿·데스크탑 전용) */}
-          <div className="container xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-6 hidden md:block">
+          <div className="container 2xl:w-[560px] md:w-[600px] w-[92%] mx-auto mt-6 hidden md:block">
             <AdUnit slot={AD_SLOT_BOTTOM} />
           </div>
 
@@ -124,7 +124,7 @@ export default function CalcLayout({ title, desc, currentUrl, faqs, children }) 
         </div>
 
         {/* 우측 사이드바 광고 — 데스크탑(xl+) 전용 */}
-        <div className="hidden xl:flex justify-center pt-6">
+        <div className="hidden 2xl:flex justify-center pt-6">
           <div className="sticky top-24 w-[300px]">
             <AdUnit slot={AD_SLOT_SIDEBAR_R} fullWidth={false} />
           </div>
