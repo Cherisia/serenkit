@@ -2,13 +2,17 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import LottoCalc from '@/components/calculator/LottoCalc'
 
 export const metadata = {
-  title: '로또 번호 추첨기 - 자동 번호 생성',
-  description: '로또 번호를 자동 추첨해요. 제외 번호 설정, 1~5게임 동시 추첨, 번호 복사까지 한 번에.',
-  keywords: ['로또 번호 생성기', '로또 자동 번호', '로또 추첨기', '로또 6/45', '행운의 번호', '로또 번호 추천'],
+  title: '로또 자동번호 생성기 — 번호 추첨기 · 제외 번호 설정',
+  description: '로또 6/45 번호를 자동으로 생성해요. 제외 번호 설정, 1~5게임 동시 추첨, 번호 복사까지 한 번에. 매주 토요일 추첨 전 행운의 번호를 뽑아보세요.',
+  keywords: [
+    '로또 자동번호', '로또자동번호', '로또 자동 번호', '로또 자동번호 생성', '로또자동번호생성',
+    '로또 번호 생성기', '로또 추첨기', '로또번호추첨', '로또번호 추첨', '로또 자동 번호 생성',
+    '로또 6/45', '행운의 번호', '로또 번호 추천', '로또계산기', '로또 확률 계산기',
+  ],
   alternates: { canonical: 'https://serenkit.com/cal/lotto/' },
   openGraph: {
-    title: '로또 번호 추첨기 | serenkit',
-    description: '로또 6/45 번호를 자동 추첨해요. 제외 번호 설정과 최대 5게임 동시 추첨 지원.',
+    title: '로또 자동번호 생성기 — 번호 추첨기 | serenkit',
+    description: '로또 6/45 번호를 자동 생성해요. 제외 번호 설정과 최대 5게임 동시 추첨 지원.',
     url: 'https://serenkit.com/cal/lotto/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
@@ -18,7 +22,7 @@ export const metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: '로또 번호 추첨기',
+  name: '로또 자동번호 생성기',
   url: 'https://serenkit.com/cal/lotto/',
   description: '무작위 로또 6/45 번호 자동 생성기. 슬롯머신 애니메이션, 제외 번호 설정, 1~5게임 동시 추첨.',
   applicationCategory: 'UtilityApplication',
@@ -38,7 +42,7 @@ const faqs = [
 export default function Page() {
   return (
     <CalcLayout
-      title="🎱 로또 번호 추첨기"
+      title="🎱 로또 자동번호 생성기"
       desc="행운의 번호를 뽑아드려요 — 제외 번호 설정, 최대 5게임 동시 추첨"
       currentUrl="/cal/lotto/"
       faqs={faqs}

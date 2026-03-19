@@ -2,25 +2,25 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import MbtiCalc from '@/components/calculator/MbtiCalc'
 
 export const metadata = {
-  title: 'MBTI 궁합 계산기 - 황금비율·점수 분석',
-  description: '두 사람의 MBTI를 선택하면 궁합 점수와 4가지 차원 분석, 황금비율 여부를 알려드려요. 연인·친구·동료 궁합을 한눈에 확인하세요.',
-  keywords: ['MBTI 궁합', 'MBTI 궁합 계산기', 'MBTI 연애 궁합', 'mbti 궁합표', '황금비율 mbti', 'MBTI 친구 궁합', 'MBTI 직장 궁합', 'MBTI 검사', 'MBTI 유형 변화', 'MBTI 16가지'],
+  title: 'MBTI 궁합 계산기 · 관계도 - 황금비율·점수 분석',
+  description: '두 사람의 MBTI 관계도와 궁합 점수를 한 번에 확인하세요. 4가지 차원 분석, 황금비율 여부, 연인·친구·동료 궁합을 바로 알 수 있어요.',
+  keywords: ['MBTI 궁합', 'MBTI 궁합 계산기', 'mbti 관계도', 'MBTI 관계도', 'MBTI 연애 궁합', 'mbti 궁합표', '황금비율 mbti', 'MBTI 친구 궁합', 'MBTI 직장 궁합', 'MBTI 검사', 'MBTI 유형 변화', 'MBTI 16가지'],
   alternates: { canonical: 'https://serenkit.com/cal/mbti/' },
   openGraph: {
-    title: 'MBTI 궁합 계산기 - serenkit',
-    description: '두 사람의 MBTI 궁합 점수와 황금비율 여부를 바로 확인해보세요.',
+    title: 'MBTI 궁합 계산기 · 관계도 - serenkit',
+    description: '두 사람의 MBTI 관계도와 궁합 점수, 황금비율 여부를 바로 확인해보세요.',
     url: 'https://serenkit.com/cal/mbti/',
     type: 'website',
-    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'MBTI 궁합 계산기 - serenkit' }],
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'MBTI 궁합 계산기 관계도 - serenkit' }],
   },
 }
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'MBTI 궁합 계산기',
+  name: 'MBTI 궁합 계산기 · 관계도',
   url: 'https://serenkit.com/cal/mbti/',
-  description: '두 사람의 MBTI 유형으로 궁합 점수와 4가지 차원 분석을 제공하는 계산기',
+  description: '두 사람의 MBTI 유형으로 관계도와 궁합 점수, 4가지 차원 분석을 제공하는 계산기',
   applicationCategory: 'EntertainmentApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
@@ -34,6 +34,10 @@ const jsonLd = {
 }
 
 const faqs = [
+  {
+    q: 'MBTI 관계도란 무엇인가요?',
+    a: 'MBTI 관계도는 두 사람의 MBTI 유형이 서로 어떤 관계에 있는지를 E/I·N/S·T/F·J/P 4가지 차원으로 분석한 결과예요. 몇 가지 차원이 같고 다른지에 따라 궁합 점수와 관계 특성이 달라집니다. 황금비율(4가지 모두 반대), 유사형(4가지 모두 같) 등 다양한 유형이 있어요.',
+  },
   {
     q: 'MBTI 궁합이 실제 관계에 영향을 미치나요?',
     a: 'MBTI는 성격 유형을 이해하는 참고 도구예요. 궁합이 낮아도 서로 이해하고 노력하면 얼마든지 좋은 관계를 만들 수 있어요. 반대로 궁합이 좋아도 소통하지 않으면 관계는 어려워질 수 있답니다. 결국 가장 중요한 건 서로에 대한 이해와 노력이에요.',
@@ -70,7 +74,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="💘 MBTI 궁합 계산기" desc="두 사람의 MBTI로 궁합 점수와 황금비율 여부를 확인해보세요" currentUrl="/cal/mbti/" faqs={faqs}>
+    <CalcLayout title="💘 MBTI 궁합 계산기 · 관계도" desc="두 사람의 MBTI 관계도와 궁합 점수, 황금비율 여부를 한 번에 확인해보세요" currentUrl="/cal/mbti/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <MbtiCalc />
     </CalcLayout>
