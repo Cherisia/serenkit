@@ -12,6 +12,8 @@ export const metadata = {
     title: '색상 팔레트 생성기 — 보색·유사색·삼각배색 자동 생성 | serenkit',
     description: '기준 색상에서 보색·유사색·삼각배색 등 조화로운 팔레트 자동 생성. HEX 코드 복사.',
     url: `${BASE_URL}/color/palette-generator/`,
+    type: 'website',
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 팔레트 생성기 - serenkit' }],
   },
 }
 
@@ -28,12 +30,13 @@ const faqs = [
 export default function PaletteGeneratorPage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: '색상 팔레트 생성기',
-    description: '기준 색상에서 조화로운 색상 팔레트를 자동으로 생성하는 무료 온라인 도구',
+    description: '기준 색상에서 보색·유사색·삼각배색 등 조화로운 팔레트를 자동으로 생성하는 온라인 도구',
     url: `${BASE_URL}/color/palette-generator/`,
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 

@@ -36,12 +36,13 @@ const faqs = [
 export default function ColorExtractorPage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: '이미지 색상 추출기',
-    description: '이미지나 사진에서 주요 색상을 자동으로 추출하는 무료 온라인 도구. HEX, RGB, HSL 코드와 색상 이름 제공.',
+    description: '이미지나 사진에서 주요 색상을 자동으로 추출하는 온라인 도구. HEX, RGB, HSL 코드와 색상 이름 제공.',
     url: `${BASE_URL}/color/color-extractor/`,
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 

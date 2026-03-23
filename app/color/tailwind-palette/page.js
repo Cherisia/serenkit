@@ -4,14 +4,16 @@ import TailwindPalette from '@/components/color/TailwindPalette'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '테일윈드 색상표 - Tailwind CSS 모든 색상',
-  description: 'Tailwind CSS의 모든 색상을 한눈에 탐색하고 클래스명 또는 HEX 코드를 복사합니다. slate, gray, emerald, teal 등 22가지 색상 계열.',
-  keywords: ['Tailwind 색상표', 'Tailwind CSS colors', '테일윈드 색상', 'tailwind palette', 'tailwind color picker'],
+  title: '테일윈드 색상표 — Tailwind CSS 전체 색상 탐색·HEX·클래스명 복사',
+  description: 'Tailwind CSS 22가지 색상 계열 전체를 한눈에 탐색. 클래스명(emerald-500)과 HEX 코드를 원클릭 복사. slate, gray, blue, indigo, violet 등 모든 팔레트.',
+  keywords: ['Tailwind 색상표', 'Tailwind CSS colors', '테일윈드 색상', 'tailwind palette', 'tailwind color picker', 'Tailwind 색상 코드', 'Tailwind 클래스 색상', 'tailwind HEX 복사', '테일윈드 팔레트', 'Tailwind CSS 색상 목록'],
   alternates: { canonical: `${BASE_URL}/color/tailwind-palette/` },
   openGraph: {
-    title: '테일윈드 색상표 - serenkit',
-    description: 'Tailwind CSS 모든 색상 한눈에 탐색, 클래스명·HEX 복사',
+    title: '테일윈드 색상표 — Tailwind CSS 전체 색상 탐색·HEX·클래스명 복사 | serenkit',
+    description: 'Tailwind CSS 22가지 색상 계열 전체 탐색. 클래스명·HEX 원클릭 복사.',
     url: `${BASE_URL}/color/tailwind-palette/`,
+    type: 'website',
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '테일윈드 색상표 - serenkit' }],
   },
 }
 
@@ -28,12 +30,13 @@ const faqs = [
 export default function TailwindPalettePage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: '테일윈드 색상표',
-    description: 'Tailwind CSS 모든 색상을 탐색하고 클래스명 또는 HEX를 복사하는 무료 온라인 도구',
+    description: 'Tailwind CSS 22가지 색상 계열 전체를 탐색하고 클래스명·HEX를 복사하는 온라인 도구',
     url: `${BASE_URL}/color/tailwind-palette/`,
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 

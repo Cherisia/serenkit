@@ -12,6 +12,8 @@ export const metadata = {
     title: '색상 포맷 변환기 — HEX·RGB·HSL·CMYK·Tailwind 즉시 변환 | serenkit',
     description: 'HEX, RGB, HSL, CMYK, Tailwind 모든 색상 포맷 즉시 변환. 색상 코드 원클릭 복사.',
     url: `${BASE_URL}/color/color-converter/`,
+    type: 'website',
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 포맷 변환기 - serenkit' }],
   },
 }
 
@@ -28,12 +30,13 @@ const faqs = [
 export default function ColorConverterPage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: '색상 포맷 변환기',
-    description: 'HEX, RGB, HSL, CMYK, Tailwind 등 모든 색상 포맷을 변환하는 무료 온라인 도구',
+    description: 'HEX, RGB, HSL, CMYK, Tailwind 등 모든 색상 포맷을 변환하는 온라인 도구',
     url: `${BASE_URL}/color/color-converter/`,
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 

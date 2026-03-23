@@ -12,6 +12,8 @@ export const metadata = {
     title: '색상 피커 — HEX·RGB·HSL·CMYK·Tailwind 코드 즉시 복사 | serenkit',
     description: '비주얼 컬러 피커로 색상 선택 후 HEX·RGB·HSL·CMYK·Tailwind 코드 한 번에 복사.',
     url: `${BASE_URL}/color/color-picker/`,
+    type: 'website',
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 피커 - serenkit' }],
   },
 }
 
@@ -28,12 +30,13 @@ const faqs = [
 export default function ColorPickerPage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: '색상 피커',
-    description: '비주얼 컬러 피커로 색상을 선택하고 모든 포맷 코드를 복사하는 무료 온라인 도구',
+    description: '비주얼 컬러 피커로 색상을 선택하고 모든 포맷 코드를 복사하는 온라인 도구',
     url: `${BASE_URL}/color/color-picker/`,
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 

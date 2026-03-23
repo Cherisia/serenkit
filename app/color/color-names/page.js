@@ -12,6 +12,8 @@ export const metadata = {
     title: '색상 이름 찾기 — HEX 코드로 CSS 색상 이름·Tailwind 클래스 검색 | serenkit',
     description: 'HEX 코드로 가장 가까운 CSS 색상 이름·Tailwind 클래스 즉시 검색. 140가지 CSS 표준 색상 전체 목록 제공.',
     url: `${BASE_URL}/color/color-names/`,
+    type: 'website',
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 이름 찾기 - serenkit' }],
   },
 }
 
@@ -28,12 +30,13 @@ const faqs = [
 export default function ColorNamesPage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: '색상 이름 찾기',
-    description: 'HEX 코드로 가장 가까운 CSS 색상 이름과 Tailwind 클래스를 찾는 무료 온라인 도구',
+    description: 'HEX 코드로 가장 가까운 CSS 색상 이름과 Tailwind 클래스를 찾는 온라인 도구',
     url: `${BASE_URL}/color/color-names/`,
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 

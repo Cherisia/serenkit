@@ -12,6 +12,8 @@ export const metadata = {
     title: '명도 대비 검사기 — WCAG AA·AAA 접근성 기준 자동 확인 | serenkit',
     description: 'WCAG 2.1 AA·AAA 기준으로 두 색상의 명도 대비 비율 즉시 측정. 텍스트 접근성 확인.',
     url: `${BASE_URL}/color/contrast-checker/`,
+    type: 'website',
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '명도 대비 검사기 - serenkit' }],
   },
 }
 
@@ -28,12 +30,13 @@ const faqs = [
 export default function ContrastCheckerPage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: '명도 대비 검사기',
-    description: 'WCAG 접근성 기준에 따라 두 색상의 명도 대비 비율을 측정하는 무료 온라인 도구',
+    description: 'WCAG 접근성 기준에 따라 두 색상의 명도 대비 비율을 측정하는 온라인 도구',
     url: `${BASE_URL}/color/contrast-checker/`,
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 

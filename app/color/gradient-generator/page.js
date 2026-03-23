@@ -12,6 +12,8 @@ export const metadata = {
     title: '그라디언트 생성기 — CSS·Tailwind 그라디언트 코드 즉시 복사 | serenkit',
     description: 'CSS linear-gradient·radial-gradient 코드를 시각적으로 생성 후 즉시 복사.',
     url: `${BASE_URL}/color/gradient-generator/`,
+    type: 'website',
+    images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '그라디언트 생성기 - serenkit' }],
   },
 }
 
@@ -28,12 +30,13 @@ const faqs = [
 export default function GradientGeneratorPage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: '그라디언트 생성기',
-    description: 'CSS 그라디언트 코드를 시각적으로 생성하는 무료 온라인 도구',
+    description: 'CSS·Tailwind 그라디언트 코드를 시각적으로 생성하는 온라인 도구',
     url: `${BASE_URL}/color/gradient-generator/`,
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 
