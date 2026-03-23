@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import ZodiacCalc from '@/components/calculator/ZodiacCalc'
 
 export const metadata = {
-  title: '띠/별자리 계산기 - 오행·궁합 확인',
-  description: '생년월일로 나의 띠와 별자리를 확인해보세요. 오행, 궁합 좋은 띠, 2026년 무슨 띠인지, 별자리 특징까지 한번에 알아보세요.',
-  keywords: ['띠 계산기', '별자리 계산기', '내 띠 확인', '생년월일 별자리', '띠 궁합', '오행', '12간지', '2026년 무슨 띠', '별자리 경계 날짜', '동양 별자리'],
+  title: '띠·별자리 계산기 — 생년월일로 내 띠·별자리·궁합·오행 확인',
+  description: '생년월일로 나의 띠·별자리를 즉시 확인. 오행, 궁합 좋은 띠, 2026년 무슨 띠인지, 별자리 특징까지 한번에 알아보세요.',
+  keywords: ['띠 계산기', '별자리 계산기', '내 띠 확인', '생년월일 별자리', '띠 궁합', '오행', '12간지', '2026년 무슨 띠', '별자리 경계 날짜', '띠별 성격', '별자리 운세', '나의 띠'],
   alternates: { canonical: 'https://serenkit.com/cal/zodiac/' },
   openGraph: {
-    title: '띠/별자리 계산기 - serenkit',
-    description: '생년월일로 나의 띠와 별자리를 확인해보세요.',
+    title: '띠·별자리 계산기 — 생년월일로 내 띠·별자리·궁합·오행 확인 | serenkit',
+    description: '생년월일로 나의 띠·별자리 즉시 확인. 오행·궁합·별자리 특징까지 한번에.',
     url: 'https://serenkit.com/cal/zodiac/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '띠/별자리 계산기 - serenkit' }],

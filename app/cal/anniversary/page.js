@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import AnniversaryCalc from '@/components/calculator/AnniversaryCalc'
 
 export const metadata = {
-  title: '기념일 계산기',
-  description: '100일, 200일, 1주년 등 기념일 날짜를 바로 계산해요. 연인, 결혼, 친구와의 특별한 날을 미리 확인하세요.',
-  keywords: ['기념일 계산기', '100일 계산', '200일 계산', '1주년 날짜', '커플 기념일 계산'],
+  title: '기념일 계산기 — 100일·200일·1주년 날짜 자동 계산',
+  description: '만난 날부터 100일·200일·1주년 기념일 날짜를 자동 계산. 커플·결혼·친구 기념일을 한 번에 확인하고 미리 챙겨보세요.',
+  keywords: ['기념일 계산기', '100일 계산기', '100일 날짜 계산', '200일 기념일', '1주년 날짜 계산', '커플 기념일 계산기', '사귄날 기념일 계산', '결혼기념일 계산기', '기념일 날짜 계산', 'D+100 계산기'],
   alternates: { canonical: 'https://serenkit.com/cal/anniversary/' },
   openGraph: {
-    title: '기념일 계산기 - serenkit',
-    description: '100일, 200일, 1주년 등 기념일 날짜를 바로 계산해요.',
+    title: '기념일 계산기 — 100일·200일·1주년 날짜 자동 계산 | serenkit',
+    description: '만난 날부터 100일·200일·1주년 기념일 날짜를 자동 계산. 커플·결혼·친구 기념일 한 번에 확인.',
     url: 'https://serenkit.com/cal/anniversary/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '기념일 계산기 - serenkit' }],

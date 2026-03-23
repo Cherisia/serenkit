@@ -4,9 +4,9 @@ import TimestampConverter from '@/components/dev/TimestampConverter'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '타임스탬프 변환기 - Unix 타임스탬프 ↔ 날짜시간 변환',
-  description: 'Unix 타임스탬프(초/밀리초)를 날짜시간으로 변환하거나 날짜를 타임스탬프로 변환합니다. UTC·KST 동시 표시.',
-  keywords: ['타임스탬프 변환', 'Unix timestamp', '유닉스 타임스탬프', '타임스탬프 계산기', 'epoch 변환', 'UTC KST 변환'],
+  title: '타임스탬프 변환기 — Unix 타임스탬프 ↔ 날짜시간 · UTC·KST 변환',
+  description: 'Unix 타임스탬프(초·밀리초)를 날짜시간으로, 날짜를 타임스탬프로 즉시 변환. UTC·KST 동시 표시, 현재 타임스탬프 자동 갱신.',
+  keywords: ['타임스탬프 변환기', 'Unix timestamp 변환', '유닉스 타임스탬프', 'epoch 변환기', 'UTC KST 변환', '밀리초 변환', 'timestamp to date', '타임스탬프 계산기', '현재 타임스탬프', 'epoch time 변환'],
   alternates: { canonical: `${BASE_URL}/dev/timestamp/` },
   openGraph: {
     title: '타임스탬프 변환기 | serenkit',

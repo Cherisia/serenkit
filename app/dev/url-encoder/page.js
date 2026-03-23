@@ -4,13 +4,13 @@ import UrlEncoderDecoder from '@/components/dev/UrlEncoderDecoder'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: 'URL 인코더/디코더 - percent-encoding 변환',
-  description: 'URL에 포함할 수 없는 한글·특수문자를 percent-encoding으로 인코딩하거나 디코딩합니다. 실시간 변환.',
-  keywords: ['URL 인코딩', 'URL 디코딩', 'percent encoding', 'encodeURIComponent', 'URL 변환기', 'URL 특수문자 인코딩'],
+  title: 'URL 인코더/디코더 — 한글·특수문자 percent-encoding 즉시 변환',
+  description: 'URL에 포함할 수 없는 한글·특수문자를 percent-encoding으로 인코딩하거나 디코딩. 실시간 변환, encodeURIComponent 방식 지원.',
+  keywords: ['URL 인코딩', 'URL 디코딩', 'percent encoding', 'encodeURIComponent', 'URL 변환기', 'URL 특수문자 인코딩', 'URL 한글 인코딩', 'URL 디코딩 온라인', 'URL 인코딩 변환기', 'URL encode decode'],
   alternates: { canonical: `${BASE_URL}/dev/url-encoder/` },
   openGraph: {
-    title: 'URL 인코더/디코더 | serenkit',
-    description: 'URL에 포함할 수 없는 한글·특수문자를 percent-encoding으로 실시간 인코딩/디코딩합니다.',
+    title: 'URL 인코더/디코더 — 한글·특수문자 percent-encoding 즉시 변환 | serenkit',
+    description: '한글·특수문자 URL percent-encoding 실시간 인코딩/디코딩. encodeURIComponent 방식.',
     url: `${BASE_URL}/dev/url-encoder/`,
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],

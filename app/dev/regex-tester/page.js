@@ -4,13 +4,13 @@ import RegexTester from '@/components/dev/RegexTester'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '정규식 테스터 - 실시간 Regex 매치 확인',
-  description: '정규식(Regular Expression)을 입력하고 테스트 문자열에서 실시간으로 매치를 확인합니다. g·i·m·s·u 플래그 지원, 캡처 그룹 파싱, 한국 전화번호·이메일 등 예제 패턴 제공.',
-  keywords: ['정규식 테스터', 'regex tester', '정규표현식', 'regexp 테스트', '정규식 검사기', '정규식 매치', 'regex matcher', '정규식 예제'],
+  title: '정규식 테스터 — 실시간 Regex 매치 확인·캡처 그룹 파싱',
+  description: '정규식(Regex)을 입력해 실시간으로 매치를 하이라이트 확인. g·i·m·s·u 플래그, 캡처 그룹 파싱, 이메일·전화번호 등 예제 패턴 제공.',
+  keywords: ['정규식 테스터', 'regex tester', '정규표현식', 'regexp 테스트', '정규식 검사기', '정규식 매치', '정규식 예제', '정규식 온라인', 'regex online', '정규식 캡처 그룹'],
   alternates: { canonical: `${BASE_URL}/dev/regex-tester/` },
   openGraph: {
-    title: '정규식 테스터 | serenkit',
-    description: '정규식을 실시간으로 테스트하고 매치 결과를 확인합니다.',
+    title: '정규식 테스터 — 실시간 Regex 매치 확인·캡처 그룹 파싱 | serenkit',
+    description: '정규식 실시간 매치 확인. g·i·m 플래그, 캡처 그룹, 이메일·전화번호 예제 패턴 제공.',
     url: `${BASE_URL}/dev/regex-tester/`,
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],

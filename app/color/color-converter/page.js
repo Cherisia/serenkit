@@ -4,13 +4,13 @@ import ColorConverter from '@/components/color/ColorConverter'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '색상 포맷 변환기 - HEX RGB HSL CMYK 변환',
-  description: 'HEX, RGB, RGBA, HSL, HSLA, HSB, CMYK, Tailwind 등 모든 색상 포맷을 한 번에 변환하는 무료 온라인 도구입니다.',
-  keywords: ['색상 변환', 'HEX RGB 변환', 'HSL 변환', 'CMYK 변환', 'Tailwind 색상 변환', 'color converter'],
+  title: '색상 포맷 변환기 — HEX·RGB·HSL·CMYK·Tailwind 즉시 변환',
+  description: 'HEX, RGB, RGBA, HSL, HSLA, HSB, CMYK, Tailwind 등 모든 색상 포맷을 한 번에 변환. 색상 코드 복사 기능 포함.',
+  keywords: ['색상 변환기', 'HEX RGB 변환', 'HSL 변환', 'CMYK 변환', 'Tailwind 색상 변환', 'color converter', '색상 포맷 변환', 'HEX HSL 변환', 'RGB CMYK 변환', '색상 코드 변환기'],
   alternates: { canonical: `${BASE_URL}/color/color-converter/` },
   openGraph: {
-    title: '색상 포맷 변환기 - serenkit',
-    description: 'HEX, RGB, HSL, CMYK, Tailwind 모든 색상 포맷 즉시 변환',
+    title: '색상 포맷 변환기 — HEX·RGB·HSL·CMYK·Tailwind 즉시 변환 | serenkit',
+    description: 'HEX, RGB, HSL, CMYK, Tailwind 모든 색상 포맷 즉시 변환. 색상 코드 원클릭 복사.',
     url: `${BASE_URL}/color/color-converter/`,
   },
 }

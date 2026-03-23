@@ -4,13 +4,13 @@ import ColorNames from '@/components/color/ColorNames'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '색상 이름 찾기 - CSS 색상 이름 검색',
-  description: 'HEX 코드를 입력하면 가장 가까운 CSS 색상 이름과 Tailwind 클래스를 자동으로 찾아줍니다. 140가지 CSS 표준 색상 전체 목록 제공.',
-  keywords: ['CSS 색상 이름', '색상 이름 찾기', 'color name', 'CSS named colors', 'Tailwind 색상 이름'],
+  title: '색상 이름 찾기 — HEX 코드로 CSS 색상 이름·Tailwind 클래스 검색',
+  description: 'HEX 코드 입력 시 가장 가까운 CSS 색상 이름(140가지)과 Tailwind 클래스를 즉시 검색. 색상 이름 전체 목록과 직접 색상 클릭으로도 확인 가능.',
+  keywords: ['CSS 색상 이름', '색상 이름 찾기', 'color name 검색', 'CSS named colors', 'Tailwind 색상 이름', 'HEX 색상 이름 변환', '색상 이름 목록', 'CSS 색상 코드 이름', 'named color 검색', 'color name finder'],
   alternates: { canonical: `${BASE_URL}/color/color-names/` },
   openGraph: {
-    title: '색상 이름 찾기 - serenkit',
-    description: 'HEX 코드 → 가장 가까운 CSS 색상 이름 & Tailwind 클래스 자동 검색',
+    title: '색상 이름 찾기 — HEX 코드로 CSS 색상 이름·Tailwind 클래스 검색 | serenkit',
+    description: 'HEX 코드로 가장 가까운 CSS 색상 이름·Tailwind 클래스 즉시 검색. 140가지 CSS 표준 색상 전체 목록 제공.',
     url: `${BASE_URL}/color/color-names/`,
   },
 }

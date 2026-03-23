@@ -4,13 +4,13 @@ import ColorPicker from '@/components/color/ColorPicker'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '색상 피커 - 비주얼 컬러 피커',
-  description: '비주얼 컬러 피커로 원하는 색상을 선택하고 HEX, RGB, HSL, CMYK, Tailwind 등 모든 포맷 코드를 복사합니다.',
-  keywords: ['색상 피커', '컬러 피커', 'color picker', 'HEX 색상 선택', 'RGB 슬라이더'],
+  title: '색상 피커 — HEX·RGB·HSL·CMYK·Tailwind 코드 즉시 복사',
+  description: '비주얼 컬러 피커로 원하는 색상을 선택하고 HEX, RGB, HSL, CMYK, Tailwind 등 모든 포맷 코드를 한 번에 복사. 온라인 컬러 피커.',
+  keywords: ['색상 피커', '컬러 피커', 'color picker', 'HEX 색상 선택', 'RGB 슬라이더', '색상 코드 복사', '색상 선택기', 'HEX 코드 복사', '색상 팔레트 피커', 'CSS 색상 선택'],
   alternates: { canonical: `${BASE_URL}/color/color-picker/` },
   openGraph: {
-    title: '색상 피커 - serenkit',
-    description: '비주얼 컬러 피커로 색상 선택 및 모든 포맷 코드 복사',
+    title: '색상 피커 — HEX·RGB·HSL·CMYK·Tailwind 코드 즉시 복사 | serenkit',
+    description: '비주얼 컬러 피커로 색상 선택 후 HEX·RGB·HSL·CMYK·Tailwind 코드 한 번에 복사.',
     url: `${BASE_URL}/color/color-picker/`,
   },
 }

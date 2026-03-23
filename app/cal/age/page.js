@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import AgeCalc from '@/components/calculator/AgeCalc'
 
 export const metadata = {
-  title: '만 나이 계산기',
-  description: '생년월일로 법적 만 나이를 바로 계산해요. 2023년 만 나이 통일법 기준으로 정확한 만 나이를 확인하세요.',
-  keywords: ['만 나이 계산기', '만나이 계산', '법적 나이 계산', '만 나이 통일법', '나이 계산기'],
+  title: '만 나이 계산기 — 생년월일로 법적 만 나이 즉시 확인',
+  description: '생년월일 입력 즉시 법적 만 나이 자동 계산. 2023년 만 나이 통일법 기준, 기준일 변경 가능. 세는 나이·연 나이와의 차이도 함께 확인하세요.',
+  keywords: ['만 나이 계산기', '만나이계산기', '나이 계산기', '만 나이 통일법', '법적 나이 계산', '생년월일 나이 계산', '세는 나이 만 나이 차이', '만 나이 계산 방법', '내 만 나이', '만나이 계산 사이트'],
   alternates: { canonical: 'https://serenkit.com/cal/age/' },
   openGraph: {
-    title: '만 나이 계산기 - serenkit',
-    description: '생년월일로 법적 만 나이를 바로 계산해요.',
+    title: '만 나이 계산기 — 생년월일로 법적 만 나이 즉시 확인 | serenkit',
+    description: '생년월일 입력 즉시 법적 만 나이 자동 계산. 2023년 만 나이 통일법 기준.',
     url: 'https://serenkit.com/cal/age/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '만 나이 계산기 - serenkit' }],

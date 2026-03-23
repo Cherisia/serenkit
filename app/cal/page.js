@@ -8,13 +8,13 @@ import AdUnit, { AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '생활 계산기 모음 - 날짜·건강·금융·단위 변환',
-  description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량, 단위 변환, 생리주기까지 생활에 필요한 모든 계산기가 모여 있어요.',
-  keywords: ['날짜 계산기', 'D-day 계산기', '날짜 차이 계산기', '영업일 계산기', '만 나이 계산기', '기념일 계산기', '월급 실수령액 계산기', 'BMI 계산기', '적정 체중 계산기', '기초대사량 계산기', '단위 변환기', '생리주기 계산기', '생활 계산기'],
+  title: '생활 계산기 모음 — 날짜·건강·금융·단위 변환 계산기',
+  description: 'D-day·날짜 차이·만 나이·영업일·기념일·월급 실수령액·퇴직금·실업급여·종합소득세·BMI·적정 체중·평수 변환까지. 생활에 필요한 계산기 모음.',
+  keywords: ['생활 계산기', '날짜 계산기', 'D-day 계산기', '만 나이 계산기', '월급 실수령액 계산기', '퇴직금 계산기', '실업급여 계산기', 'BMI 계산기', '평수 계산기', '단위 변환기'],
   alternates: { canonical: `${BASE_URL}/cal/` },
   openGraph: {
-    title: '생활 계산기 모음 - serenkit',
-    description: 'D-day, 날짜 차이, 영업일, 만 나이, 기념일, 월급 실수령액, 띠/별자리, 적정 체중, 기초대사량, 단위 변환, 생리주기까지 생활에 필요한 모든 계산기가 모여 있어요.',
+    title: '생활 계산기 모음 — 날짜·건강·금융·단위 변환 | serenkit',
+    description: 'D-day·날짜·만 나이·월급·퇴직금·실업급여·BMI·평수 등 생활 계산기 모음.',
     url: `${BASE_URL}/cal/`,
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit 생활 계산기 모음' }],

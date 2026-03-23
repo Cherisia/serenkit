@@ -4,13 +4,13 @@ import ContrastChecker from '@/components/color/ContrastChecker'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '명도 대비 검사기 - WCAG 접근성 검사',
-  description: 'WCAG 접근성 기준에 따라 두 색상의 명도 대비 비율을 측정합니다. AA·AAA 기준 통과 여부를 자동으로 확인합니다.',
-  keywords: ['명도 대비', 'WCAG 검사', '색상 접근성', 'contrast checker', 'color contrast ratio'],
+  title: '명도 대비 검사기 — WCAG AA·AAA 접근성 기준 자동 확인',
+  description: '두 색상의 명도 대비 비율(Contrast Ratio)을 측정해 WCAG 2.1 AA·AAA 기준 통과 여부를 즉시 확인. 텍스트·UI 색상 접근성 검사.',
+  keywords: ['명도 대비 검사기', 'WCAG 검사', '색상 접근성', 'contrast checker', 'color contrast ratio', 'WCAG AA 기준', '웹 접근성 색상', '텍스트 대비 검사', '색상 대비 비율', 'accessibility contrast'],
   alternates: { canonical: `${BASE_URL}/color/contrast-checker/` },
   openGraph: {
-    title: '명도 대비 검사기 - serenkit',
-    description: 'WCAG AA/AAA 기준으로 두 색상의 명도 대비 비율 자동 측정',
+    title: '명도 대비 검사기 — WCAG AA·AAA 접근성 기준 자동 확인 | serenkit',
+    description: 'WCAG 2.1 AA·AAA 기준으로 두 색상의 명도 대비 비율 즉시 측정. 텍스트 접근성 확인.',
     url: `${BASE_URL}/color/contrast-checker/`,
   },
 }

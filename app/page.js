@@ -10,13 +10,13 @@ const BASE_URL = 'https://serenkit.com'
 const totalCalcs = CATEGORIES.reduce((sum, cat) => sum + cat.calcs.length, 0)
 
 export const metadata = {
-  title: 'serenkit - 생활 계산기 · 색상 도구 · 개발자 도구 모음',
-  description: `자주 쓰는 도구들을 한 곳에 모았어요. 계산기 ${totalCalcs}개, 색상 도구 ${COLOR_TOOLS.length}개, 개발자 도구 ${DEV_TOOLS.length}개. 북마크 하나면 충분합니다.`,
-  keywords: ['생활 계산기', '색상 변환', '날짜 계산기', '월급 계산기', 'HEX RGB 변환', '색상 도구', '개발자 도구', 'UUID 생성기', 'Base64 인코딩'],
+  title: 'serenkit — 생활 계산기·색상 도구·개발자 도구 모음',
+  description: `날짜·건강·금융 계산기 ${totalCalcs}개, 색상 변환·팔레트 ${COLOR_TOOLS.length}개, 개발자 유틸리티 ${DEV_TOOLS.length}개. 자주 쓰는 도구들을 한 곳에서 즉시 사용.`,
+  keywords: ['생활 계산기', '날짜 계산기', '월급 계산기', 'D-day 계산기', '색상 변환', 'HEX RGB 변환', '개발자 도구', 'UUID 생성기', 'Base64 인코딩', '한국 생활 도구'],
   alternates: { canonical: `${BASE_URL}/` },
   openGraph: {
-    title: 'serenkit - 생활 계산기 · 색상 도구 · 개발자 도구 모음',
-    description: `날짜·건강·금융 계산기 ${totalCalcs}개, 색상 변환·팔레트 도구 ${COLOR_TOOLS.length}개, 개발자 도구 ${DEV_TOOLS.length}개가 모여 있어요.`,
+    title: 'serenkit — 생활 계산기·색상 도구·개발자 도구 모음',
+    description: `날짜·건강·금융 계산기 ${totalCalcs}개, 색상 변환·팔레트 ${COLOR_TOOLS.length}개, 개발자 도구 ${DEV_TOOLS.length}개 — 한 곳에서 즉시 사용.`,
     url: `${BASE_URL}/`,
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit - 생활 계산기 · 색상 도구 · 개발자 도구 모음' }],

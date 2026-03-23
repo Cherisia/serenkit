@@ -4,13 +4,13 @@ import GradientGenerator from '@/components/color/GradientGenerator'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '그라디언트 생성기 - CSS 그라디언트 코드 생성',
-  description: '색상과 방향을 선택해 CSS 선형·방사형·원뿔형 그라디언트 코드를 시각적으로 생성합니다. Tailwind 클래스명도 함께 제공합니다.',
-  keywords: ['CSS 그라디언트', '그라디언트 생성기', 'gradient generator', 'linear-gradient', 'Tailwind gradient'],
+  title: '그라디언트 생성기 — CSS·Tailwind 그라디언트 코드 즉시 복사',
+  description: '색상과 방향을 선택해 CSS linear-gradient·radial-gradient 코드를 시각적으로 생성. Tailwind 그라디언트 클래스도 즉시 복사.',
+  keywords: ['그라디언트 생성기', 'CSS 그라디언트', 'gradient generator', 'linear-gradient 생성', 'Tailwind gradient', 'CSS 그라디언트 코드', '그라디언트 배경 코드', '선형 그라디언트', '방사형 그라디언트', 'CSS gradient maker'],
   alternates: { canonical: `${BASE_URL}/color/gradient-generator/` },
   openGraph: {
-    title: '그라디언트 생성기 - serenkit',
-    description: 'CSS 선형·방사형·원뿔형 그라디언트 코드를 시각적으로 생성',
+    title: '그라디언트 생성기 — CSS·Tailwind 그라디언트 코드 즉시 복사 | serenkit',
+    description: 'CSS linear-gradient·radial-gradient 코드를 시각적으로 생성 후 즉시 복사.',
     url: `${BASE_URL}/color/gradient-generator/`,
   },
 }

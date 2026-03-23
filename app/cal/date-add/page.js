@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import DateAddCalc from '@/components/calculator/DateAddCalc'
 
 export const metadata = {
-  title: '날짜 더하기 빼기 계산기',
-  description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 바로 계산해요. 90일 후, 1년 전 날짜 등을 간편하게 확인하세요.',
-  keywords: ['날짜 더하기', '날짜 빼기', '날짜 계산기', '90일 후 날짜', '몇일 후 날짜'],
+  title: '날짜 더하기 빼기 계산기 — 며칠 후·전 날짜 즉시 확인',
+  description: '날짜에 일·월·년을 더하거나 빼서 결과 날짜를 즉시 계산. 90일 후·30일 전·1년 뒤 날짜를 빠르게 확인하세요.',
+  keywords: ['날짜 더하기 계산기', '날짜 빼기 계산기', '날짜 계산기', '며칠 후 날짜', '90일 후 날짜', '30일 후 날짜', '날짜 추가 계산', '몇일 후 날짜', '날짜 연산', '기간 후 날짜 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/date-add/' },
   openGraph: {
-    title: '날짜 더하기 빼기 계산기 - serenkit',
-    description: '날짜에 년, 월, 일을 더하거나 빼서 결과 날짜를 바로 계산해요.',
+    title: '날짜 더하기 빼기 계산기 — 며칠 후·전 날짜 즉시 확인 | serenkit',
+    description: '날짜에 일·월·년을 더하거나 빼서 결과 날짜를 즉시 계산. 90일 후·30일 전 날짜 빠르게 확인.',
     url: 'https://serenkit.com/cal/date-add/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 - serenkit' }],

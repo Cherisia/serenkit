@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import IncomeTaxCalc from '@/components/calculator/IncomeTaxCalc'
 
 export const metadata = {
-  title: '종합소득세 계산기 2026',
-  description: '2026년 신고(2025년 귀속) 종합소득세를 계산해보세요. 근로소득·사업소득·프리랜서 소득을 입력하면 과세표준·산출세액·세액공제·결정세액까지 단계별로 계산해드려요.',
-  keywords: ['종합소득세 계산기', '소득세 계산기', '프리랜서 세금 계산기', '사업소득세 계산기', '세금 계산기', '실효세율 계산기', '연금저축 세액공제', '종합소득세 신고'],
+  title: '종합소득세 계산기 2026 — 프리랜서·사업소득 세금 계산',
+  description: '2026년 신고(2025년 귀속) 종합소득세 계산. 근로소득·사업소득·프리랜서 소득 입력 시 과세표준·산출세액·세액공제·결정세액 단계별 확인.',
+  keywords: ['종합소득세 계산기', '소득세 계산기', '프리랜서 세금 계산기', '사업소득세 계산기', '세금 계산기', '실효세율 계산기', '연금저축 세액공제', '종합소득세 신고', '종합소득세 세율', '2025 귀속 종합소득세'],
   alternates: { canonical: 'https://serenkit.com/cal/income-tax/' },
   openGraph: {
-    title: '종합소득세 계산기 2026 - serenkit',
-    description: '2026년 신고분(2025년 귀속) 종합소득세를 근로·사업·프리랜서 소득별로 단계별 계산해요.',
+    title: '종합소득세 계산기 2026 — 프리랜서·사업소득 세금 계산 | serenkit',
+    description: '2026년 신고분(2025년 귀속) 종합소득세. 과세표준·산출세액·세액공제 단계별 계산.',
     url: 'https://serenkit.com/cal/income-tax/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '종합소득세 계산기 - serenkit' }],

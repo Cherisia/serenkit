@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import DateDiffCalc from '@/components/calculator/DateDiffCalc'
 
 export const metadata = {
-  title: '날짜 차이 계산기',
-  description: '두 날짜 사이의 일수, 주, 월, 년을 바로 계산해요. 계약 기간, 근무 일수, 여행 기간 등을 정확하게 확인하세요.',
-  keywords: ['날짜 차이 계산기', '두 날짜 사이 일수', '날짜 간격 계산', '기간 계산기', '일수 계산'],
+  title: '날짜 차이 계산기 — 두 날짜 사이 일수·주·개월 즉시 계산',
+  description: '두 날짜 사이의 일수·주·개월·년을 즉시 계산. 계약 기간·근무 일수·여행 기간·나이 차이 등 정확한 날짜 간격을 확인하세요.',
+  keywords: ['날짜 차이 계산기', '두 날짜 사이 일수', '날짜 간격 계산기', '날짜 차이 일수', '기간 계산기', '날짜 비교', '근무 일수 계산', '몇일 차이', '날짜 사이 계산', '일수 계산기'],
   alternates: { canonical: 'https://serenkit.com/cal/date-diff/' },
   openGraph: {
-    title: '날짜 차이 계산기 - serenkit',
-    description: '두 날짜 사이의 일수, 주, 월, 년을 바로 계산해요.',
+    title: '날짜 차이 계산기 — 두 날짜 사이 일수·주·개월 즉시 계산 | serenkit',
+    description: '두 날짜 사이의 일수·주·개월·년을 즉시 계산. 계약 기간·근무 일수·여행 기간 확인.',
     url: 'https://serenkit.com/cal/date-diff/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '날짜 차이 계산기 - serenkit' }],

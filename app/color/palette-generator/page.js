@@ -4,13 +4,13 @@ import PaletteGenerator from '@/components/color/PaletteGenerator'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '색상 팔레트 생성기 - 보색 유사색 삼각배색',
-  description: '기준 색상에서 보색·유사색·삼각배색·단색배색 등 색채학적으로 조화로운 색상 팔레트를 자동으로 생성합니다.',
-  keywords: ['색상 팔레트', '보색', '유사색', '삼각배색', 'color palette generator', '색상 조화'],
+  title: '색상 팔레트 생성기 — 보색·유사색·삼각배색 자동 생성',
+  description: '기준 색상으로 보색·유사색·삼각배색·단색배색 팔레트를 자동 생성. 각 색상 HEX 코드 즉시 복사. 디자인 색상 조합 추천.',
+  keywords: ['색상 팔레트 생성기', '보색 계산기', '유사색 생성기', '삼각배색', 'color palette generator', '색상 조화', '보색 찾기', '색채 배색', '팔레트 색상 추천', 'color scheme generator'],
   alternates: { canonical: `${BASE_URL}/color/palette-generator/` },
   openGraph: {
-    title: '색상 팔레트 생성기 - serenkit',
-    description: '기준 색상에서 보색·유사색·삼각배색 등 조화로운 팔레트 자동 생성',
+    title: '색상 팔레트 생성기 — 보색·유사색·삼각배색 자동 생성 | serenkit',
+    description: '기준 색상에서 보색·유사색·삼각배색 등 조화로운 팔레트 자동 생성. HEX 코드 복사.',
     url: `${BASE_URL}/color/palette-generator/`,
   },
 }

@@ -6,13 +6,13 @@ import AdUnit, { AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '색상 도구 모음 - HEX RGB HSL 변환, 팔레트, 그라디언트',
-  description: '이미지 색상 추출, HEX·RGB·HSL 변환, Tailwind 색상표, 그라디언트 생성, 명도 대비 검사 등 모든 색상 유틸리티 도구 모음',
-  keywords: ['색상 변환', 'HEX RGB 변환', '색상 추출', 'Tailwind 색상표', '그라디언트 생성기', '명도 대비 검사', '색상 팔레트'],
+  title: '색상 도구 모음 — HEX·RGB·HSL 변환·팔레트·그라디언트 생성',
+  description: '이미지 색상 추출, HEX·RGB·HSL·CMYK 변환, Tailwind 색상표, 색상 팔레트·그라디언트 생성, WCAG 명도 대비 검사 등 색상 도구 모음.',
+  keywords: ['색상 도구', 'HEX RGB 변환', '색상 추출', 'Tailwind 색상표', '그라디언트 생성기', '명도 대비 검사', '색상 팔레트', '색상 변환기', 'CSS 색상 이름', '색상 피커'],
   alternates: { canonical: `${BASE_URL}/color/` },
   openGraph: {
-    title: '색상 도구 모음 - serenkit',
-    description: '이미지 색상 추출, HEX·RGB·HSL 변환, 팔레트 생성, 그라디언트, 명도 대비 검사 등 모든 색상 유틸리티',
+    title: '색상 도구 모음 — HEX·RGB·HSL 변환·팔레트·그라디언트 생성 | serenkit',
+    description: '색상 추출, HEX·RGB·HSL 변환, 팔레트·그라디언트 생성, 명도 대비 검사 등 색상 도구 모음.',
     url: `${BASE_URL}/color/`,
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 도구 모음 - serenkit' }],

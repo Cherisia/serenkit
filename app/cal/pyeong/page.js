@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import PyeongCalc from '@/components/calculator/PyeongCalc'
 
 export const metadata = {
-  title: '평수 계산기',
-  description: '평↔m² 즉시 변환! 아파트 평수를 제곱미터로, 제곱미터를 평수로 실시간 계산해요. 공급면적·전용면적 기준 아파트 평형 참고표도 확인하세요.',
-  keywords: ['평수 계산기', '평 m2 변환', '제곱미터 평수', '아파트 평수 계산', '평방미터 평수 변환', '평 계산기', '공급면적 전용면적', '평수 m2'],
+  title: '평수 계산기 — 평↔m² 즉시 변환 · 아파트 평형표',
+  description: '평↔m² 즉시 변환. 아파트 평수를 제곱미터로, 제곱미터를 평수로 실시간 계산. 공급면적·전용면적 기준 아파트 평형 참고표도 확인하세요.',
+  keywords: ['평수 계산기', '평 m2 변환', '제곱미터 평수 변환', '아파트 평수 계산', '평방미터 평수', '평 계산기', '공급면적 전용면적', '평수 계산 방법', '33평 m2', '아파트 평형표'],
   alternates: { canonical: 'https://serenkit.com/cal/pyeong/' },
   openGraph: {
-    title: '평수 계산기 - serenkit',
-    description: '평↔m² 즉시 변환! 아파트 평수를 제곱미터로, 제곱미터를 평수로 실시간 계산해요.',
+    title: '평수 계산기 — 평↔m² 즉시 변환 · 아파트 평형표 | serenkit',
+    description: '평↔m² 즉시 변환. 아파트 평형 참고표 포함.',
     url: 'https://serenkit.com/cal/pyeong/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],

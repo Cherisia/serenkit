@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import LunarCalc from '@/components/calculator/LunarCalc'
 
 export const metadata = {
-  title: '양력 음력 변환기 - 윤달·간지 확인',
-  description: '양력을 음력으로, 음력을 양력으로 즉시 변환해요. 윤달 여부, 간지(갑자), 음력 생일의 양력 날짜까지 한번에 확인하세요.',
-  keywords: ['양력 음력 변환', '음력 양력 변환', '음력 계산기', '양력 변환기', '윤달 계산', '간지 계산', '갑자 계산', '음력 날짜 변환', '음력 생일 양력', '설날 날짜'],
+  title: '음력 계산기 — 음력 생일·기일 양력 변환 · 윤달·간지 확인',
+  description: '음력 생일·기일·기념일의 올해 양력 날짜를 즉시 확인. 양력↔음력 양방향 변환, 윤달 포함 여부, 간지(갑자), 띠까지 한 번에. 1900~2050년 지원.',
+  keywords: ['음력 계산기', '양력 음력 변환', '음력 양력 변환', '음력 생일 양력', '기일 음력 양력', '윤달 계산', '간지 계산', '갑자 계산', '음력 날짜 변환', '설날 날짜'],
   alternates: { canonical: 'https://serenkit.com/cal/lunar/' },
   openGraph: {
-    title: '양력 음력 변환기 - serenkit',
-    description: '양력을 음력으로, 음력을 양력으로 즉시 변환해요.',
+    title: '음력 계산기 — 음력 생일·기일 양력 변환 | serenkit',
+    description: '음력 생일·기일의 올해 양력 날짜를 즉시 확인. 양력↔음력 양방향 변환, 윤달·간지·띠 동시 확인.',
     url: 'https://serenkit.com/cal/lunar/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '양력 음력 변환기 - serenkit' }],

@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import SeveranceCalc from '@/components/calculator/SeveranceCalc'
 
 export const metadata = {
-  title: '퇴직금 계산기',
-  description: '입사일, 퇴직일, 월 급여를 입력하면 법정 퇴직금을 바로 계산해요. 상여금·연차수당 포함 정확한 퇴직금을 확인하세요.',
-  keywords: ['퇴직금 계산기', '퇴직금 계산', '평균임금 계산', '퇴직금 얼마', '1일 평균임금', '근로기준법 퇴직금', '퇴직금 산정'],
+  title: '퇴직금 계산기 — 법정 퇴직금 즉시 계산 · 상여금·연차 포함',
+  description: '입사일·퇴직일·월급 입력으로 법정 퇴직금 즉시 계산. 상여금·연차수당 포함 1일 평균임금 자동 산정. 근로기준법 기준.',
+  keywords: ['퇴직금 계산기', '퇴직금 계산', '퇴직금 얼마', '1일 평균임금', '평균임금 계산', '근로기준법 퇴직금', '퇴직금 산정 방법', '퇴직금 상여금 포함', '연차수당 퇴직금', '퇴직금 1년 미만'],
   alternates: { canonical: 'https://serenkit.com/cal/severance/' },
   openGraph: {
-    title: '퇴직금 계산기 - serenkit',
-    description: '입사일, 퇴직일, 월 급여를 입력하면 법정 퇴직금을 바로 계산해요.',
+    title: '퇴직금 계산기 — 법정 퇴직금 즉시 계산 · 상여금·연차 포함 | serenkit',
+    description: '입사일·퇴직일·월급 입력으로 법정 퇴직금 즉시 계산. 상여금·연차수당 포함.',
     url: 'https://serenkit.com/cal/severance/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '퇴직금 계산기 - serenkit' }],

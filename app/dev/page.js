@@ -6,13 +6,13 @@ import AdUnit, { AD_SLOT_MIDDLE, AD_SLOT_SIDEBAR_L, AD_SLOT_SIDEBAR_R } from '@/
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: '개발자 도구 모음 - 타임스탬프, Base64, URL 인코딩, UUID',
-  description: '타임스탬프 변환, Base64 인코딩/디코딩, URL 인코더/디코더, UUID 생성기 등 개발자가 자주 쓰는 유틸리티 도구 모음',
-  keywords: ['타임스탬프 변환', 'Base64 인코딩', 'URL 인코딩', 'UUID 생성기', '개발자 도구', 'Unix timestamp', 'percent encoding'],
+  title: '개발자 도구 모음 — 타임스탬프·Base64·URL 인코딩·UUID·정규식',
+  description: '개발자가 자주 쓰는 유틸리티 5종: 타임스탬프 변환, Base64 인코딩/디코딩, URL 인코더/디코더, UUID 생성기, 정규식 테스터. 브라우저에서 즉시 처리.',
+  keywords: ['개발자 도구', '타임스탬프 변환', 'Base64 인코딩', 'URL 인코딩', 'UUID 생성기', '정규식 테스터', '개발자 유틸리티', '온라인 개발 도구', 'developer tools', 'percent encoding'],
   alternates: { canonical: `${BASE_URL}/dev/` },
   openGraph: {
-    title: '개발자 도구 모음 - serenkit',
-    description: '타임스탬프 변환, Base64 인코딩/디코딩, URL 인코더/디코더, UUID 생성기 등 개발자 유틸리티 모음',
+    title: '개발자 도구 모음 — 타임스탬프·Base64·URL·UUID·정규식 | serenkit',
+    description: '타임스탬프 변환, Base64, URL 인코딩, UUID 생성, 정규식 테스터 — 개발자 유틸리티 5종.',
     url: `${BASE_URL}/dev/`,
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '개발자 도구 모음 - serenkit' }],

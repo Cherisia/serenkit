@@ -4,13 +4,13 @@ import Base64Tool from '@/components/dev/Base64Tool'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: 'Base64 인코더/디코더 - 텍스트 Base64 변환',
-  description: '텍스트를 Base64로 인코딩하거나 Base64 문자열을 원문으로 디코딩합니다. 한글·이모지 유니코드 완전 지원.',
-  keywords: ['Base64 인코딩', 'Base64 디코딩', 'Base64 변환기', 'base64 encode decode', 'JWT 디코딩', '데이터 인코딩'],
+  title: 'Base64 인코더/디코더 — 텍스트·JWT Base64 변환 즉시 처리',
+  description: '텍스트를 Base64로 인코딩하거나 Base64 문자열을 원문으로 즉시 디코딩. JWT 페이로드 디코딩, 한글·이모지 유니코드 완전 지원.',
+  keywords: ['Base64 인코딩', 'Base64 디코딩', 'Base64 변환기', 'base64 encode decode', 'JWT 디코딩', '데이터 인코딩', 'Base64 온라인', '텍스트 Base64 변환', 'base64 decoder', 'base64 인코딩 변환'],
   alternates: { canonical: `${BASE_URL}/dev/base64/` },
   openGraph: {
-    title: 'Base64 인코더/디코더 | serenkit',
-    description: '텍스트를 Base64로 인코딩하거나 Base64 문자열을 원문으로 디코딩합니다.',
+    title: 'Base64 인코더/디코더 — 텍스트·JWT Base64 변환 즉시 처리 | serenkit',
+    description: '텍스트 Base64 인코딩/디코딩, JWT 페이로드 디코딩. 한글·이모지 유니코드 완전 지원.',
     url: `${BASE_URL}/dev/base64/`,
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],

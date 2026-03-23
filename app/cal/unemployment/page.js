@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import UnemploymentCalc from '@/components/calculator/UnemploymentCalc'
 
 export const metadata = {
-  title: '실업급여 계산기',
-  description: '퇴직일, 나이, 고용보험 가입기간, 월급으로 실업급여(구직급여) 수령액을 바로 계산해요. 상한액·하한액·소정급여일수까지 한눈에 확인하세요.',
-  keywords: ['실업급여 계산기', '구직급여 계산', '실업급여 얼마', '실업급여 조건', '소정급여일수', '고용보험 실업급여', '실업급여 상한액 하한액'],
+  title: '실업급여 계산기 — 수령액·소정급여일수·조건 즉시 계산',
+  description: '퇴직일·나이·고용보험 가입기간·월급 입력으로 실업급여(구직급여) 수령액 즉시 계산. 상한액·하한액·소정급여일수까지 한눈에 확인.',
+  keywords: ['실업급여 계산기', '구직급여 계산기', '실업급여 얼마', '실업급여 조건', '소정급여일수', '고용보험 실업급여', '실업급여 상한액', '실업급여 하한액', '실업급여 신청 조건', '실업급여 계산 방법'],
   alternates: { canonical: 'https://serenkit.com/cal/unemployment/' },
   openGraph: {
-    title: '실업급여 계산기 - serenkit',
-    description: '퇴직일, 나이, 고용보험 가입기간, 월급으로 실업급여(구직급여) 수령액을 바로 계산해요.',
+    title: '실업급여 계산기 — 수령액·소정급여일수·조건 즉시 계산 | serenkit',
+    description: '퇴직일·나이·고용보험 가입기간·월급으로 실업급여 수령액 즉시 계산.',
     url: 'https://serenkit.com/cal/unemployment/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '실업급여 계산기 - serenkit' }],

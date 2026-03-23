@@ -4,13 +4,13 @@ import UuidGenerator from '@/components/dev/UuidGenerator'
 const BASE_URL = 'https://serenkit.com'
 
 export const metadata = {
-  title: 'UUID 생성기 - UUID v4 랜덤 생성',
-  description: '암호학적으로 안전한 UUID v4를 최대 10개까지 즉시 생성합니다. 개별 복사 및 전체 복사 지원.',
-  keywords: ['UUID 생성기', 'UUID v4', 'GUID 생성', 'UUID 생성', 'randomUUID', '고유 식별자 생성'],
+  title: 'UUID 생성기 — UUID v4·GUID 랜덤 생성 · 최대 10개 한번에',
+  description: '암호학적으로 안전한 UUID v4를 최대 10개까지 즉시 생성. 개별·전체 복사 지원. DB PK, API 추적 ID, 세션 토큰 생성에 활용.',
+  keywords: ['UUID 생성기', 'UUID v4', 'GUID 생성', 'UUID 생성', 'randomUUID', '고유 식별자 생성', 'UUID 온라인', 'UUID 생성 사이트', 'UUID generator', 'GUID generator'],
   alternates: { canonical: `${BASE_URL}/dev/uuid/` },
   openGraph: {
-    title: 'UUID 생성기 | serenkit',
-    description: '암호학적으로 안전한 UUID v4를 즉시 생성합니다. 최대 10개까지 한 번에 생성 가능.',
+    title: 'UUID 생성기 — UUID v4·GUID 랜덤 생성 · 최대 10개 한번에 | serenkit',
+    description: 'UUID v4를 최대 10개 즉시 생성. 개별·전체 복사. DB PK, API ID, 세션 토큰 생성.',
     url: `${BASE_URL}/dev/uuid/`,
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
