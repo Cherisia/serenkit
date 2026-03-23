@@ -23,7 +23,10 @@ export default function AdUnit({ slot, className = '', fullWidth = true }) {
   }, [])
 
   return (
-    <div className={`overflow-hidden text-center ${className}`}>
+    <div
+      className={`overflow-hidden text-center ${className}`}
+      style={{ minHeight: fullWidth ? 90 : 250 }}
+    >
       <ins
         className="adsbygoogle"
         style={{ display: 'block', textAlign: 'center' }}
