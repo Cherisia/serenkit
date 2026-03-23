@@ -7,7 +7,7 @@ export const metadata = {
   keywords: ['MBTI 궁합', 'MBTI 궁합 계산기', 'mbti 관계도', 'MBTI 관계도', 'MBTI 연애 궁합', 'mbti 궁합표', '황금비율 mbti', 'MBTI 친구 궁합', 'MBTI 직장 궁합', 'MBTI 검사', 'MBTI 유형 변화', 'MBTI 16가지'],
   alternates: { canonical: 'https://serenkit.com/cal/mbti/' },
   openGraph: {
-    title: 'MBTI 궁합 계산기 · 관계도 - serenkit',
+    title: 'MBTI 궁합 계산기 · 관계도 — 황금비율·점수 분석 | serenkit',
     description: '두 사람의 MBTI 관계도와 궁합 점수, 황금비율 여부를 바로 확인해보세요.',
     url: 'https://serenkit.com/cal/mbti/',
     type: 'website',

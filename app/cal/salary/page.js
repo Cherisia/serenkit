@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import SalaryCalc from '@/components/calculator/SalaryCalc'
 
 export const metadata = {
-  title: '월급 실수령액 계산기 2026',
+  title: '월급 실수령액 계산기 2026 — 4대보험·소득세 공제 후 실수령액',
   description: '2026년 기준 4대보험(국민연금·건강보험·장기요양·고용보험)과 소득세·지방소득세를 공제한 월급 실수령액을 계산해보세요. 연봉을 입력하면 세전·세후 월급과 공제 내역을 한눈에 확인할 수 있어요.',
-  keywords: ['월급 실수령액 계산기', '세후 월급 계산', '4대보험 계산기', '소득세 계산', '월급 계산기', '연봉 실수령액', '2026 월급 계산기', '연봉 실수령액 계산기', '공제 후 월급'],
+  keywords: ['월급 실수령액 계산기', '세후 월급 계산', '4대보험 계산기', '소득세 계산', '월급 계산기', '연봉 실수령액', '2026 월급 계산기', '연봉 실수령액 계산기', '공제 후 월급', '실수령액 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/salary/' },
   openGraph: {
-    title: '월급 실수령액 계산기 - serenkit',
-    description: '2025년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산해요.',
+    title: '월급 실수령액 계산기 2026 — 4대보험·소득세 공제 후 실수령액 | serenkit',
+    description: '2026년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산해요.',
     url: 'https://serenkit.com/cal/salary/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '월급 실수령액 계산기 - serenkit' }],

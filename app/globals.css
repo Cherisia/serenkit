@@ -4,21 +4,25 @@
   font-family: NanumSquareL;
   src: url('/fonts/NanumSquareL.woff2') format('woff2');
   font-weight: 300;
+  font-display: swap;
 }
 @font-face {
   font-family: NanumSquareR;
   src: url('/fonts/NanumSquareR.woff2') format('woff2');
   font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: NanumSquareB;
   src: url('/fonts/NanumSquareB.woff2') format('woff2');
   font-weight: 700;
+  font-display: swap;
 }
 @font-face {
   font-family: NanumSquareEB;
   src: url('/fonts/NanumSquareEB.woff2') format('woff2');
   font-weight: 800;
+  font-display: swap;
 }
 
 * {

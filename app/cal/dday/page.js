@@ -2,12 +2,12 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import DdayCalc from '@/components/calculator/DdayCalc'
 
 export const metadata = {
-  title: 'D-day 계산기 - 남은 날짜·경과 일수 계산',
+  title: 'D-day 계산기 — 남은 날짜·경과 일수·카운트다운 즉시 계산',
   description: '특정 날짜까지 남은 일수(D-숫자)와 경과 일수(D+숫자)를 바로 계산해요. 수능·시험·군 전역일·기념일·여행·프로젝트 마감 등 중요한 날짜를 쉽고 빠르게 확인하세요.',
-  keywords: ['D-day 계산기', 'D데이 계산기', '디데이 계산기', '남은 날짜 계산', '날짜 카운트다운', '수능 디데이', '전역일 계산기', '시험 D-day', '기념일 카운트다운'],
+  keywords: ['D-day 계산기', 'D데이 계산기', '디데이 계산기', '남은 날짜 계산', '날짜 카운트다운', '수능 디데이', '전역일 계산기', '시험 D-day', '기념일 카운트다운', 'D+100 계산기'],
   alternates: { canonical: 'https://serenkit.com/cal/dday/' },
   openGraph: {
-    title: 'D-day 계산기 - serenkit',
+    title: 'D-day 계산기 — 남은 날짜·경과 일수·카운트다운 즉시 계산 | serenkit',
     description: '특정 날짜까지 남은 일수와 경과 일수를 바로 계산해요.',
     url: 'https://serenkit.com/cal/dday/',
     type: 'website',

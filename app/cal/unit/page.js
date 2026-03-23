@@ -2,12 +2,12 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import UnitCalc from '@/components/calculator/UnitCalc'
 
 export const metadata = {
-  title: '단위 변환기 - 길이·무게·온도·넓이·부피·속도·데이터',
+  title: '단위 변환기 — 길이·무게·온도·넓이·부피·속도·데이터 즉시 변환',
   description: '길이, 무게, 넓이, 부피, 온도, 속도, 데이터 단위를 한 번에 변환하세요. mm↔cm↔m↔km↔인치↔피트, kg↔lb↔oz, °C↔°F↔K, km/h↔m/s 등 단위 변환기.',
   keywords: ['단위 변환기', '길이 변환', '무게 변환', '온도 변환', '넓이 변환', '부피 변환', '속도 변환', '데이터 변환', 'cm 인치 변환', 'kg lb 변환', '섭씨 화씨 변환', '평 m2 변환'],
   alternates: { canonical: 'https://serenkit.com/cal/unit/' },
   openGraph: {
-    title: '단위 변환기 - serenkit',
+    title: '단위 변환기 — 길이·무게·온도·넓이·부피·속도·데이터 즉시 변환 | serenkit',
     description: '길이·무게·온도·넓이·부피·속도·데이터 단위를 한 번에 변환해보세요.',
     url: 'https://serenkit.com/cal/unit/',
     type: 'website',

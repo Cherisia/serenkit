@@ -2,12 +2,12 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import LoanCalc from '@/components/calculator/LoanCalc'
 
 export const metadata = {
-  title: '대출 이자 계산기 - 원리금균등·원금균등·만기일시 상환',
+  title: '대출 이자 계산기 — 원리금균등·원금균등·만기일시 상환 계산',
   description: '원리금균등·원금균등·만기일시 상환 방식별 월 납입금과 총 이자를 계산해보세요. 주택담보대출·신용대출·전세자금대출 모두 적용 가능하며, 월별 상환 일정표도 한눈에 확인할 수 있어요.',
   keywords: ['대출 이자 계산기', '원리금균등', '원금균등', '만기일시상환', '대출 계산기', '이자 계산', '주택담보대출 계산기', '월 납입금 계산', '전세자금대출 계산기', '신용대출 이자', '대출 상환 계산기'],
   alternates: { canonical: 'https://serenkit.com/cal/loan/' },
   openGraph: {
-    title: '대출 이자 계산기 - serenkit',
+    title: '대출 이자 계산기 — 원리금균등·원금균등·만기일시 상환 계산 | serenkit',
     description: '원리금균등·원금균등·만기일시 상환 방식별 월 납입금과 총 이자를 계산해요.',
     url: 'https://serenkit.com/cal/loan/',
     type: 'website',
