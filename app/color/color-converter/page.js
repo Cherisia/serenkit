@@ -20,6 +20,9 @@ const faqs = [
   { q: 'RGB와 RGBA의 차이는?', a: 'RGB는 Red, Green, Blue 세 가지 색상 채널(각 0-255)로 색상을 표현합니다. RGBA는 여기에 투명도(Alpha, 0-1)를 추가한 것입니다.' },
   { q: 'HSL이란 무엇인가요?', a: 'HSL은 Hue(색상, 0-360°), Saturation(채도, 0-100%), Lightness(명도, 0-100%)로 색상을 표현합니다. 직관적으로 색상을 조정할 수 있어 디자이너에게 유용합니다.' },
   { q: 'Tailwind 색상을 어떻게 변환하나요?', a: 'HEX, RGB, HSL 등 어떤 포맷으로 입력해도 가장 가까운 Tailwind CSS 색상 클래스명(예: emerald-500)을 자동으로 찾아드립니다.' },
+  { q: 'HSB(HSV)와 HSL은 어떻게 다른가요?', a: 'HSB(HSV)는 Hue·Saturation·Brightness(밝기), HSL은 Hue·Saturation·Lightness(명도)로 표현합니다. Brightness 100%는 순수한 원색, Lightness 100%는 흰색으로 동작 방식이 다릅니다. Photoshop·Illustrator는 HSB, CSS는 HSL을 사용합니다.' },
+  { q: 'CMYK는 어디에 사용하나요?', a: 'CMYK(Cyan·Magenta·Yellow·Key/Black)는 인쇄 업계 표준 색상 모델입니다. 잉크를 혼합해 색상을 만드는 방식이라 인쇄물 디자인 시 Photoshop·InDesign에서 CMYK 값을 활용합니다. 웹 화면은 RGB 기반이라 CMYK로 변환 시 색상 차이가 생길 수 있습니다.' },
+  { q: '색상 변환 결과가 조금씩 다를 수 있는 이유는 무엇인가요?', a: '색상 포맷마다 표현 범위와 반올림 방식이 달라 미세한 오차가 생길 수 있습니다. 예를 들어 HSL → HEX → RGB로 변환하면 소수점 반올림으로 1~2 단위 차이가 발생할 수 있습니다. 실용적으로는 무시 가능한 수준입니다.' },
 ]
 
 export default function ColorConverterPage() {
