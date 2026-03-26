@@ -51,6 +51,16 @@ export default function ColorExtractorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <ToolLayout toolKey="color-extractor" faqs={faqs}>
         <ColorExtractor />
+        <aside className="bg-indigo-50 border border-indigo-100 rounded-2xl p-5 text-xs text-slate-500 leading-relaxed">
+          <h3 className="font-bold text-slate-600 mb-2">💡 이런 상황에 활용하세요</h3>
+          <ul className="space-y-1.5 list-disc list-inside">
+            <li>웹·앱 디자인 시 참고 이미지에서 정확한 HEX 색상 코드를 뽑아야 할 때</li>
+            <li>브랜드 로고나 포스터에서 사용된 색상을 그대로 재현해야 할 때</li>
+            <li>사진 속 마음에 드는 색상을 CSS, Figma, Photoshop에 바로 적용하고 싶을 때</li>
+            <li>제품 이미지·인테리어 사진에서 색상 팔레트를 추출해 배색 참고로 활용할 때</li>
+          </ul>
+          <p className="mt-3 text-slate-400">이미지 파일을 업로드하면 서버로 전송 없이 브라우저에서 즉시 처리됩니다. JPG, PNG, WebP, GIF 등 모든 이미지 형식을 지원합니다.</p>
+        </aside>
       </ToolLayout>
     </>
   )
