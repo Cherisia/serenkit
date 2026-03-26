@@ -1,4 +1,5 @@
 import './globals.css'
+import Script from 'next/script'
 import Navbar from '@/components/share/Navbar'
 import Footer from '@/components/share/Footer'
 import CookieBanner from '@/components/share/CookieBanner'
@@ -55,9 +56,7 @@ const jsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7505734558280029" crossOrigin="anonymous" />
-      </head>
+      <head />
       <body>
         <script
           type="application/ld+json"
@@ -69,6 +68,11 @@ export default function RootLayout({ children }) {
           <Footer />
           <CookieBanner />
         </FavoritesProvider>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7505734558280029"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )
