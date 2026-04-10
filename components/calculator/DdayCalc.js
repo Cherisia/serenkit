@@ -5,10 +5,11 @@ import { pushParams, readParams } from '@/lib/urlParams'
 function toStr(d) { return d.toISOString().split('T')[0] }
 
 const PRESETS = [
+  { label: '수능',        value: () => { const y = new Date(); return `${y.getMonth() >= 10 ? y.getFullYear() + 1 : y.getFullYear()}-11-14` } },
   { label: '크리스마스',  value: () => `${new Date().getFullYear()}-12-25` },
   { label: '새해',        value: () => `${new Date().getFullYear() + 1}-01-01` },
-  { label: '발렌타인',    value: () => `${new Date().getFullYear()}-02-14` },
   { label: '어린이날',    value: () => `${new Date().getFullYear()}-05-05` },
+  { label: '발렌타인',    value: () => `${new Date().getFullYear()}-02-14` },
 ]
 
 function Card({ children, as: Tag = 'section' }) {

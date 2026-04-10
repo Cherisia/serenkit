@@ -2,13 +2,13 @@ import CalcLayout from '@/components/calculator/CalcLayout'
 import DdayCalc from '@/components/calculator/DdayCalc'
 
 export const metadata = {
-  title: 'D-day 계산기 — 남은 날짜·경과 일수·카운트다운 즉시 계산',
-  description: '특정 날짜까지 남은 일수(D-숫자)와 경과 일수(D+숫자)를 바로 계산해요. 수능·시험·군 전역일·기념일·여행·프로젝트 마감 등 중요한 날짜를 쉽고 빠르게 확인하세요.',
-  keywords: ['D-day 계산기', 'D데이 계산기', '디데이 계산기', '남은 날짜 계산', '날짜 카운트다운', '수능 디데이', '전역일 계산기', '시험 D-day', '기념일 카운트다운', 'D+100 계산기'],
+  title: 'D-day 계산기 — 수능·전역일·시험·기념일 남은 날짜 즉시 계산',
+  description: '수능·군 전역일·시험·기념일까지 남은 일수(D-숫자)를 즉시 계산. 수능 프리셋 버튼으로 빠르게 입력, 경과 일수(D+숫자)도 지원. 기준일을 자유롭게 설정 가능.',
+  keywords: ['D-day 계산기', 'D데이 계산기', '디데이 계산기', '수능 디데이', '수능 D-day', '전역일 계산기', '전역일 디데이', '남은 날짜 계산', '날짜 카운트다운', '시험 D-day', '기념일 카운트다운', 'D+100 계산기', '디데이 계산'],
   alternates: { canonical: 'https://serenkit.com/cal/dday/' },
   openGraph: {
-    title: 'D-day 계산기 — 남은 날짜·경과 일수·카운트다운 즉시 계산 | serenkit',
-    description: '특정 날짜까지 남은 일수와 경과 일수를 바로 계산해요.',
+    title: 'D-day 계산기 — 수능·전역일·시험 남은 날짜 즉시 계산 | serenkit',
+    description: '수능·군 전역일·시험·기념일까지 남은 일수(D-)와 경과 일수(D+)를 즉시 계산. 수능 프리셋 버튼 지원.',
     url: 'https://serenkit.com/cal/dday/',
     type: 'website',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'D-day 계산기 - serenkit' }],
@@ -20,9 +20,10 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: 'D-day 계산기',
   url: 'https://serenkit.com/cal/dday/',
-  description: '특정 날짜까지 남은 일수와 경과 일수를 계산하는 D-day 계산기',
+  description: '수능·전역일·시험·기념일까지 남은 일수(D-숫자)와 경과 일수(D+숫자)를 계산하는 D-day 계산기.',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',
@@ -46,7 +47,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="📅 D-day 계산기" desc="특정 날짜까지 남은 일수, 경과 일수를 계산해요" currentUrl="/cal/dday/" faqs={faqs}>
+    <CalcLayout title="📅 D-day 계산기" desc="수능·전역일·시험·기념일까지 남은 일수(D-)와 경과 일수(D+) 즉시 계산" currentUrl="/cal/dday/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <DdayCalc />
     </CalcLayout>
