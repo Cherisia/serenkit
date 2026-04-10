@@ -17,6 +17,24 @@ function dday(d) {
   return diff > 0 ? `D-${diff}` : `D+${Math.abs(diff)}`
 }
 
+function calcResult(startDate) {
+  const s = new Date(startDate); s.setHours(0,0,0,0)
+  const today = new Date(); today.setHours(0,0,0,0)
+
+  // 시작일을 1일로 기산
+  const daysElapsed = Math.round((today - s) / 86400000) + 1
+
+  const dayResults  = DAY_MARKS.map(n => { const d = new Date(s); d.setDate(d.getDate() + n - 1); return { label: `${n}일`, date: d } })
+  const yearResults = YEAR_MARKS.map(n => { const d = new Date(s); d.setFullYear(d.getFullYear() + n); return { label: `${n}주년`, date: d } })
+
+  // 다음 기념일 (오늘 이후 가장 가까운 것)
+  const upcoming = [...dayResults, ...yearResults]
+    .filter(r => { const t = new Date(r.date); t.setHours(0,0,0,0); return t >= today })
+    .sort((a, b) => a.date - b.date)[0] ?? null
+
+  return { dayResults, yearResults, daysElapsed, upcoming }
+}
+
 export default function AnniversaryCalc() {
   const [start,  setStart]  = useState('')
   const [result, setResult] = useState(null)
@@ -25,26 +43,14 @@ export default function AnniversaryCalc() {
     const p = readParams()
     if (p.start) {
       setStart(p.start)
-      const s = new Date(p.start)
-      const dayResults  = DAY_MARKS.map((n) => { const d = new Date(s); d.setDate(d.getDate() + n - 1); return { label: `${n}일`, date: d } })
-      const yearResults = YEAR_MARKS.map((n) => { const d = new Date(s); d.setFullYear(d.getFullYear() + n); return { label: `${n}주년`, date: d } })
-      setResult({ dayResults, yearResults })
+      setResult(calcResult(p.start))
     }
   }, [])
 
   const calculate = () => {
     if (!start) return
     pushParams({ start })
-    const s = new Date(start)
-    const dayResults  = DAY_MARKS.map((n) => {
-      const d = new Date(s); d.setDate(d.getDate() + n - 1)
-      return { label: `${n}일`, date: d }
-    })
-    const yearResults = YEAR_MARKS.map((n) => {
-      const d = new Date(s); d.setFullYear(d.getFullYear() + n)
-      return { label: `${n}주년`, date: d }
-    })
-    setResult({ dayResults, yearResults })
+    setResult(calcResult(start))
   }
 
   function Row({ label, date }) {
@@ -82,6 +88,28 @@ export default function AnniversaryCalc() {
 
       {result && (
         <>
+          {/* 오늘 기준 경과 일수 */}
+          <section className="bg-white border border-stone-200 rounded-2xl p-6">
+            <h2 className="text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-orange-400">오늘 기준</h2>
+
+            {result.daysElapsed > 0 ? (
+              <div className="bg-gradient-to-br from-amber-400 to-orange-400 rounded-2xl p-5 text-white text-center mb-4">
+                <p className="text-xs opacity-75 mb-1">처음 만난 지 오늘까지</p>
+                <p className="text-4xl font-black">{result.daysElapsed.toLocaleString('ko-KR')}일째</p>
+                {result.upcoming && (
+                  <p className="text-sm opacity-90 mt-2.5">
+                    다음 기념일: <span className="font-black">{result.upcoming.label}</span> ({dday(result.upcoming.date)})
+                  </p>
+                )}
+              </div>
+            ) : (
+              <div className="bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl p-5 text-white text-center mb-4">
+                <p className="text-xs opacity-75 mb-1">시작일까지</p>
+                <p className="text-3xl font-black">D-{Math.abs(result.daysElapsed - 1)}</p>
+              </div>
+            )}
+          </section>
+
           <section className="bg-white border border-stone-200 rounded-2xl p-6">
             <h2 className="text-sm font-black text-stone-800 mb-4 pb-3 border-b-2 border-orange-400">📅 일수 기념일</h2>
             {result.dayResults.map((r) => <Row key={r.label} {...r} />)}
@@ -94,8 +122,8 @@ export default function AnniversaryCalc() {
       )}
 
       <aside className="bg-amber-50 border border-amber-100 rounded-2xl p-5 text-xs text-stone-500 leading-relaxed">
-        <h3 className="font-bold text-stone-600 mb-1.5">💡 기념일 계산 활용</h3>
-        <p>연인의 100일·200일·1주년 기념일을 미리 확인하세요. 오늘 이전 기념일은 D+, 앞으로 남은 기념일은 D-로 표시됩니다.</p>
+        <h3 className="font-bold text-stone-600 mb-1.5">💡 기념일 계산 기준</h3>
+        <p>처음 만난 날(시작일)을 <strong className="text-stone-600">1일</strong>로 기산합니다. 예를 들어 1월 1일 시작 시 1월 1일이 1일째, 4월 10일이 100일째입니다. 오늘 이전 기념일은 D+, 앞으로 남은 기념일은 D-로 표시됩니다.</p>
       </aside>
     </div>
   )
