@@ -21,8 +21,9 @@ const jsonLd = {
   name: '시급 계산기',
   url: 'https://serenkit.com/cal/hourly/',
   description: '2026년 최저시급 기준으로 시급·일급·주급·월급·연봉과 주휴수당을 계산하는 계산기',
-  applicationCategory: 'UtilitiesApplication',
+  applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',
