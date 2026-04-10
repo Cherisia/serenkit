@@ -51,7 +51,15 @@ export default function DateDiffCalc() {
         <div className="space-y-4">
           {[['시작일', start, setStart], ['종료일', end, setEnd]].map(([lbl, val, set]) => (
             <div key={lbl}>
-              <label className="block text-xs font-bold text-stone-600 mb-1.5">{lbl} <span className="text-red-400">*</span></label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-xs font-bold text-stone-600">{lbl} <span className="text-red-400">*</span></label>
+                {lbl === '종료일' && (
+                  <button type="button" onClick={() => set(toStr(new Date()))}
+                    className="text-[10px] font-bold text-amber-500 hover:text-amber-600 transition-colors">
+                    오늘로 설정
+                  </button>
+                )}
+              </div>
               <input type="date" value={val} onChange={(e) => set(e.target.value)}
                 className="w-full bg-stone-50 border border-stone-200 text-stone-800 text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-amber-400 transition-colors" />
             </div>
