@@ -23,23 +23,46 @@ function pickNumbers(excludeSet) {
   return result.sort((a, b) => a - b)
 }
 
-const ROLL_MS = 2000   // 굴리는 시간
-const SETTLE_MS = 400  // 공 하나씩 확정 간격
+// 다음 로또 추첨일 계산 (매주 토요일 오후 8:45)
+function getNextDraw() {
+  const now = new Date()
+  const day = now.getDay() // 0=일, 6=토
+  let daysUntil = (6 - day + 7) % 7
+
+  // 토요일이고 오후 8:45 이후면 다음 주 토요일
+  if (daysUntil === 0) {
+    const isPastDraw = now.getHours() > 20 || (now.getHours() === 20 && now.getMinutes() >= 45)
+    if (isPastDraw) daysUntil = 7
+  }
+
+  const nextDate = new Date(now)
+  nextDate.setDate(now.getDate() + daysUntil)
+
+  return {
+    daysUntil,
+    isToday: daysUntil === 0,
+    dateLabel: `${nextDate.getMonth() + 1}월 ${nextDate.getDate()}일 (토)`,
+  }
+}
+
+const ROLL_MS = 2000
+const SETTLE_MS = 400
 
 export default function LottoCalc() {
+  const [nextDraw, setNextDraw] = useState(null)
   const [excludes, setExcludes] = useState(new Set())
   const [gameCount, setGameCount] = useState(1)
   const [phase, setPhase] = useState('idle') // idle | rolling | done
   const [finalGames, setFinalGames] = useState([])
-  const [display, setDisplay] = useState([])      // 롤링 중 표시 숫자
-  const [settled, setSettled] = useState([])      // [6] 확정 여부
+  const [display, setDisplay] = useState([])
+  const [settled, setSettled] = useState([])
   const [justSettled, setJustSettled] = useState(new Set())
   const [history, setHistory] = useState([])
   const [copied, setCopied] = useState(null)
 
   const timersRef = useRef([])
   const intervalRef = useRef(null)
-  const settledRef = useRef([]) // interval 클로저용
+  const settledRef = useRef([])
 
   function clearAll() {
     timersRef.current.forEach(clearTimeout)
@@ -50,6 +73,8 @@ export default function LottoCalc() {
   useEffect(() => () => clearAll(), [])
 
   useEffect(() => {
+    setNextDraw(getNextDraw())
+
     const p = readParams()
     if (p.results) {
       const games = p.results.split(',').map(g => g.split('-').map(Number))
@@ -74,7 +99,6 @@ export default function LottoCalc() {
     setJustSettled(new Set())
     setDisplay(games.map(() => Array.from({ length: 6 }, () => Math.floor(Math.random() * 45) + 1)))
 
-    // 롤링: 80ms마다 미확정 공 숫자 교체
     intervalRef.current = setInterval(() => {
       setDisplay(() =>
         games.map(game =>
@@ -85,7 +109,6 @@ export default function LottoCalc() {
       )
     }, 80)
 
-    // 공 하나씩 확정
     for (let b = 0; b < 6; b++) {
       const bi = b
       const t = setTimeout(() => {
@@ -99,7 +122,6 @@ export default function LottoCalc() {
       timersRef.current.push(t)
     }
 
-    // 추첨 완료
     timersRef.current.push(setTimeout(() => {
       clearInterval(intervalRef.current)
       intervalRef.current = null
@@ -150,11 +172,31 @@ export default function LottoCalc() {
 
       <div className="space-y-4">
 
+        {/* 다음 추첨일 */}
+        {nextDraw && (
+          <div className="bg-white border border-stone-200 rounded-2xl px-5 py-4 flex items-center justify-between gap-3">
+            <div>
+              <p className="text-[11px] font-bold text-stone-400 mb-1">다음 로또 추첨일</p>
+              <p className="text-sm font-black text-stone-800">
+                {nextDraw.isToday
+                  ? <span className="text-violet-600">오늘 추첨! 오후 8시 45분</span>
+                  : <><span className="text-violet-600">D-{nextDraw.daysUntil}</span> <span className="text-stone-500 font-bold">{nextDraw.dateLabel}</span></>
+                }
+              </p>
+              <p className="text-[11px] text-stone-400 mt-0.5">매주 토요일 오후 8시 45분 추첨</p>
+            </div>
+            {nextDraw.daysUntil <= 1 && (
+              <span className={`text-[11px] font-black px-2.5 py-1 rounded-full ${nextDraw.isToday ? 'bg-violet-500 text-white' : 'bg-violet-100 text-violet-600'}`}>
+                {nextDraw.isToday ? '오늘!' : '내일!'}
+              </span>
+            )}
+          </div>
+        )}
+
         {/* 추첨 설정 */}
         <section className="bg-white border border-stone-200 rounded-2xl p-6">
           <h2 className="text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-violet-400">추첨 설정</h2>
 
-          {/* 게임 수 */}
           <div className="mb-5">
             <p className="text-xs font-black text-stone-600 mb-2.5">게임 수</p>
             <div className="flex gap-2">
@@ -172,7 +214,6 @@ export default function LottoCalc() {
             </div>
           </div>
 
-          {/* 제외 번호 */}
           <div className="mb-6">
             <div className="flex items-center justify-between mb-2.5">
               <p className="text-xs font-black text-stone-600">
@@ -201,7 +242,6 @@ export default function LottoCalc() {
             </div>
           </div>
 
-          {/* 추첨 버튼 */}
           <button
             onClick={draw}
             disabled={isRolling}
@@ -223,11 +263,9 @@ export default function LottoCalc() {
               {resultData.map((game, gi) => (
                 <div key={gi}>
                   <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2">
-                      <span className={`text-[11px] font-black px-2 py-0.5 rounded-full ${
-                        phase === 'done' ? 'bg-violet-100 text-violet-600' : 'bg-stone-100 text-stone-400'
-                      }`}>{gi + 1}게임</span>
-                    </div>
+                    <span className={`text-[11px] font-black px-2 py-0.5 rounded-full ${
+                      phase === 'done' ? 'bg-violet-100 text-violet-600' : 'bg-stone-100 text-stone-400'
+                    }`}>{gi + 1}게임</span>
                     {phase === 'done' && (
                       <button onClick={() => copyGame(finalGames[gi], gi)}
                         className="text-[10px] font-bold text-stone-300 hover:text-violet-500 transition-colors">
@@ -306,7 +344,7 @@ export default function LottoCalc() {
 
         <aside className="bg-violet-50 border border-violet-100 rounded-2xl p-5 text-xs text-stone-500 leading-relaxed">
           <h3 className="font-bold text-stone-600 mb-1.5">💡 이용 안내</h3>
-          <p>번호는 완전 무작위로 생성되며 실제 당첨을 보장하지 않습니다. 동행복권 로또 6/45는 매주 토요일 오후 8시 45분에 추첨됩니다.</p>
+          <p>번호는 완전 무작위로 생성되며 실제 당첨을 보장하지 않습니다. 동행복권 로또 6/45는 <strong className="text-stone-600">매주 토요일 오후 8시 45분</strong>에 추첨되며, 구매 마감은 추첨 당일 오후 8시입니다.</p>
         </aside>
 
       </div>
