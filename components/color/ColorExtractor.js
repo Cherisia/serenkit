@@ -1,7 +1,22 @@
 'use client'
 
-import { useState, useRef, useCallback } from 'react'
-import { extractDominantColors, getAllFormats, getTextColor } from '@/lib/colorUtils'
+import { useState, useRef, useCallback, useEffect } from 'react'
+import { extractDominantColors, getAllFormats, getTextColor, hexToRgb } from '@/lib/colorUtils'
+import { CSS_COLOR_NAMES } from '@/lib/colorTools'
+
+function getNearestColorName(hex) {
+  const rgb = hexToRgb(hex)
+  if (!rgb) return null
+  let minDist = Infinity
+  let nearest = null
+  for (const { name, hex: colorHex } of CSS_COLOR_NAMES) {
+    const c = hexToRgb(colorHex)
+    if (!c) continue
+    const d = Math.sqrt((rgb.r - c.r) ** 2 + (rgb.g - c.g) ** 2 + (rgb.b - c.b) ** 2)
+    if (d < minDist) { minDist = d; nearest = name }
+  }
+  return nearest
+}
 
 export default function ColorExtractor() {
   const [colors, setColors] = useState([])
@@ -43,6 +58,22 @@ export default function ColorExtractor() {
     reader.readAsDataURL(file)
   }, [])
 
+  // 클립보드 붙여넣기 (Ctrl+V) 지원
+  useEffect(() => {
+    const onPaste = (e) => {
+      const items = e.clipboardData?.items
+      if (!items) return
+      for (const item of items) {
+        if (item.type.startsWith('image/')) {
+          processImage(item.getAsFile())
+          break
+        }
+      }
+    }
+    document.addEventListener('paste', onPaste)
+    return () => document.removeEventListener('paste', onPaste)
+  }, [processImage])
+
   const onDrop = useCallback((e) => {
     e.preventDefault()
     setDragging(false)
@@ -58,6 +89,7 @@ export default function ColorExtractor() {
   }
 
   const formats = selected ? getAllFormats(selected) : null
+  const colorName = selected ? getNearestColorName(selected) : null
 
   return (
     <div className="space-y-4">
@@ -65,7 +97,7 @@ export default function ColorExtractor() {
       <article className="bg-white border border-slate-200 rounded-2xl overflow-hidden">
         <div className="px-5 pt-5 pb-3 border-b border-slate-100">
           <h2 className="font-black text-slate-800">이미지 업로드</h2>
-          <p className="text-xs text-slate-400 mt-0.5">JPG, PNG, GIF, WebP 등 이미지 파일을 선택하거나 끌어다 놓으세요</p>
+          <p className="text-xs text-slate-400 mt-0.5">JPG, PNG, GIF, WebP 등 이미지 파일을 선택·끌어놓거나 <kbd className="bg-slate-100 text-slate-600 px-1 py-0.5 rounded text-[10px] font-mono">Ctrl+V</kbd>로 붙여넣으세요</p>
         </div>
         <div className="p-5">
           <div
@@ -89,7 +121,7 @@ export default function ColorExtractor() {
                   <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <p className="text-sm font-bold text-slate-500">이미지를 끌어다 놓거나 클릭해서 선택</p>
-                <p className="text-xs text-slate-400 mt-1">JPG, PNG, GIF, WebP 지원</p>
+                <p className="text-xs text-slate-400 mt-1">JPG, PNG, GIF, WebP 지원 · Ctrl+V 붙여넣기 가능</p>
               </>
             )}
             {loading && (
@@ -116,7 +148,7 @@ export default function ColorExtractor() {
                 <button
                   key={hex}
                   onClick={() => setSelected(hex)}
-                  className={`color-swatch flex flex-col items-center gap-1.5 group cursor-pointer`}
+                  className="color-swatch flex flex-col items-center gap-1.5 group cursor-pointer"
                   aria-label={`색상 ${hex} 선택`}
                   aria-pressed={selected === hex}
                   role="listitem"
@@ -138,7 +170,7 @@ export default function ColorExtractor() {
               role="img"
               aria-label="추출된 색상 팔레트 바"
             >
-              {colors.map(({ hex, count }, i) => {
+              {colors.map(({ hex, count }) => {
                 const total = colors.reduce((s, c) => s + c.count, 0)
                 const pct = (count / total * 100).toFixed(1)
                 return (
@@ -174,12 +206,18 @@ export default function ColorExtractor() {
               <p className="text-sm opacity-75" style={{ color: getTextColor(formats.hex) }}>
                 rgb({formats.r}, {formats.g}, {formats.b})
               </p>
+              {colorName && (
+                <p className="text-xs opacity-60 mt-0.5 font-mono" style={{ color: getTextColor(formats.hex) }}>
+                  ≈ {colorName}
+                </p>
+              )}
             </div>
           </div>
           <div className="px-5 pt-4 pb-5 border-t border-slate-100">
             <h3 className="text-sm font-black text-slate-700 mb-3">색상 코드 복사</h3>
             <div className="grid grid-cols-1 gap-2">
               {[
+                { label: 'CSS Name', value: colorName ?? '—' },
                 { label: 'HEX', value: formats.hexUpper },
                 { label: 'RGB', value: formats.rgb },
                 { label: 'RGBA', value: formats.rgba },
@@ -189,21 +227,23 @@ export default function ColorExtractor() {
                 { label: 'CMYK', value: formats.cmyk },
               ].map(({ label, value }) => (
                 <div key={label} className="flex items-center gap-2">
-                  <span className="text-xs font-black text-slate-400 w-12 shrink-0">{label}</span>
+                  <span className="text-xs font-black text-slate-400 w-16 shrink-0">{label}</span>
                   <code className="flex-1 text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 font-mono text-slate-700 truncate">
                     {value}
                   </code>
-                  <button
-                    onClick={() => copy(value, label)}
-                    className={`shrink-0 text-xs font-bold px-3 py-2 rounded-lg transition-all ${
-                      copied === label
-                        ? 'bg-emerald-500 text-white'
-                        : 'bg-slate-100 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600'
-                    }`}
-                    aria-label={`${label} 코드 복사`}
-                  >
-                    {copied === label ? '✓ 복사됨' : '복사'}
-                  </button>
+                  {value !== '—' && (
+                    <button
+                      onClick={() => copy(value, label)}
+                      className={`shrink-0 text-xs font-bold px-3 py-2 rounded-lg transition-all ${
+                        copied === label
+                          ? 'bg-emerald-500 text-white'
+                          : 'bg-slate-100 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600'
+                      }`}
+                      aria-label={`${label} 코드 복사`}
+                    >
+                      {copied === label ? '✓ 복사됨' : '복사'}
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
