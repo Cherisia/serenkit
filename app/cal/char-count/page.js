@@ -20,11 +20,19 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '글자수 세기',
   url: 'https://serenkit.com/cal/char-count/',
-  description: '텍스트를 입력하면 공백 포함/제외 글자수, 바이트 수, 단어 수, 줄 수를 실시간으로 계산합니다. 사람인·잡코리아 자소서 글자수 확인에 최적화.',
+  description: '텍스트를 입력하면 공백 포함/제외 글자수, 바이트 수, 단어 수, 줄 수를 실시간으로 계산합니다. 사람인 자소서 1,600자 제한 등 주요 플랫폼 글자수 즉시 확인.',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   inLanguage: 'ko-KR',
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://serenkit.com/' },
+      { '@type': 'ListItem', position: 2, name: '계산기', item: 'https://serenkit.com/cal/' },
+      { '@type': 'ListItem', position: 3, name: '글자수 세기', item: 'https://serenkit.com/cal/char-count/' },
+    ],
+  },
 }
 
 const faqs = [

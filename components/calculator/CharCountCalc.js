@@ -12,12 +12,13 @@ function getByteLength(str) {
 }
 
 const PRESETS = [
-  { name: '자기소개서 (1,000자)',      limit: 1000, type: 'char' },
-  { name: '자기소개서 (500자)',         limit: 500,  type: 'char' },
-  { name: '트위터 / X (280자)',         limit: 280,  type: 'char' },
-  { name: '인스타그램 캡션 (2,200자)', limit: 2200, type: 'char' },
-  { name: 'SMS 단문 (90바이트)',        limit: 90,   type: 'byte' },
-  { name: 'MMS 장문 (2,000바이트)',     limit: 2000, type: 'byte' },
+  { name: '사람인 자기소개서 (1,600자)', limit: 1600, type: 'char', tag: '사람인' },
+  { name: '자기소개서 (1,000자)',         limit: 1000, type: 'char' },
+  { name: '자기소개서 (500자)',           limit: 500,  type: 'char' },
+  { name: '트위터 / X (280자)',           limit: 280,  type: 'char' },
+  { name: '인스타그램 캡션 (2,200자)',   limit: 2200, type: 'char' },
+  { name: 'SMS 단문 (90바이트)',          limit: 90,   type: 'byte' },
+  { name: 'MMS 장문 (2,000바이트)',       limit: 2000, type: 'byte' },
 ]
 
 export default function CharCountCalc() {
@@ -108,7 +109,7 @@ export default function CharCountCalc() {
       <section className="bg-white border border-stone-200 rounded-2xl p-6">
         <h2 className="text-sm font-black text-stone-800 mb-5 pb-3 border-b-2 border-sky-400">글자 제한 확인</h2>
         <div className="space-y-4">
-          {PRESETS.map(({ name, limit, type }) => {
+          {PRESETS.map(({ name, limit, type, tag }) => {
             const count = type === 'char' ? charCount : byteCount
             const pct   = Math.min((count / limit) * 100, 100)
             const over  = count > limit
@@ -116,7 +117,10 @@ export default function CharCountCalc() {
             return (
               <div key={name}>
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-xs text-stone-600">{name}</span>
+                  <span className="text-xs text-stone-600 flex items-center gap-1.5">
+                    {name}
+                    {tag && <span className="text-[10px] font-bold bg-amber-100 text-amber-600 px-1.5 py-0.5 rounded-full">{tag}</span>}
+                  </span>
                   <span className={`text-xs font-black ${over ? 'text-red-500' : 'text-stone-700'}`}>
                     {count.toLocaleString('ko-KR')} / {limit.toLocaleString('ko-KR')}
                     {over && <span className="ml-1 font-normal text-[10px]">(+{(count - limit).toLocaleString('ko-KR')} 초과)</span>}
@@ -140,6 +144,7 @@ export default function CharCountCalc() {
         <ul className="space-y-1">
           <li>• 전체 글자수는 공백(스페이스·줄바꿈·탭)을 포함한 모든 문자를 셉니다.</li>
           <li>• 바이트 수는 한글·특수문자 2바이트, 영문·숫자 1바이트 기준(EUC-KR)입니다.</li>
+          <li>• 사람인 자기소개서는 항목당 공백 포함 1,600자 제한이 일반적입니다.</li>
           <li>• 자기소개서 글자수는 대부분 공백 포함 기준이나, 회사마다 다를 수 있어요.</li>
           <li>• SMS 단문(90바이트)은 한글 기준 약 45자까지 전송 가능합니다.</li>
         </ul>
