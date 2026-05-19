@@ -23,6 +23,9 @@ const jsonLd = {
   description: '두 사람의 MBTI 유형으로 관계도와 궁합 점수, 4가지 차원 분석을 제공하는 계산기',
   applicationCategory: 'EntertainmentApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

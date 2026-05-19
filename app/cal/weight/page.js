@@ -23,6 +23,9 @@ const jsonLd = {
   description: 'BMI(체질량지수)와 표준 체중을 기반으로 적정 체중 범위를 계산하는 계산기',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

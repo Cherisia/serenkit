@@ -23,6 +23,9 @@ const jsonLd = {
   description: '생년월일로 법적 만 나이를 계산하는 만 나이 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

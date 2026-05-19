@@ -23,6 +23,9 @@ const jsonLd = {
   description: '마지막 생리 시작일 기준으로 다음 생리 예정일, 배란일, 가임기, PMS를 계산하는 계산기',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

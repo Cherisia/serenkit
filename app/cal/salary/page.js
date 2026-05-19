@@ -20,9 +20,12 @@ const jsonLd = {
   '@type': 'WebApplication',
   name: '월급 실수령액 계산기',
   url: 'https://serenkit.com/cal/salary/',
-  description: '2025년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산하는 계산기',
-  applicationCategory: 'UtilitiesApplication',
+  description: '2026년 기준 4대보험과 소득세를 공제한 월급 실수령액을 계산하는 계산기',
+  applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',
@@ -46,7 +49,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <CalcLayout title="💰 월급 실수령액 계산기" desc="2025년 기준 4대보험·소득세 공제 후 실수령액을 계산해요" currentUrl="/cal/salary/" faqs={faqs}>
+    <CalcLayout title="💰 월급 실수령액 계산기" desc="2026년 기준 4대보험·소득세 공제 후 실수령액을 계산해요" currentUrl="/cal/salary/" faqs={faqs}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SalaryCalc />
     </CalcLayout>

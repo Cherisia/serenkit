@@ -21,8 +21,11 @@ const jsonLd = {
   name: '퇴직금 계산기',
   url: 'https://serenkit.com/cal/severance/',
   description: '입사일과 퇴직일, 월 급여로 법정 퇴직금을 계산하는 계산기',
-  applicationCategory: 'UtilitiesApplication',
+  applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

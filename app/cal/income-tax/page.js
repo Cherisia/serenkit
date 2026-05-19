@@ -21,8 +21,11 @@ const jsonLd = {
   name: '종합소득세 계산기',
   url: 'https://serenkit.com/cal/income-tax/',
   description: '2026년 신고분(2025년 귀속) 종합소득세를 근로·사업소득별로 단계별 계산하는 계산기',
-  applicationCategory: 'UtilitiesApplication',
+  applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

@@ -44,14 +44,34 @@ export const metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'serenkit',
-  url: BASE_URL,
-  description: '숫자가 필요한 순간, 생활 계산기 모음 서비스',
-  inLanguage: 'ko-KR',
-}
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'serenkit',
+    url: BASE_URL,
+    description: '숫자가 필요한 순간, 생활 계산기 모음 서비스',
+    inLanguage: 'ko-KR',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'serenkit',
+    url: BASE_URL,
+    email: 'admin@serenkit.com',
+    description: '2026년 최신 법령을 반영한 생활 계산기, 색상 도구, 개발자 도구를 제공하는 한국어 웹 서비스',
+    inLanguage: 'ko-KR',
+    foundingDate: '2026',
+    areaServed: { '@type': 'Country', name: 'KR' },
+    knowsAbout: ['생활 계산기', '날짜 계산', '금융 계산', '급여 계산', '색상 도구', '개발자 도구'],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'admin@serenkit.com',
+      contactType: 'customer support',
+      availableLanguage: 'Korean',
+    },
+  },
+]
 
 export default function RootLayout({ children }) {
   return (

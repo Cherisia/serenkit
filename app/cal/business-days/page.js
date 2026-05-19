@@ -23,6 +23,9 @@ const jsonLd = {
   description: '주말·공휴일을 제외한 실제 영업일수를 계산하는 영업일 계산기. 2025~2026 법정공휴일·대체공휴일 반영.',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

@@ -23,6 +23,9 @@ const jsonLd = {
   description: 'Mifflin-St Jeor 공식 기반 기초대사량(BMR)과 하루 필요 칼로리(TDEE)를 계산하는 계산기',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

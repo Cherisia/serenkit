@@ -25,6 +25,8 @@ const jsonLd = {
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [

@@ -21,8 +21,11 @@ const jsonLd = {
   name: '실업급여 계산기',
   url: 'https://serenkit.com/cal/unemployment/',
   description: '고용보험 가입기간과 월 평균임금으로 실업급여(구직급여) 수령액을 계산하는 계산기',
-  applicationCategory: 'UtilitiesApplication',
+  applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

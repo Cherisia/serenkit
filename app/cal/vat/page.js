@@ -21,8 +21,11 @@ const jsonLd = {
   name: '부가세 계산기',
   url: 'https://serenkit.com/cal/vat/',
   description: '공급가액으로 부가세와 합계금액을 계산하거나 합계금액에서 공급가액을 역산하는 계산기',
-  applicationCategory: 'UtilitiesApplication',
+  applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

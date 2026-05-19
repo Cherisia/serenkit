@@ -23,6 +23,9 @@ const jsonLd = {
   description: '날짜에 기간을 더하거나 빼서 결과 날짜를 구하는 날짜 계산기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

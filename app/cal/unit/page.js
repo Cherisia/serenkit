@@ -23,6 +23,9 @@ const jsonLd = {
   description: '길이, 무게, 넓이, 부피, 온도, 속도, 데이터 등 7가지 단위를 변환하는 단위 변환기',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',

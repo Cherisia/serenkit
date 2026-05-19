@@ -37,6 +37,8 @@ export default function TailwindPalettePage() {
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
     inLanguage: 'ko-KR',
+    dateModified: '2026-03-01',
+    publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   }
 

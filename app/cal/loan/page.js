@@ -21,8 +21,11 @@ const jsonLd = {
   name: '대출 이자 계산기',
   url: 'https://serenkit.com/cal/loan/',
   description: '원리금균등·원금균등·만기일시 상환 방식별 월 납입금과 총 이자를 계산하는 계산기',
-  applicationCategory: 'UtilitiesApplication',
+  applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-03-01',
+  publisher: { '@type': 'Organization', name: 'serenkit', url: 'https://serenkit.com' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   breadcrumb: {
     '@type': 'BreadcrumbList',
