@@ -20,24 +20,6 @@ export const metadata = {
   },
 }
 
-const orgJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'serenkit',
-  url: 'https://serenkit.com',
-  email: 'admin@serenkit.com',
-  description: '2026년 최신 법령을 반영한 생활 계산기, 색상 도구, 개발자 도구를 제공하는 한국어 웹 서비스',
-  inLanguage: 'ko-KR',
-  foundingDate: '2026',
-  areaServed: { '@type': 'Country', name: 'KR' },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    email: 'admin@serenkit.com',
-    contactType: 'customer support',
-    availableLanguage: 'Korean',
-  },
-}
-
 const SOURCES = [
   {
     category: '급여·세금',
@@ -86,8 +68,6 @@ const UPDATES = [
 export default function AboutPage() {
   return (
     <div className="w-full bg-slate-50 pb-20">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
-
       {/* 헤더 */}
       <section className="w-full bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 py-14 pt-[calc(3.5rem+3.5rem)] text-center text-white">
         <p className="text-xs font-black opacity-75 mb-3 tracking-[0.3em] uppercase">About</p>

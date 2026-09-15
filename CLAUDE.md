@@ -436,9 +436,17 @@ WebApplication 필수 필드:
   applicationCategory: 'FinanceApplication', // 또는 UtilityApplication, HealthApplication
   operatingSystem: 'Web',
   inLanguage: 'ko-KR',
+  publisher: { '@id': 'https://serenkit.com/#organization' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
 }
 ```
+
+> **GEO(엔티티) 규칙**: `publisher`는 절대 `{ '@type': 'Organization', name: 'serenkit', url: ... }`
+> 형태로 전체 객체를 반복 선언하지 말 것. `layout.js`가 사이트 전역에 `@id: 'https://serenkit.com/#organization'`인
+> Organization 엔티티를 이미 선언하므로, 개별 페이지는 `{ '@id': 'https://serenkit.com/#organization' }`로
+> 참조만 한다. 동일 엔티티를 페이지마다 다른 내용으로 중복 선언하면 GEO 엔티티 체크에서 중복/불일치로 감점된다.
+> 같은 이유로 홈(`app/page.js`)·about 페이지에 별도의 WebSite/Organization 전체 선언을 추가하지 말 것
+> (layout.js가 이미 모든 페이지에 주입함).
 
 ### FAQ 작성 기준
 

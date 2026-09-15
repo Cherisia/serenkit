@@ -24,20 +24,9 @@ export const metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'serenkit',
-  url: BASE_URL,
-  description: '생활 계산기, 색상 유틸리티, 개발자 도구 모음',
-  inLanguage: 'ko-KR',
-}
-
 export default function Home() {
   return (
     <div className="w-full bg-slate-50 min-h-screen pb-20">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
       {/* 히어로 */}
       <section className="w-full bg-gradient-to-br from-amber-400 via-orange-400 to-yellow-300 relative overflow-hidden pt-[4.5rem]">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: CALC_HERO_PATTERN }} />
