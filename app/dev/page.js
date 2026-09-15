@@ -15,6 +15,7 @@ export const metadata = {
     description: '타임스탬프 변환, Base64, URL 인코딩, UUID 생성, 정규식 테스터 — 개발자 유틸리티 5종.',
     url: `${BASE_URL}/dev/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '개발자 도구 모음 - serenkit' }],
   },
 }

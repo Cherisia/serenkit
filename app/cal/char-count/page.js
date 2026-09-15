@@ -11,6 +11,7 @@ export const metadata = {
     description: '텍스트를 입력하면 공백 포함/제외 글자수, 바이트 수, 단어 수를 실시간으로 계산해요. 사람인·잡코리아 자소서 글자 제한도 바로 확인하세요.',
     url: 'https://serenkit.com/cal/char-count/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }

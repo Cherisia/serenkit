@@ -13,6 +13,7 @@ export const metadata = {
     description: 'Tailwind CSS 22가지 색상 계열 전체 탐색. 클래스명·HEX 원클릭 복사.',
     url: `${BASE_URL}/color/tailwind-palette/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '테일윈드 색상표 - serenkit' }],
   },
 }

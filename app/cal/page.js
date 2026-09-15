@@ -17,6 +17,7 @@ export const metadata = {
     description: 'D-day·날짜·만 나이·월급·퇴직금·실업급여·BMI·평수 등 생활 계산기 모음.',
     url: `${BASE_URL}/cal/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit 생활 계산기 모음' }],
   },
 }

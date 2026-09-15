@@ -19,6 +19,7 @@ export const metadata = {
     description: '이미지 업로드 또는 Ctrl+V 붙여넣기로 주요 색상을 HEX·RGB·HSL·CMYK 코드와 색상 이름으로 즉시 추출. 서버 전송 없음.',
     url: `${BASE_URL}/color/color-extractor/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '이미지 색상 추출기 - serenkit' }],
   },
 }

@@ -13,6 +13,7 @@ export const metadata = {
     description: 'UUID v4를 최대 10개 즉시 생성. 개별·전체 복사. DB PK, API ID, 세션 토큰 생성.',
     url: `${BASE_URL}/dev/uuid/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }

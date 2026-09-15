@@ -11,6 +11,7 @@ export const metadata = {
     description: '2026년 신고분(2025년 귀속) 종합소득세. 과세표준·산출세액·세액공제 단계별 계산.',
     url: 'https://serenkit.com/cal/income-tax/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '종합소득세 계산기 - serenkit' }],
   },
 }

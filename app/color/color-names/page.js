@@ -13,6 +13,7 @@ export const metadata = {
     description: 'HEX 코드로 가장 가까운 CSS 색상 이름·Tailwind 클래스 즉시 검색. 140가지 CSS 표준 색상 전체 목록 제공.',
     url: `${BASE_URL}/color/color-names/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 이름 찾기 - serenkit' }],
   },
 }

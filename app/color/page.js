@@ -15,6 +15,7 @@ export const metadata = {
     description: '색상 추출, HEX·RGB·HSL 변환, 팔레트·그라디언트 생성, 명도 대비 검사 등 색상 도구 모음.',
     url: `${BASE_URL}/color/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 도구 모음 - serenkit' }],
   },
 }

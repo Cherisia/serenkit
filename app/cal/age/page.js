@@ -11,6 +11,7 @@ export const metadata = {
     description: '생년월일 입력 즉시 법적 만 나이 자동 계산. 2023년 만 나이 통일법 기준.',
     url: 'https://serenkit.com/cal/age/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '만 나이 계산기 - serenkit' }],
   },
 }

@@ -13,6 +13,7 @@ export const metadata = {
     description: '정규식 실시간 매치 확인. g·i·m 플래그, 캡처 그룹, 이메일·전화번호 예제 패턴 제공.',
     url: `${BASE_URL}/dev/regex-tester/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }

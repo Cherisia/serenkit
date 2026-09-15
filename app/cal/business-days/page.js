@@ -11,6 +11,7 @@ export const metadata = {
     description: '주말·공휴일을 제외한 실제 영업일수를 바로 계산해요. 2025~2026 법정공휴일·대체공휴일 반영.',
     url: 'https://serenkit.com/cal/business-days/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '영업일 계산기 - serenkit' }],
   },
 }

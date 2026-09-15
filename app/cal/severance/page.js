@@ -11,6 +11,7 @@ export const metadata = {
     description: '입사일·퇴직일·월급 입력으로 법정 퇴직금 즉시 계산. 상여금·연차수당 포함.',
     url: 'https://serenkit.com/cal/severance/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '퇴직금 계산기 - serenkit' }],
   },
 }

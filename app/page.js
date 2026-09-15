@@ -19,6 +19,7 @@ export const metadata = {
     description: `날짜·건강·금융 계산기 ${totalCalcs}개, 색상 변환·팔레트 ${COLOR_TOOLS.length}개, 개발자 도구 ${DEV_TOOLS.length}개 — 한 곳에서 즉시 사용.`,
     url: `${BASE_URL}/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit - 생활 계산기 · 색상 도구 · 개발자 도구 모음' }],
   },
 }

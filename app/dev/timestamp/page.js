@@ -13,6 +13,7 @@ export const metadata = {
     description: 'Unix 타임스탬프(초/밀리초)를 날짜시간으로, 날짜를 타임스탬프로 양방향 변환합니다.',
     url: `${BASE_URL}/dev/timestamp/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }

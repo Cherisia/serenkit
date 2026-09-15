@@ -188,6 +188,7 @@ export const metadata = {
   keywords: ['...'],
   alternates: { canonical: 'https://serenkit.com/cal/[slug]/' },
   openGraph: { title: '계산기 이름 | serenkit', description: '...', url: '...', type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }] },
 }
 
@@ -403,6 +404,7 @@ const ref = useRef(null)
 | `canonical` | 반드시 trailing slash 포함: `https://serenkit.com/cal/salary/` |
 | OG `title` | `[계산기명] | serenkit` (파이프 구분) |
 | OG `image` | `/og-image.png?v=2` 고정 |
+| OG `siteName` | 반드시 `'serenkit'` 명시. Next.js는 페이지별 `openGraph` 객체가 layout.js 값을 완전히 덮어써서, 누락 시 `og:site_name` 메타 태그 자체가 사라짐 |
 
 ### HTML 헤딩 계층
 

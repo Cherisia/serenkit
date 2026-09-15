@@ -13,6 +13,7 @@ export const metadata = {
     description: '기준 색상에서 보색·유사색·삼각배색 등 조화로운 팔레트 자동 생성. HEX 코드 복사.',
     url: `${BASE_URL}/color/palette-generator/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 팔레트 생성기 - serenkit' }],
   },
 }

@@ -13,6 +13,7 @@ export const metadata = {
     description: 'CSS linear-gradient·radial-gradient 코드를 시각적으로 생성 후 즉시 복사.',
     url: `${BASE_URL}/color/gradient-generator/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '그라디언트 생성기 - serenkit' }],
   },
 }

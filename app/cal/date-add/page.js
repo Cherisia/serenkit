@@ -11,6 +11,7 @@ export const metadata = {
     description: '날짜에 일·월·년을 더하거나 빼서 결과 날짜를 즉시 계산. 90일 후·30일 전 날짜 빠르게 확인.',
     url: 'https://serenkit.com/cal/date-add/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '날짜 더하기 빼기 계산기 - serenkit' }],
   },
 }

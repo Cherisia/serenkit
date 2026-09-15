@@ -11,6 +11,7 @@ export const metadata = {
     description: '수능·군 전역일·시험·기념일까지 남은 일수(D-)와 경과 일수(D+)를 즉시 계산. 수능 프리셋 버튼 지원.',
     url: 'https://serenkit.com/cal/dday/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'D-day 계산기 - serenkit' }],
   },
 }

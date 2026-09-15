@@ -11,6 +11,7 @@ export const metadata = {
     description: '평↔m² 즉시 변환. 아파트 평형 참고표 포함.',
     url: 'https://serenkit.com/cal/pyeong/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }

@@ -11,6 +11,7 @@ export const metadata = {
     description: '생년월일로 나의 띠·별자리 즉시 확인. 오행·궁합·별자리 특징까지 한번에.',
     url: 'https://serenkit.com/cal/zodiac/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '띠/별자리 계산기 - serenkit' }],
   },
 }

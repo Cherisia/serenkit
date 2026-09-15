@@ -13,6 +13,7 @@ export const metadata = {
     description: 'HEX, RGB, HSL, CMYK, Tailwind 모든 색상 포맷 즉시 변환. 색상 코드 원클릭 복사.',
     url: `${BASE_URL}/color/color-converter/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 포맷 변환기 - serenkit' }],
   },
 }

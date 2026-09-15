@@ -15,6 +15,7 @@ export const metadata = {
     description: `2026년 최신 법령 기준 생활 계산기 ${totalCalcs}개, 색상 도구 ${COLOR_TOOLS.length}개, 개발자 도구 ${DEV_TOOLS.length}개 제공.`,
     url: 'https://serenkit.com/about/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'serenkit 소개' }],
   },
 }

@@ -16,6 +16,7 @@ export const metadata = {
     description: '만난 날부터 오늘 기준 경과 일수 즉시 확인. 100일·200일·1주년 기념일 날짜와 D-day 한 번에.',
     url: 'https://serenkit.com/cal/anniversary/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '기념일 계산기 - serenkit' }],
   },
 }

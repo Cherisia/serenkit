@@ -15,6 +15,7 @@ export const metadata = {
     description: '두 날짜 사이의 일수(경과일수)·주·개월·년을 즉시 계산. 오늘까지 경과 기간, 계약·근무·여행 기간 확인.',
     url: 'https://serenkit.com/cal/date-diff/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '날짜 차이 계산기 - serenkit' }],
   },
 }

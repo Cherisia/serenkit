@@ -13,6 +13,7 @@ export const metadata = {
     description: '한글·특수문자 URL percent-encoding 실시간 인코딩/디코딩. encodeURIComponent 방식.',
     url: `${BASE_URL}/dev/url-encoder/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }

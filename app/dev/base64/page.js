@@ -13,6 +13,7 @@ export const metadata = {
     description: '텍스트 Base64 인코딩/디코딩, JWT 페이로드 디코딩. 한글·이모지 유니코드 완전 지원.',
     url: `${BASE_URL}/dev/base64/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }

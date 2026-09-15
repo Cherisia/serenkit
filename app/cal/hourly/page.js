@@ -11,6 +11,7 @@ export const metadata = {
     description: '2026년 최저시급 10,320원 기준 시급·일급·주급·월급·연봉 한 번에 계산. 주휴수당 자동 포함.',
     url: 'https://serenkit.com/cal/hourly/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '시급 계산기 - serenkit' }],
   },
 }

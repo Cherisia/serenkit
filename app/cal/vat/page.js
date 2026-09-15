@@ -11,6 +11,7 @@ export const metadata = {
     description: '공급가액으로 부가세·합계금액 즉시 계산. 부가세 포함 금액 역산도 지원.',
     url: 'https://serenkit.com/cal/vat/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '부가세 계산기 - serenkit' }],
   },
 }

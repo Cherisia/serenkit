@@ -16,6 +16,7 @@ export const metadata = {
     description: '로또 6/45 번호를 클릭 한 번에 즉시 추첨. 제외 번호 설정·5게임 동시 추첨·다음 추첨일 D-Day 확인.',
     url: 'https://serenkit.com/cal/lotto/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630 }],
   },
 }

@@ -16,6 +16,7 @@ export const metadata = {
     description: '음력 생일·기일의 양력 날짜를 연도별로 자동 계산. 양력↔음력 변환, 윤달·간지·띠 동시 확인. 한국천문연구원 기준.',
     url: 'https://serenkit.com/cal/lunar/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '음력 계산기 - serenkit' }],
   },
 }

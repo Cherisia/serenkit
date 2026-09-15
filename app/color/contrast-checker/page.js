@@ -13,6 +13,7 @@ export const metadata = {
     description: 'WCAG 2.1 AA·AAA 기준으로 두 색상의 명도 대비 비율 즉시 측정. 텍스트 접근성 확인.',
     url: `${BASE_URL}/color/contrast-checker/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '명도 대비 검사기 - serenkit' }],
   },
 }

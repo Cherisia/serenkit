@@ -11,6 +11,7 @@ export const metadata = {
     description: '두 사람의 MBTI 관계도와 궁합 점수, 황금비율 여부를 바로 확인해보세요.',
     url: 'https://serenkit.com/cal/mbti/',
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: 'MBTI 궁합 계산기 관계도 - serenkit' }],
   },
 }

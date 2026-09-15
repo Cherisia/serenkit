@@ -13,6 +13,7 @@ export const metadata = {
     description: '비주얼 컬러 피커로 색상 선택 후 HEX·RGB·HSL·CMYK·Tailwind 코드 한 번에 복사.',
     url: `${BASE_URL}/color/color-picker/`,
     type: 'website',
+    siteName: 'serenkit',
     images: [{ url: '/og-image.png?v=2', width: 1200, height: 630, alt: '색상 피커 - serenkit' }],
   },
 }
